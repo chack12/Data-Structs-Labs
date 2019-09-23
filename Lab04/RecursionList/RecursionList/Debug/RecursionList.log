@@ -1,0 +1,16 @@
+﻿  RecursionList.cpp
+C:\Users\Christopher\Desktop\College\Data Structures\Labs\Lab04\RecursionList\RecursionList\RecursionList.h(46,20): warning C4251:  'FactorialByStack::s': class 'std::stack<int,std::deque<_Ty,std::allocator<_Ty>>>' needs to have dll-interface to be used by clients of class 'FactorialByStack'
+C:\Users\Christopher\Desktop\College\Data Structures\Labs\Lab04\RecursionList\RecursionList\RecursionList.h(46,20): warning C4251:         with
+C:\Users\Christopher\Desktop\College\Data Structures\Labs\Lab04\RecursionList\RecursionList\RecursionList.h(46,20): warning C4251:         [
+C:\Users\Christopher\Desktop\College\Data Structures\Labs\Lab04\RecursionList\RecursionList\RecursionList.h(46,20): warning C4251:             _Ty=int
+C:\Users\Christopher\Desktop\College\Data Structures\Labs\Lab04\RecursionList\RecursionList\RecursionList.h(46,20): warning C4251:         ]
+C:\Users\Christopher\Desktop\College\Data Structures\Labs\Lab04\RecursionList\RecursionList\RecursionList.h(46): message :  see declaration of 'std::stack<int,std::deque<_Ty,std::allocator<_Ty>>>'
+C:\Users\Christopher\Desktop\College\Data Structures\Labs\Lab04\RecursionList\RecursionList\RecursionList.h(46): message :         with
+C:\Users\Christopher\Desktop\College\Data Structures\Labs\Lab04\RecursionList\RecursionList\RecursionList.h(46): message :         [
+C:\Users\Christopher\Desktop\College\Data Structures\Labs\Lab04\RecursionList\RecursionList\RecursionList.h(46): message :             _Ty=int
+C:\Users\Christopher\Desktop\College\Data Structures\Labs\Lab04\RecursionList\RecursionList\RecursionList.h(46): message :         ]
+C:\Users\Christopher\Desktop\College\Data Structures\Labs\Lab04\RecursionList\RecursionList\RecursionList.h(50,1): warning C4275:  non dll-interface class 'std::exception' used as base for dll-interface class 'MyException'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.22.27905\include\vcruntime_exception.h(44): message :  see declaration of 'std::exception'
+C:\Users\Christopher\Desktop\College\Data Structures\Labs\Lab04\RecursionList\RecursionList\RecursionList.h(49): message :  see declaration of 'MyException'
+     Creating library C:\Users\Christopher\Desktop\College\Data Structures\Labs\Lab04\RecursionList\Debug\RECURSIONLIST.lib and object C:\Users\Christopher\Desktop\College\Data Structures\Labs\Lab04\RecursionList\Debug\RECURSIONLIST.exp
+  RecursionList.vcxproj -> C:\Users\Christopher\Desktop\College\Data Structures\Labs\Lab04\RecursionList\Debug\RECURSIONLIST.dll

@@ -1,0 +1,10 @@
+﻿  TowerHannoiGame.cpp
+C:\Users\Christopher\Desktop\College\Data Structures\Lab03\StackQueues\StackQueues\StackQueues.h(23,24): warning C4251:  'IStack::queue': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'IStack'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.22.27905\include\xstring(4343): message :  see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\Christopher\Desktop\College\Data Structures\Lab03\StackQueues\StackQueues\StackQueues.h(38,24): warning C4251:  'ArrayBasedStack::stack': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'ArrayBasedStack'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.22.27905\include\xstring(4343): message :  see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\Christopher\Desktop\College\Data Structures\Lab03\StackQueues\StackQueues\StackQueues.h(50,24): warning C4251:  'IQueue::queue': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'IQueue'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.22.27905\include\xstring(4343): message :  see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\Christopher\Desktop\College\Data Structures\Lab03\StackQueues\StackQueues\StackQueues.h(65,24): warning C4251:  'ArrayBasedQueue::queue': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'ArrayBasedQueue'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.22.27905\include\xstring(4343): message :  see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+  TowerHannoiGame.vcxproj -> C:\Users\Christopher\Desktop\College\Data Structures\Lab03\StackQueues\x64\Debug\TowerHannoiGame.exe
