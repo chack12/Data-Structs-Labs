@@ -1,23 +1,23 @@
 ﻿  stdafx.cpp
   Lab01EXE.cpp
-C:\Users\Christopher\Desktop\College\Data Structures\Lab01\Lab01\Lab01DLL\Lab01DLL.h(67,26): warning C4251:  'Deck::m_deck': class 'std::vector<Card,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Deck'
-C:\Users\Christopher\Desktop\College\Data Structures\Lab01\Lab01\Lab01DLL\Lab01DLL.h(67,26): warning C4251:         with
-C:\Users\Christopher\Desktop\College\Data Structures\Lab01\Lab01\Lab01DLL\Lab01DLL.h(67,26): warning C4251:         [
-C:\Users\Christopher\Desktop\College\Data Structures\Lab01\Lab01\Lab01DLL\Lab01DLL.h(67,26): warning C4251:             _Ty=Card
-C:\Users\Christopher\Desktop\College\Data Structures\Lab01\Lab01\Lab01DLL\Lab01DLL.h(67,26): warning C4251:         ]
-C:\Users\Christopher\Desktop\College\Data Structures\Lab01\Lab01\Lab01DLL\Lab01DLL.h(67): message :  see declaration of 'std::vector<Card,std::allocator<_Ty>>'
-C:\Users\Christopher\Desktop\College\Data Structures\Lab01\Lab01\Lab01DLL\Lab01DLL.h(67): message :         with
-C:\Users\Christopher\Desktop\College\Data Structures\Lab01\Lab01\Lab01DLL\Lab01DLL.h(67): message :         [
-C:\Users\Christopher\Desktop\College\Data Structures\Lab01\Lab01\Lab01DLL\Lab01DLL.h(67): message :             _Ty=Card
-C:\Users\Christopher\Desktop\College\Data Structures\Lab01\Lab01\Lab01DLL\Lab01DLL.h(67): message :         ]
-C:\Users\Christopher\Desktop\College\Data Structures\Lab01\Lab01\Lab01DLL\Lab01DLL.h(83,27): warning C4251:  'BlackJackHand::m_hand': class 'std::vector<Card,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'BlackJackHand'
-C:\Users\Christopher\Desktop\College\Data Structures\Lab01\Lab01\Lab01DLL\Lab01DLL.h(83,27): warning C4251:         with
-C:\Users\Christopher\Desktop\College\Data Structures\Lab01\Lab01\Lab01DLL\Lab01DLL.h(83,27): warning C4251:         [
-C:\Users\Christopher\Desktop\College\Data Structures\Lab01\Lab01\Lab01DLL\Lab01DLL.h(83,27): warning C4251:             _Ty=Card
-C:\Users\Christopher\Desktop\College\Data Structures\Lab01\Lab01\Lab01DLL\Lab01DLL.h(83,27): warning C4251:         ]
-C:\Users\Christopher\Desktop\College\Data Structures\Lab01\Lab01\Lab01DLL\Lab01DLL.h(67): message :  see declaration of 'std::vector<Card,std::allocator<_Ty>>'
-C:\Users\Christopher\Desktop\College\Data Structures\Lab01\Lab01\Lab01DLL\Lab01DLL.h(67): message :         with
-C:\Users\Christopher\Desktop\College\Data Structures\Lab01\Lab01\Lab01DLL\Lab01DLL.h(67): message :         [
-C:\Users\Christopher\Desktop\College\Data Structures\Lab01\Lab01\Lab01DLL\Lab01DLL.h(67): message :             _Ty=Card
-C:\Users\Christopher\Desktop\College\Data Structures\Lab01\Lab01\Lab01DLL\Lab01DLL.h(67): message :         ]
-  Lab01EXE.vcxproj -> C:\Users\Christopher\Desktop\College\Data Structures\Lab01\Lab01\x64\Debug\Lab01EXE.exe
+C:\Users\Ben\Documents\School\Third Year\Fall Semesters\Computer Data Structures\Labs\Lab 1\Lab01DLL\Lab01DLL.h(67,26): warning C4251:  'Deck::m_deck': class 'std::vector<Card,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Deck'
+C:\Users\Ben\Documents\School\Third Year\Fall Semesters\Computer Data Structures\Labs\Lab 1\Lab01DLL\Lab01DLL.h(67,26): warning C4251:         with
+C:\Users\Ben\Documents\School\Third Year\Fall Semesters\Computer Data Structures\Labs\Lab 1\Lab01DLL\Lab01DLL.h(67,26): warning C4251:         [
+C:\Users\Ben\Documents\School\Third Year\Fall Semesters\Computer Data Structures\Labs\Lab 1\Lab01DLL\Lab01DLL.h(67,26): warning C4251:             _Ty=Card
+C:\Users\Ben\Documents\School\Third Year\Fall Semesters\Computer Data Structures\Labs\Lab 1\Lab01DLL\Lab01DLL.h(67,26): warning C4251:         ]
+C:\Users\Ben\Documents\School\Third Year\Fall Semesters\Computer Data Structures\Labs\Lab 1\Lab01DLL\Lab01DLL.h(67): message :  see declaration of 'std::vector<Card,std::allocator<_Ty>>'
+C:\Users\Ben\Documents\School\Third Year\Fall Semesters\Computer Data Structures\Labs\Lab 1\Lab01DLL\Lab01DLL.h(67): message :         with
+C:\Users\Ben\Documents\School\Third Year\Fall Semesters\Computer Data Structures\Labs\Lab 1\Lab01DLL\Lab01DLL.h(67): message :         [
+C:\Users\Ben\Documents\School\Third Year\Fall Semesters\Computer Data Structures\Labs\Lab 1\Lab01DLL\Lab01DLL.h(67): message :             _Ty=Card
+C:\Users\Ben\Documents\School\Third Year\Fall Semesters\Computer Data Structures\Labs\Lab 1\Lab01DLL\Lab01DLL.h(67): message :         ]
+C:\Users\Ben\Documents\School\Third Year\Fall Semesters\Computer Data Structures\Labs\Lab 1\Lab01DLL\Lab01DLL.h(83,27): warning C4251:  'BlackJackHand::m_hand': class 'std::vector<Card,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'BlackJackHand'
+C:\Users\Ben\Documents\School\Third Year\Fall Semesters\Computer Data Structures\Labs\Lab 1\Lab01DLL\Lab01DLL.h(83,27): warning C4251:         with
+C:\Users\Ben\Documents\School\Third Year\Fall Semesters\Computer Data Structures\Labs\Lab 1\Lab01DLL\Lab01DLL.h(83,27): warning C4251:         [
+C:\Users\Ben\Documents\School\Third Year\Fall Semesters\Computer Data Structures\Labs\Lab 1\Lab01DLL\Lab01DLL.h(83,27): warning C4251:             _Ty=Card
+C:\Users\Ben\Documents\School\Third Year\Fall Semesters\Computer Data Structures\Labs\Lab 1\Lab01DLL\Lab01DLL.h(83,27): warning C4251:         ]
+C:\Users\Ben\Documents\School\Third Year\Fall Semesters\Computer Data Structures\Labs\Lab 1\Lab01DLL\Lab01DLL.h(67): message :  see declaration of 'std::vector<Card,std::allocator<_Ty>>'
+C:\Users\Ben\Documents\School\Third Year\Fall Semesters\Computer Data Structures\Labs\Lab 1\Lab01DLL\Lab01DLL.h(67): message :         with
+C:\Users\Ben\Documents\School\Third Year\Fall Semesters\Computer Data Structures\Labs\Lab 1\Lab01DLL\Lab01DLL.h(67): message :         [
+C:\Users\Ben\Documents\School\Third Year\Fall Semesters\Computer Data Structures\Labs\Lab 1\Lab01DLL\Lab01DLL.h(67): message :             _Ty=Card
+C:\Users\Ben\Documents\School\Third Year\Fall Semesters\Computer Data Structures\Labs\Lab 1\Lab01DLL\Lab01DLL.h(67): message :         ]
+  Lab01EXE.vcxproj -> C:\Users\Ben\Documents\School\Third Year\Fall Semesters\Computer Data Structures\Labs\Lab 1\x64\Debug\Lab01EXE.exe

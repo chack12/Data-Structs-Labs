@@ -1,23 +1,4 @@
 ﻿  StackQueues.cpp
-C:\Users\Christopher\Desktop\College\Data Structures\Lab03\StackQueues\StackQueues\StackQueues.h(23,24): warning C4251:  'IStack::queue': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'IStack'
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 3\StackQueues\StackQueues\StackQueues.h(163,24): warning C4251:  'ArrayBasedQueue::queue': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'ArrayBasedQueue'
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.22.27905\include\xstring(4343): message :  see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-C:\Users\Christopher\Desktop\College\Data Structures\Lab03\StackQueues\StackQueues\StackQueues.h(38,24): warning C4251:  'ArrayBasedStack::stack': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'ArrayBasedStack'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.22.27905\include\xstring(4343): message :  see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-C:\Users\Christopher\Desktop\College\Data Structures\Lab03\StackQueues\StackQueues\StackQueues.h(50,24): warning C4251:  'IQueue::queue': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'IQueue'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.22.27905\include\xstring(4343): message :  see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-C:\Users\Christopher\Desktop\College\Data Structures\Lab03\StackQueues\StackQueues\StackQueues.h(65,24): warning C4251:  'ArrayBasedQueue::queue': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'ArrayBasedQueue'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.22.27905\include\xstring(4343): message :  see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-C:\Users\Christopher\Desktop\College\Data Structures\Lab03\StackQueues\StackQueues\StackQueues.cpp(20,1): error C2084:  function 'std::string ArrayBasedStack::peek(void)' already has a body
-C:\Users\Christopher\Desktop\College\Data Structures\Lab03\StackQueues\StackQueues\StackQueues.cpp(7): message :  see previous definition of 'peek'
-C:\Users\Christopher\Desktop\College\Data Structures\Lab03\StackQueues\StackQueues\StackQueues.cpp(26,15): error C2248:  'IStack::queue': cannot access private member declared in class 'IStack'
-C:\Users\Christopher\Desktop\College\Data Structures\Lab03\StackQueues\StackQueues\StackQueues.h(23): message :  see declaration of 'IStack::queue'
-C:\Users\Christopher\Desktop\College\Data Structures\Lab03\StackQueues\StackQueues\StackQueues.h(15): message :  see declaration of 'IStack'
-C:\Users\Christopher\Desktop\College\Data Structures\Lab03\StackQueues\StackQueues\StackQueues.cpp(46,1): error C2511:  'bool ArrayBasedQueue::isEmpty(std::string) const': overloaded member function not found in 'ArrayBasedQueue'
-C:\Users\Christopher\Desktop\College\Data Structures\Lab03\StackQueues\StackQueues\StackQueues.h(55): message :  see declaration of 'ArrayBasedQueue'
-C:\Users\Christopher\Desktop\College\Data Structures\Lab03\StackQueues\StackQueues\StackQueues.cpp(47,5): error C2597:  illegal reference to non-static member 'ArrayBasedQueue::queue'
-C:\Users\Christopher\Desktop\College\Data Structures\Lab03\StackQueues\StackQueues\StackQueues.cpp(47,5): error C3867:  'ArrayBasedQueue::queue': non-standard syntax; use '&' to create a pointer to member
-C:\Users\Christopher\Desktop\College\Data Structures\Lab03\StackQueues\StackQueues\StackQueues.cpp(47,5): error C2109:  subscript requires array or pointer type
-C:\Users\Christopher\Desktop\College\Data Structures\Lab03\StackQueues\StackQueues\StackQueues.cpp(72,1): error C2589:  'end of file': illegal token on right side of '::'
-C:\Users\Christopher\Desktop\College\Data Structures\Lab03\StackQueues\StackQueues\StackQueues.cpp(72): error C2144:  syntax error: 'unknown-type' should be preceded by ';'
-C:\Users\Christopher\Desktop\College\Data Structures\Lab03\StackQueues\StackQueues\StackQueues.cpp(72,1): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\Christopher\Desktop\College\Data Structures\Lab03\StackQueues\StackQueues\StackQueues.cpp(72,1): error C1004:  unexpected end-of-file found
+  StackQueues.vcxproj -> C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 3\StackQueues\x64\Debug\STACKQUEUES.dll

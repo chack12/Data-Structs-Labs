@@ -46,7 +46,7 @@ namespace StackQueueTests
 			Assert::IsFalse(stack.isEmpty());
 			Assert::IsTrue(stack.push(3));
 
-			Assert::IsTrue(stack.isEmpty());
+			Assert::IsFalse(stack.isEmpty());
 
 			Assert::IsTrue(stack.pop());
 			Assert::IsFalse(stack.isEmpty());

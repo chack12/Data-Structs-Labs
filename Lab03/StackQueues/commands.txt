@@ -1,0 +1,2 @@
+cd C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 3\StackQueues\
+"C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 3\StackQueues\x64\Debug\TowerHannoiGame.exe" < winning_moves.txt
