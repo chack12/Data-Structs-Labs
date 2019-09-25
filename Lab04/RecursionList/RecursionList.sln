@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27428.2037
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RecursionList", "RecursionList\RecursionList.vcxproj", "{B243376E-9FA4-489C-BCCE-BB9C496C62A7}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTest1", "UnitTest1\UnitTest1.vcxproj", "{85221DB3-A09E-470F-A857-24F3F00B9D75}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QueenSolver", "QueenSolver\QueenSolver.vcxproj", "{9C52736C-1A50-4802-93C1-D2CBF21A7EC3}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTest2", "UnitTest2\UnitTest2.vcxproj", "{BE95BE84-8D64-423E-AA75-97BB7DE7606D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,14 @@ Global
 		{9C52736C-1A50-4802-93C1-D2CBF21A7EC3}.Release|x64.Build.0 = Release|x64
 		{9C52736C-1A50-4802-93C1-D2CBF21A7EC3}.Release|x86.ActiveCfg = Release|Win32
 		{9C52736C-1A50-4802-93C1-D2CBF21A7EC3}.Release|x86.Build.0 = Release|Win32
+		{BE95BE84-8D64-423E-AA75-97BB7DE7606D}.Debug|x64.ActiveCfg = Debug|x64
+		{BE95BE84-8D64-423E-AA75-97BB7DE7606D}.Debug|x64.Build.0 = Debug|x64
+		{BE95BE84-8D64-423E-AA75-97BB7DE7606D}.Debug|x86.ActiveCfg = Debug|Win32
+		{BE95BE84-8D64-423E-AA75-97BB7DE7606D}.Debug|x86.Build.0 = Debug|Win32
+		{BE95BE84-8D64-423E-AA75-97BB7DE7606D}.Release|x64.ActiveCfg = Release|x64
+		{BE95BE84-8D64-423E-AA75-97BB7DE7606D}.Release|x64.Build.0 = Release|x64
+		{BE95BE84-8D64-423E-AA75-97BB7DE7606D}.Release|x86.ActiveCfg = Release|Win32
+		{BE95BE84-8D64-423E-AA75-97BB7DE7606D}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
