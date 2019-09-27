@@ -95,4 +95,5 @@ C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structur
 C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.cpp(25,21): warning C4018:  '<': signed/unsigned mismatch
 C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.cpp(65,20): warning C4018:  '<': signed/unsigned mismatch
 C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.cpp(58): warning C4715:  'PalindromeByRecursion::isPalindrome': not all control paths return a value
+     Creating library C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\Debug\RECURSIONLIST.lib and object C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\Debug\RECURSIONLIST.exp
   RecursionList.vcxproj -> C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\Debug\RECURSIONLIST.dll
