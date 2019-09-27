@@ -9,17 +9,103 @@ C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structur
 C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(46): message :         [
 C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(46): message :             _Ty=char
 C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(46): message :         ]
-C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(50,1): warning C4275:  non dll-interface class 'std::exception' used as base for dll-interface class 'MyException'
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(55,3): error C2065:  'cout': undeclared identifier
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(61,1): warning C4275:  non dll-interface class 'std::exception' used as base for dll-interface class 'MyBaseException'
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.22.27905\include\vcruntime_exception.h(44): message :  see declaration of 'std::exception'
-C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(49): message :  see declaration of 'MyException'
-C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(119,20): warning C4251:  'FactorialByStack::s': class 'std::stack<int,std::deque<_Ty,std::allocator<_Ty>>>' needs to have dll-interface to be used by clients of class 'FactorialByStack'
-C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(119,20): warning C4251:         with
-C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(119,20): warning C4251:         [
-C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(119,20): warning C4251:             _Ty=int
-C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(119,20): warning C4251:         ]
-C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(119): message :  see declaration of 'std::stack<int,std::deque<_Ty,std::allocator<_Ty>>>'
-C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(119): message :         with
-C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(119): message :         [
-C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(119): message :             _Ty=int
-C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(119): message :         ]
-  UnitTest1.vcxproj -> C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\Debug\UnitTest1.dll
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(60): message :  see declaration of 'MyBaseException'
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(127,17): warning C4251:  'ChessBoard::col1': class 'std::stack<int,std::deque<_Ty,std::allocator<_Ty>>>' needs to have dll-interface to be used by clients of class 'ChessBoard'
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(127,17): warning C4251:         with
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(127,17): warning C4251:         [
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(127,17): warning C4251:             _Ty=int
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(127,17): warning C4251:         ]
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(108): message :  see declaration of 'std::stack<int,std::deque<_Ty,std::allocator<_Ty>>>'
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(108): message :         with
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(108): message :         [
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(108): message :             _Ty=int
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(108): message :         ]
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(128,17): warning C4251:  'ChessBoard::col2': class 'std::stack<int,std::deque<_Ty,std::allocator<_Ty>>>' needs to have dll-interface to be used by clients of class 'ChessBoard'
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(128,17): warning C4251:         with
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(128,17): warning C4251:         [
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(128,17): warning C4251:             _Ty=int
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(128,17): warning C4251:         ]
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(108): message :  see declaration of 'std::stack<int,std::deque<_Ty,std::allocator<_Ty>>>'
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(108): message :         with
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(108): message :         [
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(108): message :             _Ty=int
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(108): message :         ]
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(129,17): warning C4251:  'ChessBoard::col3': class 'std::stack<int,std::deque<_Ty,std::allocator<_Ty>>>' needs to have dll-interface to be used by clients of class 'ChessBoard'
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(129,17): warning C4251:         with
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(129,17): warning C4251:         [
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(129,17): warning C4251:             _Ty=int
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(129,17): warning C4251:         ]
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(108): message :  see declaration of 'std::stack<int,std::deque<_Ty,std::allocator<_Ty>>>'
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(108): message :         with
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(108): message :         [
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(108): message :             _Ty=int
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(108): message :         ]
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(130,17): warning C4251:  'ChessBoard::col4': class 'std::stack<int,std::deque<_Ty,std::allocator<_Ty>>>' needs to have dll-interface to be used by clients of class 'ChessBoard'
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(130,17): warning C4251:         with
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(130,17): warning C4251:         [
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(130,17): warning C4251:             _Ty=int
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(130,17): warning C4251:         ]
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(108): message :  see declaration of 'std::stack<int,std::deque<_Ty,std::allocator<_Ty>>>'
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(108): message :         with
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(108): message :         [
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(108): message :             _Ty=int
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(108): message :         ]
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(131,17): warning C4251:  'ChessBoard::col5': class 'std::stack<int,std::deque<_Ty,std::allocator<_Ty>>>' needs to have dll-interface to be used by clients of class 'ChessBoard'
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(131,17): warning C4251:         with
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(131,17): warning C4251:         [
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(131,17): warning C4251:             _Ty=int
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(131,17): warning C4251:         ]
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(108): message :  see declaration of 'std::stack<int,std::deque<_Ty,std::allocator<_Ty>>>'
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(108): message :         with
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(108): message :         [
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(108): message :             _Ty=int
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(108): message :         ]
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(132,17): warning C4251:  'ChessBoard::col6': class 'std::stack<int,std::deque<_Ty,std::allocator<_Ty>>>' needs to have dll-interface to be used by clients of class 'ChessBoard'
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(132,17): warning C4251:         with
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(132,17): warning C4251:         [
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(132,17): warning C4251:             _Ty=int
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(132,17): warning C4251:         ]
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(108): message :  see declaration of 'std::stack<int,std::deque<_Ty,std::allocator<_Ty>>>'
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(108): message :         with
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(108): message :         [
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(108): message :             _Ty=int
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(108): message :         ]
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(133,17): warning C4251:  'ChessBoard::col7': class 'std::stack<int,std::deque<_Ty,std::allocator<_Ty>>>' needs to have dll-interface to be used by clients of class 'ChessBoard'
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(133,17): warning C4251:         with
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(133,17): warning C4251:         [
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(133,17): warning C4251:             _Ty=int
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(133,17): warning C4251:         ]
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(108): message :  see declaration of 'std::stack<int,std::deque<_Ty,std::allocator<_Ty>>>'
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(108): message :         with
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(108): message :         [
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(108): message :             _Ty=int
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(108): message :         ]
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(134,17): warning C4251:  'ChessBoard::col8': class 'std::stack<int,std::deque<_Ty,std::allocator<_Ty>>>' needs to have dll-interface to be used by clients of class 'ChessBoard'
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(134,17): warning C4251:         with
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(134,17): warning C4251:         [
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(134,17): warning C4251:             _Ty=int
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(134,17): warning C4251:         ]
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(108): message :  see declaration of 'std::stack<int,std::deque<_Ty,std::allocator<_Ty>>>'
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(108): message :         with
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(108): message :         [
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(108): message :             _Ty=int
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(108): message :         ]
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(166,20): warning C4251:  'FactorialByStack::s': class 'std::stack<int,std::deque<_Ty,std::allocator<_Ty>>>' needs to have dll-interface to be used by clients of class 'FactorialByStack'
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(166,20): warning C4251:         with
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(166,20): warning C4251:         [
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(166,20): warning C4251:             _Ty=int
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(166,20): warning C4251:         ]
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(108): message :  see declaration of 'std::stack<int,std::deque<_Ty,std::allocator<_Ty>>>'
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(108): message :         with
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(108): message :         [
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(108): message :             _Ty=int
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\RecursionList\RecursionList.h(108): message :         ]
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\UnitTest1\unittest1.cpp(84,1): error C2061:  syntax error: identifier 'MyException'
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\UnitTest1\unittest1.cpp(84,4): error C2310:  catch handlers must specify one type
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\UnitTest1\unittest1.cpp(88,4): error C2311:  'std::exception': is caught by '...' on line 84
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\UnitTest1\unittest1.cpp(101,1): error C2061:  syntax error: identifier 'MyException'
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\UnitTest1\unittest1.cpp(101,5): error C2310:  catch handlers must specify one type
+C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 4\RecursionList\UnitTest1\unittest1.cpp(105,4): error C2311:  'std::exception': is caught by '...' on line 101

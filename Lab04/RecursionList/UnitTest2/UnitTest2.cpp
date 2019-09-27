@@ -9,7 +9,6 @@ namespace UnitTest2
 	TEST_CLASS(UnitTestPalindrome)
 	{
 	public:
-		
 		TEST_METHOD(Loop1)
 		{
 			PalindromeByLoop checker;
@@ -65,6 +64,39 @@ namespace UnitTest2
 			Assert::IsTrue(checker.isPalindrome("a"));
 			Assert::IsFalse(checker.isPalindrome("ab"));
 			Assert::IsFalse(checker.isPalindrome(""));
+		}
+
+		TEST_METHOD(UserDefinedExceptionTest1)
+		{
+
+			std::string status = CallSimpleExceptionMethod(1);
+			Assert::AreEqual(std::string("I got Exception 1"), status);
+
+		}
+
+		TEST_METHOD(UserDefinedExceptionTest2)
+		{
+
+
+			std::string status = CallSimpleExceptionMethod(2);
+			Assert::AreEqual(std::string("I got Exception 2"), status);
+
+		}
+
+		TEST_METHOD(UserDefinedExceptionTest3)
+		{
+
+			std::string status = CallSimpleExceptionMethod(3);
+			Assert::AreEqual(std::string("I got Exception 3"), status);
+
+		}
+
+		TEST_METHOD(UserDefinedExceptionTest4)
+		{
+
+			std::string status = CallSimpleExceptionMethod(4);
+			Assert::AreEqual(std::string("I did not get an Exception"), status);
+
 		}
 	};
 }
