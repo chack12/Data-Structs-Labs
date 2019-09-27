@@ -1,4 +1,0 @@
-﻿  StackQueues.cpp
-C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 3\StackQueues\StackQueues\StackQueues.h(163,24): warning C4251:  'ArrayBasedQueue::queue': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'ArrayBasedQueue'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.22.27905\include\xstring(4343): message :  see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-  StackQueues.vcxproj -> C:\Users\Ben\Documents\School\Third Year\Fall Semester\Engineering Data Structures\Labs\Lab 3\StackQueues\x64\Debug\STACKQUEUES.dll
