@@ -110,6 +110,7 @@ public:
 		}
 	}
 
+	//Shows the inputted card
 	Card* ShowCard(int input) {
 		for (int i = 0; i < m_listOfCards.size(); ++i) {
 			if (m_listOfCards[i]->GetRank() == input) {
