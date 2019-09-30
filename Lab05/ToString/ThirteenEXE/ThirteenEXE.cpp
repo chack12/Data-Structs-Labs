@@ -48,6 +48,7 @@ int main()
 		player2Turn = true;
 
 		while (player1Turn) {
+			cout << "************************************************************************************" << endl;
 			game.GetPlayer(1)->ShowHand();
 			game.GetPlayer(1)->ShowStack();
 			cout << endl;
@@ -56,19 +57,18 @@ int main()
 			cout << "Dump - discard all cards and draw 5 new ones. Ends turn immediately" << endl;
 			cout << "Draw - draw a card from the community pile (Max cards in hand is 6)" << endl;
 			cout << "Discard - if you cannot place a card on the stack, you must discard to end your turn" << endl;
+			cout << endl;
 			cout << "Player 1: Enter your action: ";
 			cin >> inputS;
 			cout << endl;
 
 			transform(inputS.begin(), inputS.end(), inputS.begin(), ::tolower);
 			if (inputS == "place") {
-				game.GetPlayer(1)->ShowHand();
-
 				cout << "What card do you want to add on the stack: ";
 				cin >> inputI;
 				cout << endl;
 
-				if ((inputI <= 12 || inputI >= 0) && (game.GetPlayer(1)->ShowTopOfStack()->GetRank() == game.GetPlayer(1)->ShowCard(inputI)->GetRank() - 1)) {
+				if ((inputI <= 12 || inputI >= 0) && (game.GetPlayer(1)->GetStackSize() == 0 || game.GetPlayer(1)->ShowTopOfStack()->GetRank() == game.GetPlayer(1)->ShowCard(inputI)->GetRank() - 1)) {
 					game.GetPlayer(1)->AddCardToStack(game.GetPlayer(1)->GetCard(inputI));
 
 					if (game.GetPlayer(1)->CheckForWin()) {
@@ -90,7 +90,7 @@ int main()
 
 				if (inputI <= 12 || inputI >= 0) {
 					game.PutToBottom(game.GetPlayer(1)->GetCard(inputI));
-					player2Turn = false;
+					player1Turn = false;
 				}
 				else {
 					cout << "Invalid input" << endl;
@@ -122,6 +122,7 @@ int main()
 		}
 		
 		while (player2Turn) {
+			cout << "************************************************************************************" << endl;
 			game.GetPlayer(2)->ShowHand();
 			game.GetPlayer(2)->ShowStack();
 			cout << endl;
@@ -130,19 +131,18 @@ int main()
 			cout << "Dump - discard all cards and draw 5 new ones. Ends turn immediately" << endl;
 			cout << "Draw - draw a card from the community pile (Max cards in hand is 6)" << endl;
 			cout << "Discard - if you cannot place a card on the stack, you must discard to end your turn" << endl;
+			cout << endl;
 			cout << "Player 2: Enter your action: ";
 			cin >> inputS;
 			cout << endl;
 
 			transform(inputS.begin(), inputS.end(), inputS.begin(), ::tolower);
 			if (inputS == "place") {
-				game.GetPlayer(2)->ShowHand();
-
 				cout << "What card do you want to add on the stack: ";
 				cin >> inputI;
 				cout << endl;
 
-				if ((inputI <= 12 || inputI >= 0) && (game.GetPlayer(1)->ShowTopOfStack()->GetRank() == game.GetPlayer(1)->ShowCard(inputI)->GetRank() - 1)) {
+				if ((inputI <= 12 || inputI >= 0) && (game.GetPlayer(2)->GetStackSize() == 0 || game.GetPlayer(2)->ShowTopOfStack()->GetRank() == game.GetPlayer(2)->ShowCard(inputI)->GetRank() - 1)) {
 					game.GetPlayer(2)->AddCardToStack(game.GetPlayer(2)->GetCard(inputI));
 
 					if (game.GetPlayer(2)->CheckForWin()) {
