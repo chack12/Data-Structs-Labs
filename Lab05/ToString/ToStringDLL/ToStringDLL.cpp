@@ -8,7 +8,8 @@
 #include <string>
 #include <queue>
 #include <vector>
-#include <cstring>
+#include <sstream>
+#include <ctime>
 
 class Card
 {
@@ -59,7 +60,6 @@ private:
 class Player
 {
 public:
-
 	//Player constructor
 	Player(std::string name)
 	{
@@ -94,7 +94,7 @@ public:
 
 	//Adds the card to the players stack
 	void AddCardToStack(Card* card) {
-		if (card->GetRank() - 1 == m_stackOfCards.front()->GetRank() || card->GetRank() == 1) {
+		if (card->GetRank() == 1 || card->GetRank() - 1 == m_stackOfCards.front()->GetRank()) {
 			m_stackOfCards.insert(m_stackOfCards.begin(), card);
 		}
 	}
@@ -103,11 +103,25 @@ public:
 	Card* GetCard(int input) {
 		for (int i = 0; i < m_listOfCards.size(); ++i) {
 			if (m_listOfCards[i]->GetRank() == input) {
+				Card* temp = m_listOfCards[i];
 				m_listOfCards.erase(m_listOfCards.begin() + i);
+				return temp;
+			}
+		}
+	}
+
+	Card* ShowCard(int input) {
+		for (int i = 0; i < m_listOfCards.size(); ++i) {
+			if (m_listOfCards[i]->GetRank() == input) {
 				return m_listOfCards[i];
 			}
 		}
 	}
+
+	Card* ShowTopOfStack() {
+		return m_stackOfCards[m_stackOfCards.size() - 1];
+	}
+
 	int GetHandSize() {
 		return m_listOfCards.size();
 	}
@@ -115,9 +129,12 @@ public:
 	//Discards players deck
 	std::vector<Card*> DiscardHand() {
 		std::vector<Card*> tempListOfCards = m_listOfCards;
-		for (int i = 0; i < m_listOfCards.size(); ++i) {
-			m_listOfCards.erase(m_listOfCards.begin() + i);
-		}
+		//for (int i = 0; i < m_listOfCards.size(); ++i) {
+			//m_listOfCards.erase(m_listOfCards.begin() + i);
+		//}
+
+		m_listOfCards.clear();
+
 		return tempListOfCards;
 	}
 
@@ -133,13 +150,14 @@ public:
 
 	//Show the players hand
 	void ShowHand() {
-		std::string output;
+		std::stringstream ss;
 
 		for (int i = 0; i < m_listOfCards.size(); ++i) {
-			output += m_listOfCards[i]->GetRank() + " ";
+			ss << m_listOfCards[i]->GetRank();
+			ss << " ";
 		}
-
-		std::cout << output << std::endl;
+		std::string temp = ss.str();
+		std::cout << ss.str() << std::endl;
 	}
 
 	//Show the players stack
@@ -148,7 +166,7 @@ public:
 			std::cout << "Your stack is empty" << std::endl;
 		}
 		else {
-			for (int i = m_stackOfCards.size(); i >= 0; --i) {
+			for (int i = 0; i < m_stackOfCards.size(); ++i) {
 				std::cout << m_stackOfCards[i]->GetRank() << std::endl;
 			}
 		}
@@ -156,14 +174,11 @@ public:
 
 	//Checks for win condition
 	bool CheckForWin() {
-		try {
-			if (m_stackOfCards[12]->GetRank() == 13) {
-				return true;
-			}
+		if (m_stackOfCards.size() == 13 && m_stackOfCards[12]->GetRank() == 13) {
+			return true;
 		}
-		catch (int temp) {
-			return false;
-		}
+
+		return false;
 	}
 
 private:
@@ -178,6 +193,8 @@ public:
 	//Game constructor
 	Game()
 	{
+		srand(time(NULL));
+
 		m_player1 = new Player("Player1");
 		m_player2 = new Player("Player2");
 
