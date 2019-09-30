@@ -33,13 +33,24 @@ int main()
 	}
 
 	while (!endGame) {
+		cout << "Drawing a card from the top of the pile..." << endl;
+		cout << endl;
+
+		while (game.GetPlayer(1)->GetHandSize() < 6) {
+			game.GetPlayer(1)->AddCardToHand(game.PullFromTopofPile());
+		}
+		
+		while (game.GetPlayer(2)->GetHandSize() < 6) {
+			game.GetPlayer(2)->AddCardToHand(game.PullFromTopofPile());
+		}
+
+		player1Turn = true;
+		player2Turn = true;
+
 		while (player1Turn) {
 			game.GetPlayer(1)->ShowHand();
-			cout << "Drawing a card from the top of the pile..." << endl;
-			cout << endl;
-			game.GetPlayer(1)->AddCardToHand(game.PullFromTopofPile());
-			game.GetPlayer(1)->ShowHand();
 			game.GetPlayer(1)->ShowStack();
+			cout << endl;
 
 			cout << "Place - add a card from your hand to the stack." << endl;
 			cout << "Dump - discard all cards and draw 5 new ones. Ends turn immediately" << endl;
@@ -53,11 +64,11 @@ int main()
 			if (inputS == "place") {
 				game.GetPlayer(1)->ShowHand();
 
-				cout << "What card do you want to add on the stack: " << endl;
+				cout << "What card do you want to add on the stack: ";
 				cin >> inputI;
 				cout << endl;
 
-				if (inputI <= 12 || inputI >= 0) {
+				if ((inputI <= 12 || inputI >= 0) && (game.GetPlayer(1)->ShowTopOfStack()->GetRank() == game.GetPlayer(1)->ShowCard(inputI)->GetRank() - 1)) {
 					game.GetPlayer(1)->AddCardToStack(game.GetPlayer(1)->GetCard(inputI));
 
 					if (game.GetPlayer(1)->CheckForWin()) {
@@ -73,12 +84,13 @@ int main()
 			else if (inputS == "discard") {
 				game.GetPlayer(1)->ShowHand();
 
-				cout << "What card do you want to discard: " << endl;
+				cout << "What card do you want to discard: ";
 				cin >> inputI;
 				cout << endl;
 
 				if (inputI <= 12 || inputI >= 0) {
 					game.PutToBottom(game.GetPlayer(1)->GetCard(inputI));
+					player2Turn = false;
 				}
 				else {
 					cout << "Invalid input" << endl;
@@ -99,7 +111,7 @@ int main()
 					game.GetPlayer(1)->AddCardToHand(game.PullFromTopofPile());
 				}
 				else {
-					cout << "Too many cards in your hand" << endl;
+					cout << "Too many cards in your hand";
 					cout << endl;
 				}
 			}
@@ -111,11 +123,8 @@ int main()
 		
 		while (player2Turn) {
 			game.GetPlayer(2)->ShowHand();
-			cout << "Drawing a card from the top of the pile..." << endl;
-			cout << endl;
-			game.GetPlayer(2)->AddCardToHand(game.PullFromTopofPile());
-			game.GetPlayer(2)->ShowHand();
 			game.GetPlayer(2)->ShowStack();
+			cout << endl;
 
 			cout << "Place - add a card from your hand to the stack." << endl;
 			cout << "Dump - discard all cards and draw 5 new ones. Ends turn immediately" << endl;
@@ -129,11 +138,11 @@ int main()
 			if (inputS == "place") {
 				game.GetPlayer(2)->ShowHand();
 
-				cout << "What card do you want to add on the stack: " << endl;
+				cout << "What card do you want to add on the stack: ";
 				cin >> inputI;
 				cout << endl;
 
-				if (inputI <= 12 || inputI >= 0) {
+				if ((inputI <= 12 || inputI >= 0) && (game.GetPlayer(1)->ShowTopOfStack()->GetRank() == game.GetPlayer(1)->ShowCard(inputI)->GetRank() - 1)) {
 					game.GetPlayer(2)->AddCardToStack(game.GetPlayer(2)->GetCard(inputI));
 
 					if (game.GetPlayer(2)->CheckForWin()) {
@@ -149,12 +158,13 @@ int main()
 			else if (inputS == "discard") {
 				game.GetPlayer(2)->ShowHand();
 
-				cout << "What card do you want to discard: " << endl;
+				cout << "What card do you want to discard: ";
 				cin >> inputI;
 				cout << endl;
 
 				if (inputI <= 12 || inputI >= 0) {
 					game.PutToBottom(game.GetPlayer(2)->GetCard(inputI));
+					player2Turn = false;
 				}
 				else {
 					cout << "Invalid input" << endl;
@@ -175,7 +185,7 @@ int main()
 					game.GetPlayer(2)->AddCardToHand(game.PullFromTopofPile());
 				}
 				else {
-					cout << "Too many cards in your hand" << endl;
+					cout << "Too many cards in your hand";
 					cout << endl;
 				}
 			}
