@@ -91,7 +91,6 @@ public:
 	{
 		m_listOfCards.push_back(card);
 	}
-
 	//Adds the card to the players stack
 	void AddCardToStack(Card* card) {
 		if (card->GetRank() == 1 || card->GetRank() - 1 == m_stackOfCards.front()->GetRank()) {
@@ -142,7 +141,8 @@ public:
 		std::string cards;
 
 		for (int i = 0; i < m_listOfCards.size(); ++i) {
-			cards += m_listOfCards[i]->GetRank() + " ";
+			cards += m_listOfCards[i]->GetRank();
+			cards += " ";
 		}
 
 		return cards;
@@ -150,14 +150,17 @@ public:
 
 	//Show the players hand
 	void ShowHand() {
-		std::stringstream ss;
+		// std::stringstream ss;
 
+		/* Temp comment for consistency. Talk to chris.
 		for (int i = 0; i < m_listOfCards.size(); ++i) {
 			ss << m_listOfCards[i]->GetRank();
 			ss << " ";
 		}
-		std::string temp = ss.str();
-		std::cout << ss.str() << std::endl;
+		*/
+
+		std::string temp = ShowHandString();
+		std::cout << ShowHandString() << std::endl;
 	}
 
 	//Show the players stack
