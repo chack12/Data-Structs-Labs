@@ -154,8 +154,8 @@
     <ClCompile Include="ThirteenEXE.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ToString\ToString.vcxproj">
-      <Project>{3fdf5f7c-edf2-430e-8254-730e970f68fe}</Project>
+    <ProjectReference Include="..\ToStringDLL\ToStringDLL.vcxproj">
+      <Project>{ea809072-137a-4eac-adfb-a57ff864b729}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -4,7 +4,7 @@
 #include <iostream>
 #include <locale>
 #include <string>
-#include "../ToString/ToString.cpp"
+#include "../ToStringDLL/ToStringDLL.cpp"
 
 using namespace std;
 

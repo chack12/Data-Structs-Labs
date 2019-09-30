@@ -1,0 +1,2 @@
+#define TOSTRINGDLL_API __declspec(dllexport)
+#define TOSTRINGDLL_API __declspec(dllimport)
