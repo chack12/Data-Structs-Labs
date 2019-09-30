@@ -93,8 +93,8 @@ public:
 	}
 	//Adds the card to the players stack
 	void AddCardToStack(Card* card) {
-		if (card->GetRank() == 1 || card->GetRank() - 1 == m_stackOfCards.front()->GetRank()) {
-			m_stackOfCards.insert(m_stackOfCards.begin(), card);
+		if (card->GetRank() == 1 || card->GetRank() - 1 == m_stackOfCards.back()->GetRank()) {
+			m_stackOfCards.insert(m_stackOfCards.end(), card);
 		}
 	}
 
@@ -117,7 +117,12 @@ public:
 		}
 	}
 
+	int GetStackSize() {
+		return m_stackOfCards.size();
+	}
+
 	Card* ShowTopOfStack() {
+		Card* temp = m_stackOfCards[m_stackOfCards.size() - 1];
 		return m_stackOfCards[m_stackOfCards.size() - 1];
 	}
 
@@ -152,7 +157,11 @@ public:
 	void ShowHand() {
 		// std::stringstream ss;
 
+<<<<<<< HEAD
 		/* Temp comment for consistency. Talk to chris.
+=======
+		ss << "Hand: ";
+>>>>>>> 660aeeca6411a36c206f1f4f8b3da5e87d8710c7
 		for (int i = 0; i < m_listOfCards.size(); ++i) {
 			ss << m_listOfCards[i]->GetRank();
 			ss << " ";
@@ -166,12 +175,15 @@ public:
 	//Show the players stack
 	void ShowStack() {
 		if (m_stackOfCards.size() == 0) {
-			std::cout << "Your stack is empty" << std::endl;
+			std::cout << "Stack: empty" << std::endl;
 		}
 		else {
-			for (int i = 0; i < m_stackOfCards.size(); ++i) {
+			std::cout << "Stack: " << std::endl;
+
+			for (int i = m_stackOfCards.size() - 1; i >= 0; --i) {
 				std::cout << m_stackOfCards[i]->GetRank() << std::endl;
 			}
+
 		}
 	}
 
