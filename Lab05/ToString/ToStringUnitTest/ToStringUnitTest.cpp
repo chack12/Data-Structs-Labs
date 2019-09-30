@@ -58,9 +58,9 @@ namespace ToStringTest
 
 		TEST_METHOD(PlayerClass)
 		{
-
-
-
+			Player player1 = "Chris";
+			Assert::AreEqual("Chris", player1.GetName);
+			Assert::AreEqual("", player1.~Player());
 		}
 
 		TEST_METHOD(GameClass)
