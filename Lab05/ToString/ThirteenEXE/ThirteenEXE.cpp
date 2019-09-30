@@ -15,8 +15,16 @@ int main()
 	int inputI;
 	bool endGame = false, player1Turn = true, player2Turn = true;
 
-	cout << "Welcome to 13" << endl;
-	//cout << "Rules of the game" << endl;
+	cout << "******************" << endl;
+	cout << "* The Game of 13 *" << endl;
+	cout << "******************" << endl;
+	cout << endl;
+	cout << "Rules of the game" << endl;
+	cout << "Each player must use the hand they draw from the pile to establish" << endl;
+	cout << "a stack in ascending order of cards from Ace to King (1-13). Players can only add" << endl;
+	cout << "cards in EXACT order. Each turn begins with the player drawing a card. The max" << endl;
+	cout << "amount of cards a player can have in their hand is 6. If the player cannot put a card" << endl;
+	cout << "in their stack, their turn is over." << endl;
 	cout << endl;
 
 	for (int i = 0; i < 5; ++i) {
@@ -39,6 +47,7 @@ int main()
 			cout << "Discard - if you cannot place a card on the stack, you must discard to end your turn" << endl;
 			cout << "Player 1: Enter your action: ";
 			cin >> inputS;
+			cout << endl;
 
 			transform(inputS.begin(), inputS.end(), inputS.begin(), ::tolower);
 			if (inputS == "place") {
@@ -46,6 +55,7 @@ int main()
 
 				cout << "What card do you want to add on the stack: " << endl;
 				cin >> inputI;
+				cout << endl;
 
 				if (inputI <= 12 || inputI >= 0) {
 					game.GetPlayer(1)->AddCardToStack(game.GetPlayer(1)->GetCard(inputI));
@@ -57,6 +67,7 @@ int main()
 				}
 				else {
 					cout << "Invalid input" << endl;
+					cout << endl;
 				}
 			}
 			else if (inputS == "discard") {
@@ -64,12 +75,14 @@ int main()
 
 				cout << "What card do you want to discard: " << endl;
 				cin >> inputI;
+				cout << endl;
 
 				if (inputI <= 12 || inputI >= 0) {
 					game.PutToBottom(game.GetPlayer(1)->GetCard(inputI));
 				}
 				else {
 					cout << "Invalid input" << endl;
+					cout << endl;
 				}
 			}
 			else if (inputS == "dump") {
@@ -87,10 +100,12 @@ int main()
 				}
 				else {
 					cout << "Too many cards in your hand" << endl;
+					cout << endl;
 				}
 			}
 			else {
 				cout << "Invalid input" << endl;
+				cout << endl;
 			}
 		}
 		
@@ -108,6 +123,7 @@ int main()
 			cout << "Discard - if you cannot place a card on the stack, you must discard to end your turn" << endl;
 			cout << "Player 2: Enter your action: ";
 			cin >> inputS;
+			cout << endl;
 
 			transform(inputS.begin(), inputS.end(), inputS.begin(), ::tolower);
 			if (inputS == "place") {
@@ -115,6 +131,7 @@ int main()
 
 				cout << "What card do you want to add on the stack: " << endl;
 				cin >> inputI;
+				cout << endl;
 
 				if (inputI <= 12 || inputI >= 0) {
 					game.GetPlayer(2)->AddCardToStack(game.GetPlayer(2)->GetCard(inputI));
@@ -126,6 +143,7 @@ int main()
 				}
 				else {
 					cout << "Invalid input" << endl;
+					cout << endl;
 				}
 			}
 			else if (inputS == "discard") {
@@ -133,12 +151,14 @@ int main()
 
 				cout << "What card do you want to discard: " << endl;
 				cin >> inputI;
+				cout << endl;
 
 				if (inputI <= 12 || inputI >= 0) {
 					game.PutToBottom(game.GetPlayer(2)->GetCard(inputI));
 				}
 				else {
 					cout << "Invalid input" << endl;
+					cout << endl;
 				}
 			}
 			else if (inputS == "dump") {
@@ -156,10 +176,12 @@ int main()
 				}
 				else {
 					cout << "Too many cards in your hand" << endl;
+					cout << endl;
 				}
 			}
 			else {
 				cout << "Invalid input" << endl;
+				cout << endl;
 			}
 		}
 	}
@@ -171,4 +193,6 @@ int main()
 	if (game.GetPlayer(2)->CheckForWin()) {
 		cout << "Player 2 Wins" << endl;
 	}
+
+	return 0;
 }
