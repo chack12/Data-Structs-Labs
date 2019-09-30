@@ -10,7 +10,7 @@ using namespace std;
 
 int main()
 {
-	Game game;
+	Game* game = new Game();
 	string inputS;
 	int inputI;
 	bool endGame = false, player1Turn = true, player2Turn = true;
@@ -28,20 +28,21 @@ int main()
 	cout << endl;
 
 	for (int i = 0; i < 5; ++i) {
-		game.GetPlayer(1)->AddCardToHand(game.PullFromTopofPile());
-		game.GetPlayer(2)->AddCardToHand(game.PullFromTopofPile());
+		game->GetPlayer(1)->AddCardToHand(game->PullFromTopofPile());
+		game->GetPlayer(2)->AddCardToHand(game->PullFromTopofPile());
 	}
 
+	//!endGame
 	while (!endGame) {
 		cout << "Drawing a card from the top of the pile..." << endl;
 		cout << endl;
 
-		while (game.GetPlayer(1)->GetHandSize() < 6) {
-			game.GetPlayer(1)->AddCardToHand(game.PullFromTopofPile());
+		while (game->GetPlayer(1)->GetHandSize() < 6) {
+			game->GetPlayer(1)->AddCardToHand(game->PullFromTopofPile());
 		}
 		
-		while (game.GetPlayer(2)->GetHandSize() < 6) {
-			game.GetPlayer(2)->AddCardToHand(game.PullFromTopofPile());
+		while (game->GetPlayer(2)->GetHandSize() < 6) {
+			game->GetPlayer(2)->AddCardToHand(game->PullFromTopofPile());
 		}
 
 		player1Turn = true;
@@ -49,8 +50,8 @@ int main()
 
 		while (player1Turn) {
 			cout << "************************************************************************************" << endl;
-			game.GetPlayer(1)->ShowHand();
-			game.GetPlayer(1)->ShowStack();
+			game->GetPlayer(1)->ShowHand();
+			game->GetPlayer(1)->ShowStack();
 			cout << endl;
 
 			cout << "Place - add a card from your hand to the stack." << endl;
@@ -68,10 +69,14 @@ int main()
 				cin >> inputI;
 				cout << endl;
 
-				if ((inputI <= 12 || inputI >= 0) && (game.GetPlayer(1)->GetStackSize() == 0 || game.GetPlayer(1)->ShowTopOfStack()->GetRank() == game.GetPlayer(1)->ShowCard(inputI)->GetRank() - 1)) {
-					game.GetPlayer(1)->AddCardToStack(game.GetPlayer(1)->GetCard(inputI));
+				if (game->GetPlayer(1)->GetStackSize() == 0 && inputI != 1) {
+					cout << "Invalid input" << endl;
+					cout << endl;
+				}
+				else if ((inputI <= 12 || inputI >= 0) && (game->GetPlayer(1)->GetStackSize() == 0 || game->GetPlayer(1)->ShowTopOfStack()->GetRank() == game->GetPlayer(1)->ShowCard(inputI)->GetRank() - 1)) {
+					game->GetPlayer(1)->AddCardToStack(game->GetPlayer(1)->GetCard(inputI));
 
-					if (game.GetPlayer(1)->CheckForWin()) {
+					if (game->GetPlayer(1)->CheckForWin()) {
 						endGame = true;
 						player1Turn = false;
 					}
@@ -82,14 +87,14 @@ int main()
 				}
 			}
 			else if (inputS == "discard") {
-				game.GetPlayer(1)->ShowHand();
+				game->GetPlayer(1)->ShowHand();
 
 				cout << "What card do you want to discard: ";
 				cin >> inputI;
 				cout << endl;
 
 				if (inputI <= 12 || inputI >= 0) {
-					game.PutToBottom(game.GetPlayer(1)->GetCard(inputI));
+					game->PutToBottom(game->GetPlayer(1)->GetCard(inputI));
 					player1Turn = false;
 				}
 				else {
@@ -98,17 +103,17 @@ int main()
 				}
 			}
 			else if (inputS == "dump") {
-				std::vector<Card*> listOfCards = game.GetPlayer(1)->DiscardHand();
+				std::vector<Card*> listOfCards = game->GetPlayer(1)->DiscardHand();
 
 				for (int i = 0; i < listOfCards.size(); ++i) {
-					game.PutToBottom(listOfCards[i]);
+					game->PutToBottom(listOfCards[i]);
 				}
 				
 				player1Turn = false;
 			}
 			else if (inputS == "draw") {
-				if (game.GetPlayer(1)->GetHandSize() < 6) {
-					game.GetPlayer(1)->AddCardToHand(game.PullFromTopofPile());
+				if (game->GetPlayer(1)->GetHandSize() < 6) {
+					game->GetPlayer(1)->AddCardToHand(game->PullFromTopofPile());
 				}
 				else {
 					cout << "Too many cards in your hand";
@@ -123,8 +128,8 @@ int main()
 		
 		while (player2Turn) {
 			cout << "************************************************************************************" << endl;
-			game.GetPlayer(2)->ShowHand();
-			game.GetPlayer(2)->ShowStack();
+			game->GetPlayer(2)->ShowHand();
+			game->GetPlayer(2)->ShowStack();
 			cout << endl;
 
 			cout << "Place - add a card from your hand to the stack." << endl;
@@ -142,10 +147,14 @@ int main()
 				cin >> inputI;
 				cout << endl;
 
-				if ((inputI <= 12 || inputI >= 0) && (game.GetPlayer(2)->GetStackSize() == 0 || game.GetPlayer(2)->ShowTopOfStack()->GetRank() == game.GetPlayer(2)->ShowCard(inputI)->GetRank() - 1)) {
-					game.GetPlayer(2)->AddCardToStack(game.GetPlayer(2)->GetCard(inputI));
+				if (game->GetPlayer(2)->GetStackSize() == 0 && inputI != 1) {
+					cout << "Invalid input" << endl;
+					cout << endl;
+				}
+				if ((inputI <= 12 || inputI >= 0) && (game->GetPlayer(2)->GetStackSize() == 0 || game->GetPlayer(2)->ShowTopOfStack()->GetRank() == game->GetPlayer(2)->ShowCard(inputI)->GetRank() - 1)) {
+					game->GetPlayer(2)->AddCardToStack(game->GetPlayer(2)->GetCard(inputI));
 
-					if (game.GetPlayer(2)->CheckForWin()) {
+					if (game->GetPlayer(2)->CheckForWin()) {
 						endGame = true;
 						player2Turn = false;
 					}
@@ -156,14 +165,14 @@ int main()
 				}
 			}
 			else if (inputS == "discard") {
-				game.GetPlayer(2)->ShowHand();
+				game->GetPlayer(2)->ShowHand();
 
 				cout << "What card do you want to discard: ";
 				cin >> inputI;
 				cout << endl;
 
 				if (inputI <= 12 || inputI >= 0) {
-					game.PutToBottom(game.GetPlayer(2)->GetCard(inputI));
+					game->PutToBottom(game->GetPlayer(2)->GetCard(inputI));
 					player2Turn = false;
 				}
 				else {
@@ -172,17 +181,17 @@ int main()
 				}
 			}
 			else if (inputS == "dump") {
-				std::vector<Card*> listOfCards = game.GetPlayer(2)->DiscardHand();
+				std::vector<Card*> listOfCards = game->GetPlayer(2)->DiscardHand();
 
 				for (int i = 0; i < listOfCards.size(); ++i) {
-					game.PutToBottom(listOfCards[i]);
+					game->PutToBottom(listOfCards[i]);
 				}
 
 				player2Turn = false;
 			}
 			else if (inputS == "draw") {
-				if (game.GetPlayer(2)->GetHandSize() < 6) {
-					game.GetPlayer(2)->AddCardToHand(game.PullFromTopofPile());
+				if (game->GetPlayer(2)->GetHandSize() < 6) {
+					game->GetPlayer(2)->AddCardToHand(game->PullFromTopofPile());
 				}
 				else {
 					cout << "Too many cards in your hand";
@@ -196,13 +205,15 @@ int main()
 		}
 	}
 
-	if (game.GetPlayer(1)->CheckForWin()) {
+	if (game->GetPlayer(1)->CheckForWin()) {
 		cout << "Player 1 Wins" << endl;
 	}
 
-	if (game.GetPlayer(2)->CheckForWin()) {
+	if (game->GetPlayer(2)->CheckForWin()) {
 		cout << "Player 2 Wins" << endl;
 	}
+
+	delete game;
 
 	return 0;
 }

@@ -95,6 +95,7 @@ public:
 	{
 		m_listOfCards.push_back(card);
 	}
+
 	//Adds the card to the players stack
 	void AddCardToStack(Card* card) {
 		if (card->GetRank() == 1 || card->GetRank() - 1 == m_stackOfCards.back()->GetRank()) {
@@ -113,6 +114,7 @@ public:
 		}
 	}
 
+	//Shows the inputted card
 	Card* ShowCard(int input) {
 		for (int i = 0; i < m_listOfCards.size(); ++i) {
 			if (m_listOfCards[i]->GetRank() == input) {
@@ -166,9 +168,13 @@ public:
 			ss << m_listOfCards[i]->GetRank();
 			ss << " ";
 		}
+<<<<<<< HEAD
 		
 
 		std::string temp = ss.str();
+=======
+
+>>>>>>> c8b6a6512330ecb0a84ffeed368f5be8c8bfe7a5
 		std::cout << ss.str() << std::endl;
 	}
 
