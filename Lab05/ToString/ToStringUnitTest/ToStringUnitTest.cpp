@@ -59,8 +59,16 @@ namespace ToStringTest
 		TEST_METHOD(PlayerClass)
 		{
 			Player player1 = "Chris";
+			Player player2 = "Derek";
 			Assert::AreEqual(std::string("Chris"), player1.GetName());
-			Assert::IsTrue(NULL, player1.~Player());
+			Assert::AreEqual(std::string("Derek"), player2.GetName());
+			player1.AddCardToHand();
+			player2.AddCardToHand();
+			Assert::AreEqual(std::string("1 2 3 4 5 6"), player1.ShowHandString());
+			Assert::AreNotEqual(std::string("1 3 6 3 2 4"), player2.ShowHandString());
+
+
+			// Assert::IsTrue(NULL, player1.~Player());
 		}
 
 		TEST_METHOD(GameClass)

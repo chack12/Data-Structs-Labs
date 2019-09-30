@@ -121,6 +121,16 @@ public:
 		return tempListOfCards;
 	}
 
+	std::string ShowHandString() {
+		std::string cards;
+
+		for (int i = 0; i < m_listOfCards.size(); ++i) {
+			cards += m_listOfCards[i]->GetRank() + " ";
+		}
+
+		return cards;
+	}
+
 	//Show the players hand
 	void ShowHand() {
 		std::string output;
