@@ -82,16 +82,86 @@ int main()
 				player1Turn = false;
 			}
 			else if (inputS == "draw") {
-				//Check for 6 cards
-				game.GetPlayer(1)->AddCardToHand();
+				if (game.GetPlayer(1)->GetHandSize() < 6) {
+					game.GetPlayer(1)->AddCardToHand(game.PullFromTopofPile());
+				}
+				else {
+					cout << "Too many cards in your hand" << endl;
+				}
 			}
 			else {
 				cout << "Invalid input" << endl;
 			}
 		}
 		
+		while (player2Turn) {
+			game.GetPlayer(2)->ShowHand();
+			cout << "Drawing a card from the top of the pile..." << endl;
+			cout << endl;
+			game.GetPlayer(2)->AddCardToHand(game.PullFromTopofPile());
+			game.GetPlayer(2)->ShowHand();
+			game.GetPlayer(2)->ShowStack();
 
-		//Players 2 turn
+			cout << "Place - add a card from your hand to the stack." << endl;
+			cout << "Dump - discard all cards and draw 5 new ones. Ends turn immediately" << endl;
+			cout << "Draw - draw a card from the community pile (Max cards in hand is 6)" << endl;
+			cout << "Discard - if you cannot place a card on the stack, you must discard to end your turn" << endl;
+			cout << "Player 2: Enter your action: ";
+			cin >> inputS;
+
+			transform(inputS.begin(), inputS.end(), inputS.begin(), ::tolower);
+			if (inputS == "place") {
+				game.GetPlayer(2)->ShowHand();
+
+				cout << "What card do you want to add on the stack: " << endl;
+				cin >> inputI;
+
+				if (inputI <= 12 || inputI >= 0) {
+					game.GetPlayer(2)->AddCardToStack(game.GetPlayer(2)->GetCard(inputI));
+
+					if (game.GetPlayer(2)->CheckForWin()) {
+						endGame = true;
+						player2Turn = false;
+					}
+				}
+				else {
+					cout << "Invalid input" << endl;
+				}
+			}
+			else if (inputS == "discard") {
+				game.GetPlayer(2)->ShowHand();
+
+				cout << "What card do you want to discard: " << endl;
+				cin >> inputI;
+
+				if (inputI <= 12 || inputI >= 0) {
+					game.PutToBottom(game.GetPlayer(2)->GetCard(inputI));
+				}
+				else {
+					cout << "Invalid input" << endl;
+				}
+			}
+			else if (inputS == "dump") {
+				std::vector<Card*> listOfCards = game.GetPlayer(2)->DiscardHand();
+
+				for (int i = 0; i < listOfCards.size(); ++i) {
+					game.PutToBottom(listOfCards[i]);
+				}
+
+				player2Turn = false;
+			}
+			else if (inputS == "draw") {
+				if (game.GetPlayer(2)->GetHandSize() < 6) {
+					game.GetPlayer(2)->AddCardToHand(game.PullFromTopofPile());
+				}
+				else {
+					cout << "Too many cards in your hand" << endl;
+				}
+			}
+			else {
+				cout << "Invalid input" << endl;
+			}
+		}
 	}
 
 	if (game.GetPlayer(1)->CheckForWin()) {
