@@ -8,6 +8,7 @@
 #include <string>
 #include <queue>
 #include <vector>
+#include <cstring>
 
 class Card
 {
@@ -58,6 +59,7 @@ private:
 class Player
 {
 public:
+
 	//Player constructor
 	Player(std::string name)
 	{
