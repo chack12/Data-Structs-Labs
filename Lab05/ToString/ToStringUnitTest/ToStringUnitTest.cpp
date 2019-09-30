@@ -49,7 +49,7 @@ namespace ToStringTest
 
 		TEST_METHOD(DeckClass)
 		{
-			Card* Card1 = &Card(1);
+			Card* Card1 = new Card(1);
 			Deck Deck1;
 			Assert::AreEqual(Card1, Deck1.Front());
 
@@ -80,8 +80,11 @@ namespace ToStringTest
 
 		TEST_METHOD(GameClass)
 		{
-
-
+			Game game;
+			Deck deck;
+			Card card1 = Card(1);
+			//Player player1;
+			// Player player2;
 
 		}
 	};

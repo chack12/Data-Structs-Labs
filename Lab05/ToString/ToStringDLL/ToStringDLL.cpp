@@ -53,6 +53,10 @@ public:
 		deck.pop();
 	}
 
+	Card* getTop() {
+		return deck.;
+
+	}
 private:
 	std::queue<Card> deck;
 };
@@ -155,21 +159,17 @@ public:
 
 	//Show the players hand
 	void ShowHand() {
-		// std::stringstream ss;
+		std::stringstream ss;
 
-<<<<<<< HEAD
-		/* Temp comment for consistency. Talk to chris.
-=======
 		ss << "Hand: ";
->>>>>>> 660aeeca6411a36c206f1f4f8b3da5e87d8710c7
 		for (int i = 0; i < m_listOfCards.size(); ++i) {
 			ss << m_listOfCards[i]->GetRank();
 			ss << " ";
 		}
-		*/
+		
 
-		std::string temp = ShowHandString();
-		std::cout << ShowHandString() << std::endl;
+		std::string temp = ss.str();
+		std::cout << ss.str() << std::endl;
 	}
 
 	//Show the players stack
