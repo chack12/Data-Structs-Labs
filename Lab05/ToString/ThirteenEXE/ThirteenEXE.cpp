@@ -70,7 +70,7 @@ int main()
 				cout << endl;
 
 				if (game->GetPlayer(1)->GetStackSize() == 0 && inputI != 1) {
-					cout << "Invalid input" << endl;
+					cout << "!!!!!!!!!!!!! Invalid input !!!!!!!!!!!!!" << endl;
 					cout << endl;
 				}
 				else if ((inputI <= 12 && inputI >= 0) && (game->GetPlayer(1)->GetStackSize() == 0 || game->GetPlayer(1)->ShowTopOfStack()->GetRank() == game->GetPlayer(1)->ShowCard(inputI)->GetRank() - 1)) {
@@ -82,7 +82,7 @@ int main()
 					}
 				}
 				else {
-					cout << "Invalid input" << endl;
+					cout << "!!!!!!!!!!!!! Invalid input !!!!!!!!!!!!!" << endl;
 					cout << endl;
 				}
 			}
@@ -98,7 +98,7 @@ int main()
 					player1Turn = false;
 				}
 				else {
-					cout << "Invalid input" << endl;
+					cout << "!!!!!!!!!!!!! Invalid input !!!!!!!!!!!!!" << endl;
 					cout << endl;
 				}
 			}
@@ -121,7 +121,7 @@ int main()
 				}
 			}
 			else {
-				cout << "Invalid input" << endl;
+				cout << "!!!!!!!!!!!!! Invalid input !!!!!!!!!!!!!" << endl;
 				cout << endl;
 			}
 		}
@@ -148,7 +148,7 @@ int main()
 				cout << endl;
 
 				if (game->GetPlayer(2)->GetStackSize() == 0 && inputI != 1) {
-					cout << "Invalid input" << endl;
+					cout << "!!!!!!!!!!!!! Invalid input !!!!!!!!!!!!!" << endl;
 					cout << endl;
 				}
 				if ((inputI <= 12 && inputI >= 0) && (game->GetPlayer(2)->GetStackSize() == 0 || game->GetPlayer(2)->ShowTopOfStack()->GetRank() == game->GetPlayer(2)->ShowCard(inputI)->GetRank() - 1)) {
@@ -160,7 +160,7 @@ int main()
 					}
 				}
 				else {
-					cout << "Invalid input" << endl;
+					cout << "!!!!!!!!!!!!! Invalid input !!!!!!!!!!!!!" << endl;
 					cout << endl;
 				}
 			}
@@ -176,7 +176,7 @@ int main()
 					player2Turn = false;
 				}
 				else {
-					cout << "Invalid input" << endl;
+					cout << "!!!!!!!!!!!!! Invalid input !!!!!!!!!!!!!" << endl;
 					cout << endl;
 				}
 			}
@@ -199,7 +199,7 @@ int main()
 				}
 			}
 			else {
-				cout << "Invalid input" << endl;
+				cout << "!!!!!!!!!!!!! Invalid input !!!!!!!!!!!!!" << endl;
 				cout << endl;
 			}
 		}
