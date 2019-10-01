@@ -116,7 +116,7 @@ int main()
 					game->GetPlayer(1)->AddCardToHand(game->PullFromTopofPile());
 				}
 				else {
-					cout << "Too many cards in your hand";
+					cout << "!!!!!!!!!!!!! Too many cards in your hand !!!!!!!!!!!!!";
 					cout << endl;
 				}
 			}
@@ -194,7 +194,7 @@ int main()
 					game->GetPlayer(2)->AddCardToHand(game->PullFromTopofPile());
 				}
 				else {
-					cout << "Too many cards in your hand";
+					cout << "!!!!!!!!!!!!! Too many cards in your hand !!!!!!!!!!!!!";
 					cout << endl;
 				}
 			}

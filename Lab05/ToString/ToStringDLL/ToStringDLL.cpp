@@ -84,16 +84,13 @@ int Player::GetHandSize() {
 //Discards players deck
 std::vector<Card*> Player::DiscardHand() {
 	std::vector<Card*> tempListOfCards = m_listOfCards;
-	//for (int i = 0; i < m_listOfCards.size(); ++i) {
-		//m_listOfCards.erase(m_listOfCards.begin() + i);
-	//}
 
 	m_listOfCards.clear();
 
 	return tempListOfCards;
 }
 
-//Returns a string of w
+//Returns a string of what is in the hand
 std::string Player::ShowHandString() {
 	std::stringstream ss;
 
@@ -103,7 +100,10 @@ std::string Player::ShowHandString() {
 		ss << " ";
 	}
 
-	return ss.str();
+	std::string temp = ss.str();
+	temp.pop_back();
+
+	return temp;
 }
 
 //Show the players stack

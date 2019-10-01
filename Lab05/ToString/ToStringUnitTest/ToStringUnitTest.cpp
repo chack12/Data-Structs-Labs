@@ -49,11 +49,8 @@ namespace ToStringTest
 
 		TEST_METHOD(DeckClass)
 		{
-			// Card* Card1 = new Card(1);
-			// Deck Deck1;
-			// Assert::AreEqual(Card1, Deck1.Front());
-
-
+			Deck Deck1;
+			Assert::AreEqual(Deck1.Front()->GetRank());
 		}
 
 		TEST_METHOD(PlayerClass)
