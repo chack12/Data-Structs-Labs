@@ -112,9 +112,6 @@ public:
 	//Returns a string of what is in the hand
 	std::string ShowHandString();
 
-	//Show the players hand
-	void ShowHand();
-
 	//Show the players stack
 	void ShowStack();
 

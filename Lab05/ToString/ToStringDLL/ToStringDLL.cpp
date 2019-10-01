@@ -95,18 +95,6 @@ std::vector<Card*> Player::DiscardHand() {
 
 //Returns a string of w
 std::string Player::ShowHandString() {
-	std::string cards;
-
-	for (int i = 0; i < m_listOfCards.size(); ++i) {
-		cards += m_listOfCards[i]->GetRank();
-		cards += " ";
-	}
-
-	return cards;
-}
-
-//Show the players hand
-void Player::ShowHand() {
 	std::stringstream ss;
 
 	ss << "Hand: ";
@@ -114,8 +102,8 @@ void Player::ShowHand() {
 		ss << m_listOfCards[i]->GetRank();
 		ss << " ";
 	}
-	std::string temp = ss.str();
-	std::cout << ss.str() << std::endl;
+
+	return ss.str();
 }
 
 //Show the players stack
