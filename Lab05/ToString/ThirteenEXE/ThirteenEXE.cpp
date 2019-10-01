@@ -73,7 +73,7 @@ int main()
 					cout << "Invalid input" << endl;
 					cout << endl;
 				}
-				else if ((inputI <= 12 || inputI >= 0) && (game->GetPlayer(1)->GetStackSize() == 0 || game->GetPlayer(1)->ShowTopOfStack()->GetRank() == game->GetPlayer(1)->ShowCard(inputI)->GetRank() - 1)) {
+				else if ((inputI <= 12 && inputI >= 0) && (game->GetPlayer(1)->GetStackSize() == 0 || game->GetPlayer(1)->ShowTopOfStack()->GetRank() == game->GetPlayer(1)->ShowCard(inputI)->GetRank() - 1)) {
 					game->GetPlayer(1)->AddCardToStack(game->GetPlayer(1)->GetCard(inputI));
 
 					if (game->GetPlayer(1)->CheckForWin()) {
@@ -93,7 +93,7 @@ int main()
 				cin >> inputI;
 				cout << endl;
 
-				if (inputI <= 12 || inputI >= 0) {
+				if (inputI <= 12 && inputI >= 0) {
 					game->PutToBottom(game->GetPlayer(1)->GetCard(inputI));
 					player1Turn = false;
 				}
@@ -151,7 +151,7 @@ int main()
 					cout << "Invalid input" << endl;
 					cout << endl;
 				}
-				if ((inputI <= 12 || inputI >= 0) && (game->GetPlayer(2)->GetStackSize() == 0 || game->GetPlayer(2)->ShowTopOfStack()->GetRank() == game->GetPlayer(2)->ShowCard(inputI)->GetRank() - 1)) {
+				if ((inputI <= 12 && inputI >= 0) && (game->GetPlayer(2)->GetStackSize() == 0 || game->GetPlayer(2)->ShowTopOfStack()->GetRank() == game->GetPlayer(2)->ShowCard(inputI)->GetRank() - 1)) {
 					game->GetPlayer(2)->AddCardToStack(game->GetPlayer(2)->GetCard(inputI));
 
 					if (game->GetPlayer(2)->CheckForWin()) {
@@ -171,7 +171,7 @@ int main()
 				cin >> inputI;
 				cout << endl;
 
-				if (inputI <= 12 || inputI >= 0) {
+				if (inputI <= 12 && inputI >= 0) {
 					game->PutToBottom(game->GetPlayer(2)->GetCard(inputI));
 					player2Turn = false;
 				}
