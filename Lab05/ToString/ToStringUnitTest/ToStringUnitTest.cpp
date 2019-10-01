@@ -51,8 +51,8 @@ namespace ToStringTest
 
 		TEST_METHOD(DeckClass)
 		{
-			Deck Deck1;
-			Assert::AreEqual(Deck1.Front()->GetRank());
+			// Deck Deck1;
+			//Assert::AreEqual(Deck1.Front()->GetRank());
 		}
 
 		TEST_METHOD(PlayerClass)
@@ -64,18 +64,16 @@ namespace ToStringTest
 			//Checking for player names matching and not matching respectively. 
 			Assert::AreEqual(std::string("Chris"), player1.GetName());
 			Assert::AreNotEqual(std::string("Derekk"), player2.GetName());
-
-			Card* tempPlayer1 = game1.GetTopOfPile();
-			game1.GetPlayer(1)->AddCardToHand(game1.PullFromTopofPile());
-			Assert::AreSame(tempPlayer1->GetRankString(), game1.GetPlayer(1)->ShowHandString());
 			
 			/*Checking for players pulling the correct card and outputting the correct 
 			string from private vector */
-			//Assert::AreEqual(, player1.ShowHandString());
-			// Assert::AreNotEqual(std::string("4"), player2.ShowHandString());
+			Card* tempPlayer1 = game1.GetTopOfPile();
+			game1.GetPlayer(1)->AddCardToHand(game1.PullFromTopofPile());
+			Assert::AreSame(tempPlayer1->GetRankString(), game1.GetPlayer(1)->ShowHandString());
+			player1.~Player();
+			player2.~Player();
+			game1.~Game();
 
-
-			// Assert::IsTrue((bool)"Chris", (bool)player1.~Player());
 		}
 
 		/*TEST_METHOD(GameClass)
