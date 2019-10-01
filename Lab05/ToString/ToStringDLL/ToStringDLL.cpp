@@ -152,3 +152,8 @@ Player* Game::GetPlayer(int i) {
 	}
 }
 
+//Returns the card at the top of the community pile
+Card* Game::GetTopOfPile() {
+	return m_communityPile.front();
+}
+
