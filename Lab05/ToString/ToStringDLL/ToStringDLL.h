@@ -155,9 +155,11 @@ public:
 	//Game deconstructor
 	~Game()
 	{
+		//Deletes player and player's hands.
 		delete m_player1;
 		delete m_player2;
 
+		//Deletes contents of community pile.
 		for (Card* card : m_communityPile) {
 			delete card;
 		}
