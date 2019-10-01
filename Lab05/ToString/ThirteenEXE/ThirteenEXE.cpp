@@ -32,7 +32,6 @@ int main()
 		game->GetPlayer(2)->AddCardToHand(game->PullFromTopofPile());
 	}
 
-	//!endGame
 	while (!endGame) {
 		cout << "Drawing a card from the top of the pile..." << endl;
 		cout << endl;

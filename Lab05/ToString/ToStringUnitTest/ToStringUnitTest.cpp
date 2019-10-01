@@ -57,11 +57,7 @@ namespace ToStringTest
 			string from private vector */
 			Card* tempPlayer1 = game1.GetTopOfPile();
 			game1.GetPlayer(1)->AddCardToHand(game1.PullFromTopofPile());
-			Assert::AreSame(tempPlayer1->GetRankString(), game1.GetPlayer(1)->ShowHandString());
-			player1.~Player();
-			player2.~Player();
-			game1.~Game();
-
+			Assert::AreEqual("Hand: " + tempPlayer1->GetRankString(), game1.GetPlayer(1)->ShowHandString());
 		}
 
 		TEST_METHOD(GameClass)
