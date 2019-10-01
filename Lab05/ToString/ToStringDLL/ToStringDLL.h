@@ -112,9 +112,6 @@ public:
 	//Returns a string of what is in the hand
 	std::string ShowHandString();
 
-	//Show the players hand
-	void ShowHand();
-
 	//Show the players stack
 	void ShowStack();
 
@@ -171,6 +168,9 @@ public:
 
 	//Return the player
 	Player* GetPlayer(int i);
+
+	//Returns the card at the top of the community pile
+	Card* GetTopOfPile();
 
 private:
 	Player* m_player1;
