@@ -16,6 +16,13 @@ int Card::GetRank() {
 	return rank;
 }
 
+//Returns the cards rank as a String
+std::string Card::GetRankString() {
+	std::stringstream ss;
+	ss << rank;
+	return ss.str();
+}
+
 //Returns the front card 
 Card* Deck::Front() {
 	return &deck.front();

@@ -19,7 +19,7 @@ namespace Lab01Test
 
 			Assert::AreEqual(1, card1.GetRank());
 			Assert::AreEqual(11, card2.GetRank());
-
+			
 			// this  code should work, https://developercommunity.visualstudio.com/content/problem/175181/native-unit-tests-assertareequal-gives-compile-err.html
 			//Assert::AreEqual(HEARTS, card1.GetSuit());
 			//Assert::AreEqual(SPADES, card2.GetSuit());

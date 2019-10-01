@@ -31,6 +31,9 @@ public:
 
 	//Returns the cards rank
 	int GetRank();
+	
+	//Returns the cards rank as a String
+	std::string GetRankString();
 
 private:
 	int rank;
