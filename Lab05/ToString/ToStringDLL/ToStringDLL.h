@@ -157,12 +157,8 @@ public:
 	//Game deconstructor
 	~Game()
 	{
-<<<<<<< HEAD
 		//Deletes player and player's hands.
-=======
 		std::cout << "Deleting the game" << std::endl;
-
->>>>>>> 579d9016c88e06fd987531870bcfded25888237b
 		delete m_player1;
 		delete m_player2;
 

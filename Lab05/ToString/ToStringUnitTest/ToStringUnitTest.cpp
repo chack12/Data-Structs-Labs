@@ -71,7 +71,7 @@ namespace ToStringTest
 			player2->AddCardToHand(game.PullFromTopofPile());
 
 
-			//Checking that card was actually added to top of hand.
+			//Checking that card was actually added to top of hand from .PullFromTopofPile()
 			Assert::IsTrue(player1->GetHandSize() > 0);
 			Assert::IsFalse(player2->GetHandSize() > 1);
 
