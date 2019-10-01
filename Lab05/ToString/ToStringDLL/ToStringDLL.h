@@ -27,7 +27,9 @@ public:
 	}
 
 	//Card deconstructor
-	~Card() {}
+	~Card() {
+		std::cout << "Deleting card" << std::endl;
+	}
 
 	//Returns the cards rank
 	int GetRank();
@@ -155,6 +157,8 @@ public:
 	//Game deconstructor
 	~Game()
 	{
+		std::cout << "Deleting the game" << std::endl;
+
 		delete m_player1;
 		delete m_player2;
 
