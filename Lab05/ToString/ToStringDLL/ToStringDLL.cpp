@@ -53,10 +53,6 @@ public:
 		deck.pop();
 	}
 
-	Card* getTop() {
-		return deck.;
-
-	}
 private:
 	std::queue<Card> deck;
 };
@@ -168,13 +164,7 @@ public:
 			ss << m_listOfCards[i]->GetRank();
 			ss << " ";
 		}
-<<<<<<< HEAD
-		
-
 		std::string temp = ss.str();
-=======
-
->>>>>>> c8b6a6512330ecb0a84ffeed368f5be8c8bfe7a5
 		std::cout << ss.str() << std::endl;
 	}
 
@@ -273,64 +263,4 @@ private:
 	std::vector<Card*> m_communityPile;
 	std::vector<Card*> m_masterCardList;
 };
-
-
-/*int main()
-{
-	std::list<const Player*> stackOfPeople;
-	Player* p1 = new Player("Huey 1");
-	Player* p2 = new Player("Louie 2");
-	Player* p3 = new Player("Dewey 3");
-
-	stackOfPeople.push_front(p1);
-	stackOfPeople.push_front(p2);
-	stackOfPeople.push_front(p3);
-
-	for (const Player* p : stackOfPeople)
-	{
-		std::string name = p->GetName();
-		std::cout << name << " " << std::endl;
-	}
-	std::cout <<  std::endl;
-
-
-	std::list<const Player*> queueOfPeople;
-
-	queueOfPeople.push_back(p1);
-	queueOfPeople.push_back(p2);
-	queueOfPeople.push_back(p3);
-
-	for (const Player* p : queueOfPeople)
-	{
-		std::string name = p->GetName();
-		std::cout << name << " " << std::endl;
-	}
-
-	std::cout << "calling pop methods" << std::endl;
-	stackOfPeople.pop_front();
-	queueOfPeople.pop_front();
-
-	for (const Player* p : stackOfPeople)
-	{
-		std::string name = p->GetName();
-		std::cout << name << " " << std::endl;
-	}
-	std::cout << std::endl;
-
-	for (const Player* p : queueOfPeople)
-	{
-		std::string name = p->GetName();
-		std::cout << name << " " << std::endl;
-	}
-
-	std::cout << "calling clear methods" << std::endl;
-	stackOfPeople.clear();
-	queueOfPeople.clear();
-	std::cout << "calling delete" << std::endl;
-	delete p1;
-	delete p2;
-	delete p3;
-
-	return 0;
-}*/
 
