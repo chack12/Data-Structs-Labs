@@ -11,256 +11,156 @@
 #include <sstream>
 #include <ctime>
 
-class Card
+//Returns the cards rank
+int Card::GetRank() {
+	return rank;
+}
+
+//Returns the front card 
+Card* Deck::Front() {
+	return &deck.front();
+}
+
+//Removes the top card from the deck (queue)
+void Deck::Pop() {
+	deck.pop();
+}
+
+//Returns the name of the player
+std::string Player::GetName()
 {
-public:
-	//Card constructor
-	Card(int myRank) {
-		rank = myRank;
-	}
+	return m_name;
+}
 
-	//Card deconstructor
-	~Card() {}
-
-	//Returns the cards rank
-	int GetRank() {
-		return rank;
-	}
-
-private:
-	int rank;
-};
-
-class Deck
+//Adds the inputted card to the hand of the player
+void Player::AddCardToHand(Card* card)
 {
-public:
-	//Deck constructor
-	Deck() {
-		int ranks[13] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 };
+	m_listOfCards.push_back(card);
+}
 
-		for (int i = 0; i < 52; ++i) {
-			deck.push(Card(ranks[i % 13]));
+//Adds the card to the players stack
+void Player::AddCardToStack(Card* card) {
+	if (card->GetRank() == 1 || card->GetRank() - 1 == m_stackOfCards.back()->GetRank()) {
+		m_stackOfCards.insert(m_stackOfCards.end(), card);
+	}
+}
+
+//Gets the card assoicated with an input and removes it from the list
+Card* Player::GetCard(int input) {
+	for (int i = 0; i < m_listOfCards.size(); ++i) {
+		if (m_listOfCards[i]->GetRank() == input) {
+			Card* temp = m_listOfCards[i];
+			m_listOfCards.erase(m_listOfCards.begin() + i);
+			return temp;
 		}
 	}
+}
 
-	//Returns the front card 
-	Card* Front() {
-		return &deck.front();
-	}
-
-	//Removes the top card from the deck (queue)
-	void Pop() {
-		deck.pop();
-	}
-
-private:
-	std::queue<Card> deck;
-};
-
-class Player
-{
-public:
-	//Player constructor
-	Player(std::string name)
-	{
-		m_name = name;
-	}
-
-	//Returns the name of the player
-	std::string GetName() const
-	{
-		return m_name;
-	}
-
-	//Player deconstructor
-	virtual ~Player()
-	{
-		std::cout << "Deleting " << m_name << std::endl;
-
-		for (int i = 0; i < m_stackOfCards.size(); ++i) {
-			delete m_stackOfCards.front();
-		}
-
-		for (int i = 0; i < m_listOfCards.size(); ++i) {
-			delete m_listOfCards.front();
+//Shows the inputted card
+Card* Player::ShowCard(int input) {
+	for (int i = 0; i < m_listOfCards.size(); ++i) {
+		if (m_listOfCards[i]->GetRank() == input) {
+			return m_listOfCards[i];
 		}
 	}
+}
 
-	//Adds the inputted card to the hand of the player
-	void AddCardToHand(Card* card)
-	{
-		m_listOfCards.push_back(card);
+//Returns the size of the stack
+int Player::GetStackSize() {
+	return m_stackOfCards.size();
+}
+
+//Returns the card at the top of the stack
+Card* Player::ShowTopOfStack() {
+	Card* temp = m_stackOfCards[m_stackOfCards.size() - 1];
+	return m_stackOfCards[m_stackOfCards.size() - 1];
+}
+
+//Returns the size of the hand
+int Player::GetHandSize() {
+	return m_listOfCards.size();
+}
+
+//Discards players deck
+std::vector<Card*> Player::DiscardHand() {
+	std::vector<Card*> tempListOfCards = m_listOfCards;
+	//for (int i = 0; i < m_listOfCards.size(); ++i) {
+		//m_listOfCards.erase(m_listOfCards.begin() + i);
+	//}
+
+	m_listOfCards.clear();
+
+	return tempListOfCards;
+}
+
+//Returns a string of w
+std::string Player::ShowHandString() {
+	std::string cards;
+
+	for (int i = 0; i < m_listOfCards.size(); ++i) {
+		cards += m_listOfCards[i]->GetRank();
+		cards += " ";
 	}
 
-	//Adds the card to the players stack
-	void AddCardToStack(Card* card) {
-		if (card->GetRank() == 1 || card->GetRank() - 1 == m_stackOfCards.back()->GetRank()) {
-			m_stackOfCards.insert(m_stackOfCards.end(), card);
-		}
+	return cards;
+}
+
+//Show the players hand
+void Player::ShowHand() {
+	std::stringstream ss;
+
+	ss << "Hand: ";
+	for (int i = 0; i < m_listOfCards.size(); ++i) {
+		ss << m_listOfCards[i]->GetRank();
+		ss << " ";
 	}
+	std::string temp = ss.str();
+	std::cout << ss.str() << std::endl;
+}
 
-	//Gets the card assoicated with an input and removes it from the list
-	Card* GetCard(int input) {
-		for (int i = 0; i < m_listOfCards.size(); ++i) {
-			if (m_listOfCards[i]->GetRank() == input) {
-				Card* temp = m_listOfCards[i];
-				m_listOfCards.erase(m_listOfCards.begin() + i);
-				return temp;
-			}
-		}
+//Show the players stack
+void Player::ShowStack() {
+	if (m_stackOfCards.size() == 0) {
+		std::cout << "Stack: empty" << std::endl;
 	}
+	else {
+		std::cout << "Stack: " << std::endl;
 
-	//Shows the inputted card
-	Card* ShowCard(int input) {
-		for (int i = 0; i < m_listOfCards.size(); ++i) {
-			if (m_listOfCards[i]->GetRank() == input) {
-				return m_listOfCards[i];
-			}
-		}
-	}
-
-	int GetStackSize() {
-		return m_stackOfCards.size();
-	}
-
-	Card* ShowTopOfStack() {
-		Card* temp = m_stackOfCards[m_stackOfCards.size() - 1];
-		return m_stackOfCards[m_stackOfCards.size() - 1];
-	}
-
-	int GetHandSize() {
-		return m_listOfCards.size();
-	}
-
-	//Discards players deck
-	std::vector<Card*> DiscardHand() {
-		std::vector<Card*> tempListOfCards = m_listOfCards;
-		//for (int i = 0; i < m_listOfCards.size(); ++i) {
-			//m_listOfCards.erase(m_listOfCards.begin() + i);
-		//}
-
-		m_listOfCards.clear();
-
-		return tempListOfCards;
-	}
-
-	std::string ShowHandString() {
-		std::string cards;
-
-		for (int i = 0; i < m_listOfCards.size(); ++i) {
-			cards += m_listOfCards[i]->GetRank();
-			cards += " ";
-		}
-
-		return cards;
-	}
-
-	//Show the players hand
-	void ShowHand() {
-		std::stringstream ss;
-
-		ss << "Hand: ";
-		for (int i = 0; i < m_listOfCards.size(); ++i) {
-			ss << m_listOfCards[i]->GetRank();
-			ss << " ";
-		}
-		std::string temp = ss.str();
-		std::cout << ss.str() << std::endl;
-	}
-
-	//Show the players stack
-	void ShowStack() {
-		if (m_stackOfCards.size() == 0) {
-			std::cout << "Stack: empty" << std::endl;
-		}
-		else {
-			std::cout << "Stack: " << std::endl;
-
-			for (int i = m_stackOfCards.size() - 1; i >= 0; --i) {
-				std::cout << m_stackOfCards[i]->GetRank() << std::endl;
-			}
-
-		}
-	}
-
-	//Checks for win condition
-	bool CheckForWin() {
-		if (m_stackOfCards.size() == 13 && m_stackOfCards[12]->GetRank() == 13) {
-			return true;
+		for (int i = m_stackOfCards.size() - 1; i >= 0; --i) {
+			std::cout << m_stackOfCards[i]->GetRank() << std::endl;
 		}
 
-		return false;
+	}
+}
+
+//Checks for win condition
+bool Player::CheckForWin() {
+	if (m_stackOfCards.size() == 13 && m_stackOfCards[12]->GetRank() == 13) {
+		return true;
 	}
 
-private:
-	std::string m_name;
-	std::vector<Card*> m_stackOfCards;
-	std::vector<Card*> m_listOfCards;
-};
+	return false;
+}
 
-class Game
-{
-public:
-	//Game constructor
-	Game()
-	{
-		srand(time(NULL));
+//Returns a card from the top of the pile
+Card* Game::PullFromTopofPile() {
+	Card* newCard = m_communityPile.front();
+	m_communityPile.erase(m_communityPile.begin());
+	return newCard;
+}
 
-		m_player1 = new Player("Player1");
-		m_player2 = new Player("Player2");
+//Adds discarded card to the bottom of the deck
+void Game::PutToBottom(Card* card) {
+	m_communityPile.push_back(card);
+}
 
-		//Add cards from the Deck to the masterCardList
-		for (int i = 0; i < 52; ++i) {
-			m_masterCardList.push_back(deck.Front());
-			deck.Pop();
-		}
-
-		//Move cards from the masterCardList to the communityPile
-		for (int i = 0; i < 52; ++i) {
-			int position = rand() % m_masterCardList.size();
-			m_communityPile.push_back(m_masterCardList[position]);
-			m_masterCardList.erase(m_masterCardList.begin() + position);
-		}
+//Return the player
+Player* Game::GetPlayer(int i) {
+	if (i == 1) {
+		return m_player1;
 	}
-
-	//Game deconstructor
-	~Game()
-	{
-		delete m_player1;
-		delete m_player2;
-
-		for (Card* card : m_communityPile) {
-			delete card;
-		}
+	else {
+		return m_player2;
 	}
-
-	//Returns a card from the top of the pile
-	Card* PullFromTopofPile() {
-		Card* newCard = m_communityPile.front();
-		m_communityPile.erase(m_communityPile.begin());
-		return newCard;
-	}
-
-	//Adds discarded card to the bottom of the deck
-	void PutToBottom(Card* card) {
-		m_communityPile.push_back(card);
-	}
-
-	//Return the player
-	Player* GetPlayer(int i) {
-		if (i == 1) {
-			return m_player1;
-		}
-		else {
-			return m_player2;
-		}
-	}
-
-private:
-	Player* m_player1;
-	Player* m_player2;
-	Deck deck;
-	std::vector<Card*> m_communityPile;
-	std::vector<Card*> m_masterCardList;
-};
+}
 
