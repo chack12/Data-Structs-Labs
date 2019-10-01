@@ -60,7 +60,7 @@ namespace ToStringTest
 
 		TEST_METHOD(PlayerClass)
 		{
-			Deck Deck;
+			Game game1;
 			Player player1 = "Chris";
 			Player player2 = "Derek";
 
@@ -68,13 +68,13 @@ namespace ToStringTest
 			Assert::AreEqual(std::string("Chris"), player1.GetName());
 			Assert::AreNotEqual(std::string("Derekk"), player2.GetName());
 
-			// player1.AddCardToHand(Deck.Front());
-			// player2.AddCardToHand(Deck.Front());
-
+			player1.AddCardToHand(game1.PullFromTopofPile());
+			player2.AddCardToHand(game1.PullFromTopofPile());
+			
 			/*Checking for players pulling the correct card and outputting the correct 
 			string from private vector */
-			// Assert::AreEqual(std::string("1"), player1.ShowHandString());
-			// Assert::AreNotEqual(std::string("4"), player2.ShowHandString());
+			Assert::AreEqual(std::string("1"), player1.ShowHandString());
+			Assert::AreNotEqual(std::string("4"), player2.ShowHandString());
 
 
 			// Assert::IsTrue((bool)"Chris", (bool)player1.~Player());
