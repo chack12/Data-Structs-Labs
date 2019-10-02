@@ -50,7 +50,7 @@ int main()
 
 		while (player1Turn) {
 			cout << "************************************************************************************" << endl;
-			game->GetPlayer(1)->ShowHand();
+			cout << game->GetPlayer(1)->ShowHandString() << endl;
 			game->GetPlayer(1)->ShowStack();
 			cout << endl;
 
@@ -87,7 +87,7 @@ int main()
 				}
 			}
 			else if (inputS == "discard") {
-				game->GetPlayer(1)->ShowHand();
+				cout << game->GetPlayer(1)->ShowHandString() << endl;
 
 				cout << "What card do you want to discard: ";
 				cin >> inputI;
@@ -128,7 +128,7 @@ int main()
 		
 		while (player2Turn) {
 			cout << "************************************************************************************" << endl;
-			game->GetPlayer(2)->ShowHand();
+			cout << game->GetPlayer(1)->ShowHandString() << endl;
 			game->GetPlayer(2)->ShowStack();
 			cout << endl;
 
@@ -165,7 +165,7 @@ int main()
 				}
 			}
 			else if (inputS == "discard") {
-				game->GetPlayer(2)->ShowHand();
+				cout << game->GetPlayer(1)->ShowHandString() << endl;
 
 				cout << "What card do you want to discard: ";
 				cin >> inputI;

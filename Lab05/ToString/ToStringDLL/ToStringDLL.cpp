@@ -70,6 +70,10 @@ Card* Player::ShowCard(int input) {
 			return m_listOfCards[i];
 		}
 	}
+
+	Card* temp = new Card(-1);
+
+	return temp;
 }
 
 //Returns the size of the stack

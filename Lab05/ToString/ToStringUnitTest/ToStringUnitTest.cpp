@@ -73,9 +73,6 @@ namespace ToStringTest
 			string from private vector */
 			Assert::AreEqual(std::string("1"), player1.ShowHandString());
 			Assert::AreNotEqual(std::string("4"), player2.ShowHandString());
-
-
-			// Assert::IsTrue(NULL, player1.~Player());
 		}
 
 		TEST_METHOD(GameClass)

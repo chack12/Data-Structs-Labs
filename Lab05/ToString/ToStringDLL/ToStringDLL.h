@@ -27,9 +27,7 @@ public:
 	}
 
 	//Card deconstructor
-	~Card() {
-		std::cout << "Deleting card" << std::endl;
-	}
+	~Card() { }
 
 	//Returns the cards rank
 	int GetRank();
