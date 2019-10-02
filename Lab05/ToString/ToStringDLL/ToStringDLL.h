@@ -110,10 +110,10 @@ public:
 	std::vector<Card*> DiscardHand();
 
 	//Returns a string of what is in the hand
-	std::string ShowHandString();
+	std::string ShowHand();
 
 	//Show the players stack
-	void ShowStack();
+	std::string ShowStack();
 
 	//Checks for win condition
 	bool CheckForWin();

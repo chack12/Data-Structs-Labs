@@ -9,55 +9,30 @@ namespace ToStringTest
 	TEST_CLASS(ToStringUnitTest)
 	{
 	public:
-
-		TEST_METHOD(CardClass1)
+		TEST_METHOD(CardClass)
 		{
-			Deck Deck;
+			//Test GetRank()
+			Card card1 = Card(2);
+			Card card2 = Card(12);
 
-			Card Card1 = Card(2);
-			Card Card2 = Card(12);
-
-
-			Assert::AreEqual(2, Card1.GetRank());
-			Assert::AreEqual(12, Card1.GetRank());
-
-
-		}
-
-		TEST_METHOD(CardClass2)
-		{
-			Deck Deck;
-
-			Card Card1 = Card(9);
-			Card Card2 = Card(10);
-
-
-			Assert::AreEqual(9, Card1.GetRank());
-			Assert::AreEqual(10, Card1.GetRank());
-
-		}
-
-		TEST_METHOD(CardClass3)
-		{
-			Deck Deck;
-
-			//Checking to make sure cards cannot be out of 1-13
-			Card Card1 = Card(15);
-			Assert::Fail();
-
+			Assert::AreEqual(2, card1.GetRank());
+			Assert::AreEqual(12, card2.GetRank());
 		}
 
 		TEST_METHOD(DeckClass)
 		{
-			Card* Card1 = &Card(1);
-			Deck Deck1;
-			Assert::AreEqual(Card1, Deck1.Front());
-
-
+			//Test CardAt()
+			Deck deck;
 		}
 
 		TEST_METHOD(PlayerClass)
 		{
+			//Test GetName()
+			//Test AddCardToHand()
+			//Test AddCardToStack()
+			//Test ShowHand()
+			//Test ShowStack()
+
 			Deck Deck;
 			Player player1 = "Chris";
 			Player player2 = "Derek";
@@ -66,8 +41,8 @@ namespace ToStringTest
 			Assert::AreEqual(std::string("Chris"), player1.GetName());
 			Assert::AreNotEqual(std::string("Derekk"), player2.GetName());
 
-			player1.AddCardToHand(Deck.Front());
-			player2.AddCardToHand(Deck.Front());
+			player1.AddCardToHand(Deck.CardAt(0));
+			player2.AddCardToHand(Deck.CardAt(0));
 
 			/*Checking for players pulling the correct card and outputting the correct 
 			string from private vector */

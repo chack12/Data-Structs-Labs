@@ -98,7 +98,7 @@ std::vector<Card*> Player::DiscardHand() {
 }
 
 //Returns a string of what is in the hand
-std::string Player::ShowHandString() {
+std::string Player::ShowHand() {
 	std::stringstream ss;
 
 	ss << "Hand: ";
@@ -114,18 +114,29 @@ std::string Player::ShowHandString() {
 }
 
 //Show the players stack
-void Player::ShowStack() {
+std::string Player::ShowStack() {
+	std::stringstream ss;
+
 	if (m_stackOfCards.size() == 0) {
-		std::cout << "Stack: empty" << std::endl;
+		ss << "Stack: empty";
+
+		return ss.str();
 	}
 	else {
-		std::cout << "Stack: " << std::endl;
+		ss << "Stack: ";
+		ss << "\n";
 
 		for (int i = m_stackOfCards.size() - 1; i >= 0; --i) {
-			std::cout << m_stackOfCards[i]->GetRank() << std::endl;
+			ss << m_stackOfCards[i]->GetRank();
+			ss << "\n";
 		}
 
 	}
+
+	std::string temp = ss.str();
+	temp.erase(temp.size() - 1, 1);
+
+	return temp;
 }
 
 //Checks for win condition

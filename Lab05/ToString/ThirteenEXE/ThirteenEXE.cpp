@@ -32,8 +32,7 @@ int main()
 		game->GetPlayer(2)->AddCardToHand(game->PullFromTopofPile());
 	}
 
-	//!endGame
-	while (false) {
+	while (!endGame) {
 		cout << "Drawing a card from the top of the pile..." << endl;
 		cout << endl;
 
@@ -50,8 +49,8 @@ int main()
 
 		while (player1Turn) {
 			cout << "************************************************************************************" << endl;
-			cout << game->GetPlayer(1)->ShowHandString() << endl;
-			game->GetPlayer(1)->ShowStack();
+			cout << game->GetPlayer(1)->ShowHand() << endl;
+			cout << game->GetPlayer(1)->ShowStack() << endl;
 			cout << endl;
 
 			cout << "Place - add a card from your hand to the stack." << endl;
@@ -87,7 +86,7 @@ int main()
 				}
 			}
 			else if (inputS == "discard") {
-				cout << game->GetPlayer(1)->ShowHandString() << endl;
+				cout << game->GetPlayer(1)->ShowHand() << endl;
 
 				cout << "What card do you want to discard: ";
 				cin >> inputI;
@@ -128,8 +127,8 @@ int main()
 		
 		while (player2Turn) {
 			cout << "************************************************************************************" << endl;
-			cout << game->GetPlayer(1)->ShowHandString() << endl;
-			game->GetPlayer(2)->ShowStack();
+			cout << game->GetPlayer(2)->ShowHand() << endl;
+			cout << game->GetPlayer(2)->ShowStack() << endl;
 			cout << endl;
 
 			cout << "Place - add a card from your hand to the stack." << endl;
@@ -165,7 +164,7 @@ int main()
 				}
 			}
 			else if (inputS == "discard") {
-				cout << game->GetPlayer(1)->ShowHandString() << endl;
+				cout << game->GetPlayer(2)->ShowHand() << endl;
 
 				cout << "What card do you want to discard: ";
 				cin >> inputI;
