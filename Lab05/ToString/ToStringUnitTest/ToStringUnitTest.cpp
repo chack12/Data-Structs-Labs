@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "CppUnitTest.h"
-#include "../ToStringDLL/ToStringDLL.cpp"
+#include "../ToStringDLL/ToStringDLL.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
