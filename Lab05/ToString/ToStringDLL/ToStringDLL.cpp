@@ -23,15 +23,11 @@ std::string Card::GetRankString() {
 	return ss.str();
 }
 
-//Returns the front card 
-Card* Deck::Front() {
-	return &deck.front();
+//Returns the card at the inputted index 
+Card* Deck::CardAt(int index) {
+	return deck[index];
 }
 
-//Removes the top card from the deck (queue)
-void Deck::Pop() {
-	deck.pop();
-}
 
 //Returns the name of the player
 std::string Player::GetName()

@@ -48,18 +48,23 @@ public:
 
 		for (int i = 0; i < 52; ++i) {
 			int temp = ranks[i % 13];
-			deck.push(Card(ranks[i % 13]));
+			deck.push_back(new Card(ranks[i % 13]));
 		}
 	}
 
-	//Returns the front card 
-	Card* Front();
+	~Deck() { 
+		std::cout << "Deleting the deck" << std::endl;
 
-	//Removes the top card from the deck (queue)
-	void Pop();
+		for (int i = 0; i < deck.size(); i++) {
+			delete deck[i];
+		}
+	}
+
+	//Returns the card at the inputted index 
+	Card* CardAt(int index);
 
 private:
-	std::queue<Card> deck;
+	std::vector<Card*> deck;
 };
 
 class TOSTRINGDLL_API Player
@@ -75,14 +80,6 @@ public:
 	virtual ~Player()
 	{
 		std::cout << "Deleting " << m_name << std::endl;
-
-		for (int i = 0; i < m_stackOfCards.size(); ++i) {
-			delete m_stackOfCards.front();
-		}
-
-		for (int i = 0; i < m_listOfCards.size(); ++i) {
-			delete m_listOfCards.front();
-		}
 	}
 
 	//Returns the name of the player
@@ -135,13 +132,14 @@ public:
 	{
 		srand(time(NULL));
 
+		deck = new Deck();
+
 		m_player1 = new Player("Player1");
 		m_player2 = new Player("Player2");
 
 		//Add cards from the Deck to the masterCardList
 		for (int i = 0; i < 52; ++i) {
-			m_masterCardList.push_back(deck.Front());
-			deck.Pop();
+			m_masterCardList.push_back(deck->CardAt(i));
 		}
 
 		//Move cards from the masterCardList to the communityPile
@@ -157,13 +155,11 @@ public:
 	{
 		//Deletes player and player's hands.
 		std::cout << "Deleting the game" << std::endl;
+
+		delete deck;
+
 		delete m_player1;
 		delete m_player2;
-
-		//Deletes contents of community pile.
-		for (Card* card : m_communityPile) {
-			delete card;
-		}
 	}
 
 	//Returns a card from the top of the pile
@@ -181,7 +177,7 @@ public:
 private:
 	Player* m_player1;
 	Player* m_player2;
-	Deck deck;
+	Deck* deck;
 	std::vector<Card*> m_communityPile;
 	std::vector<Card*> m_masterCardList;
 };

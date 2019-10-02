@@ -33,7 +33,7 @@ int main()
 	}
 
 	//!endGame
-	while (!endGame) {
+	while (false) {
 		cout << "Drawing a card from the top of the pile..." << endl;
 		cout << endl;
 
