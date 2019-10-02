@@ -89,10 +89,10 @@ public:
 	void AddCardToStack(Card* card);
 
 	//Gets the card assoicated with an input and removes it from the list
-	Card* GetCard(int input);
+	Card* GetAndRemoveCard(int input);
 
 	//Shows the inputted card
-	Card* ShowCard(int input);
+	Card* GetCard(int input);
 
 	//Returns the size of the stack
 	int GetStackSize();

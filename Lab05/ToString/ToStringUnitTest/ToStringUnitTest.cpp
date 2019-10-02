@@ -53,9 +53,13 @@ namespace ToStringTest
 
 		TEST_METHOD(GameClass)
 		{
+			Game game;
 
+			//Get a copy of the card from the top
+			Card* card = game.GetTopOfPile();
 
-
+			//Check to see if the copy is equal to the function that actually pulls the card from the top
+			Assert::AreEqual(card->GetRank(), game.PullFromTopofPile()->GetRank());
 		}
 	};
 }

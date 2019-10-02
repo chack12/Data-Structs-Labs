@@ -42,7 +42,7 @@ void Player::AddCardToStack(Card* card) {
 }
 
 //Gets the card assoicated with an input and removes it from the list
-Card* Player::GetCard(int input) {
+Card* Player::GetAndRemoveCard(int input) {
 	for (int i = 0; i < m_listOfCards.size(); ++i) {
 		if (m_listOfCards[i]->GetRank() == input) {
 			Card* temp = m_listOfCards[i];
@@ -53,7 +53,7 @@ Card* Player::GetCard(int input) {
 }
 
 //Shows the inputted card
-Card* Player::ShowCard(int input) {
+Card* Player::GetCard(int input) {
 	for (int i = 0; i < m_listOfCards.size(); ++i) {
 		if (m_listOfCards[i]->GetRank() == input) {
 			return m_listOfCards[i];

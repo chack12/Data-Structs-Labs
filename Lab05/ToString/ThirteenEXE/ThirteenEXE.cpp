@@ -72,8 +72,8 @@ int main()
 					cout << "Invalid input" << endl;
 					cout << endl;
 				}
-				else if ((inputI <= 13 && inputI >= 1) && (game->GetPlayer(1)->GetStackSize() == 0 || game->GetPlayer(1)->ShowTopOfStack()->GetRank() == game->GetPlayer(1)->ShowCard(inputI)->GetRank() - 1)) {
-					game->GetPlayer(1)->AddCardToStack(game->GetPlayer(1)->GetCard(inputI));
+				else if ((inputI <= 13 && inputI >= 1) && (game->GetPlayer(1)->GetStackSize() == 0 || game->GetPlayer(1)->ShowTopOfStack()->GetRank() == game->GetPlayer(1)->GetCard(inputI)->GetRank() - 1)) {
+					game->GetPlayer(1)->AddCardToStack(game->GetPlayer(1)->GetAndRemoveCard(inputI));
 
 					if (game->GetPlayer(1)->CheckForWin()) {
 						endGame = true;
@@ -92,8 +92,8 @@ int main()
 				cin >> inputI;
 				cout << endl;
 
-				if ((inputI <= 13 && inputI >= 1) && game->GetPlayer(1)->ShowCard(inputI)->GetRank() == inputI) {
-					game->PutToBottom(game->GetPlayer(1)->GetCard(inputI));
+				if ((inputI <= 13 && inputI >= 1) && game->GetPlayer(1)->GetCard(inputI)->GetRank() == inputI) {
+					game->PutToBottom(game->GetPlayer(1)->GetAndRemoveCard(inputI));
 					player1Turn = false;
 				}
 				else {
@@ -150,8 +150,8 @@ int main()
 					cout << "Invalid input" << endl;
 					cout << endl;
 				}
-				if ((inputI <= 13 && inputI >= 1) && (game->GetPlayer(2)->GetStackSize() == 0 || game->GetPlayer(2)->ShowTopOfStack()->GetRank() == game->GetPlayer(2)->ShowCard(inputI)->GetRank() - 1)) {
-					game->GetPlayer(2)->AddCardToStack(game->GetPlayer(2)->GetCard(inputI));
+				if ((inputI <= 13 && inputI >= 1) && (game->GetPlayer(2)->GetStackSize() == 0 || game->GetPlayer(2)->ShowTopOfStack()->GetRank() == game->GetPlayer(2)->GetCard(inputI)->GetRank() - 1)) {
+					game->GetPlayer(2)->AddCardToStack(game->GetPlayer(2)->GetAndRemoveCard(inputI));
 
 					if (game->GetPlayer(2)->CheckForWin()) {
 						endGame = true;
@@ -170,8 +170,8 @@ int main()
 				cin >> inputI;
 				cout << endl;
 
-				if ((inputI <= 13 && inputI >= 1) && game->GetPlayer(1)->ShowCard(inputI)->GetRank() == inputI) {
-					game->PutToBottom(game->GetPlayer(2)->GetCard(inputI));
+				if ((inputI <= 13 && inputI >= 1) && game->GetPlayer(2)->GetCard(inputI)->GetRank() == inputI) {
+					game->PutToBottom(game->GetPlayer(2)->GetAndRemoveCard(inputI));
 					player2Turn = false;
 				}
 				else {
