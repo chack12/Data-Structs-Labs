@@ -20,6 +20,21 @@ namespace ToStringTest
 			Assert::AreEqual(2, card1.GetRank());
 			Assert::AreEqual(12, card2.GetRank());
 			Assert::AreNotEqual(23, card3.GetRank());
+			
+			//Testing for bounds checks for Card class.
+			try {
+				Card card4 = Card(69);
+				Card card5 = Card(-69);
+				Assert::AreNotEqual(69, card4.GetRank());
+				Assert::AreNotEqual(-69, card5.GetRank());
+				Assert::Fail();
+			}
+			catch (...)
+			{
+				Assert::AreEqual(2, card1.GetRank());
+			}
+			
+
 		}
 
 		TEST_METHOD(DeckClass)
@@ -30,6 +45,8 @@ namespace ToStringTest
 			Assert::AreEqual(1, deck.CardAt(0)->GetRank());
 			Assert::AreEqual(13, deck.CardAt(12)->GetRank());
 			Assert::AreNotEqual(13, deck.CardAt(1)->GetRank());
+			Assert::AreNotEqual(12, deck.CardAt(2)->GetRank());
+
 		}
 
 		TEST_METHOD(PlayerClass)
@@ -60,6 +77,9 @@ namespace ToStringTest
 
 			//Check to see if the copy is equal to the function that actually pulls the card from the top
 			Assert::AreEqual(card->GetRank(), game.PullFromTopofPile()->GetRank());
+			
+			/* All other aspects of the game class have been tested in the above unit 
+			tests for card/deck/player classes. */
 		}
 	};
 }
