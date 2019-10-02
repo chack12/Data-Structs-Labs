@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "CppUnitTest.h"
-#include "../ToStringDLL/ToStringDLL.h"
+#include "../ToStringDLL/ToStringDLL.cpp"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -12,68 +12,76 @@ namespace ToStringTest
 
 		TEST_METHOD(CardClass1)
 		{
-			
-			Deck deck;
-
-			//Checking for cards pulled to be equal.
+			Deck Deck;
 
 			Card Card1 = Card(2);
 			Card Card2 = Card(12);
+
+
 			Assert::AreEqual(2, Card1.GetRank());
-			Assert::AreEqual(12, Card2.GetRank());
+			Assert::AreEqual(12, Card1.GetRank());
 
-			//Checking for cards pulled not equal
 
-			Card Card3 = Card(9);
-			Card Card4 = Card(10);
-			Assert::AreNotEqual(2, Card3.GetRank());
-			Assert::AreNotEqual(1, Card4.GetRank());
-			
+		}
 
-			//Checking to make sure cards cannot be out of 1-13.
-			Card Card5 = Card(69);
-			Card Card6 = Card(-69);
-			Assert::AreNotSame(69, Card5.GetRank());
-			Assert::AreNotSame(69, Card6.GetRank());
+		TEST_METHOD(CardClass2)
+		{
+			Deck Deck;
+
+			Card Card1 = Card(9);
+			Card Card2 = Card(10);
+
+
+			Assert::AreEqual(9, Card1.GetRank());
+			Assert::AreEqual(10, Card1.GetRank());
+
+		}
+
+		TEST_METHOD(CardClass3)
+		{
+			Deck Deck;
+
+			//Checking to make sure cards cannot be out of 1-13
+			Card Card1 = Card(15);
+			Assert::Fail();
+
 		}
 
 		TEST_METHOD(DeckClass)
 		{
-			// Deck Deck1;
-			//Assert::AreEqual(Deck1.Front()->GetRank());
+			Card* Card1 = &Card(1);
+			Deck Deck1;
+			Assert::AreEqual(Card1, Deck1.Front());
+
+
 		}
 
 		TEST_METHOD(PlayerClass)
 		{
-			Game game1;
+			Deck Deck;
 			Player player1 = "Chris";
 			Player player2 = "Derek";
 
 			//Checking for player names matching and not matching respectively. 
 			Assert::AreEqual(std::string("Chris"), player1.GetName());
 			Assert::AreNotEqual(std::string("Derekk"), player2.GetName());
-			
+
+			player1.AddCardToHand(Deck.Front());
+			player2.AddCardToHand(Deck.Front());
+
 			/*Checking for players pulling the correct card and outputting the correct 
 			string from private vector */
-			Card* tempPlayer1 = game1.GetTopOfPile();
-			game1.GetPlayer(1)->AddCardToHand(game1.PullFromTopofPile());
-			Assert::AreEqual("Hand: " + tempPlayer1->GetRankString(), game1.GetPlayer(1)->ShowHandString());
+			Assert::AreEqual(std::string("1"), player1.ShowHandString());
+			Assert::AreNotEqual(std::string("4"), player2.ShowHandString());
+
+
+			// Assert::IsTrue(NULL, player1.~Player());
 		}
 
 		TEST_METHOD(GameClass)
 		{
 
-			Game game;
-			Player* player1 = game.GetPlayer(1);
-			Player* player2 = game.GetPlayer(2);
 
-			player1->AddCardToHand(game.PullFromTopofPile());
-			player2->AddCardToHand(game.PullFromTopofPile());
-
-
-			//Checking that card was actually added to top of hand from .PullFromTopofPile()
-			Assert::IsTrue(player1->GetHandSize() > 0);
-			Assert::IsFalse(player2->GetHandSize() > 1);
 
 		}
 	};
