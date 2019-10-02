@@ -23,7 +23,12 @@ class TOSTRINGDLL_API Card
 public:
 	//Card constructor
 	Card(int myRank) {
-		rank = myRank;
+		if (myRank > 0 && myRank < 14) {
+			rank = myRank;
+		}
+		else {
+			throw "Rank out of bounds";
+		}
 	}
 
 	//Card deconstructor
