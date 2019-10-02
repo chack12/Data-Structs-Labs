@@ -77,9 +77,10 @@ namespace ToStringTest
 
 			//Check to see if the copy is equal to the function that actually pulls the card from the top
 			Assert::AreEqual(card->GetRank(), game.PullFromTopofPile()->GetRank());
-			
-			/* All other aspects of the game class have been tested in the above unit 
-			tests for card/deck/player classes. */
+
+			//Check to see if the player's hand is initially empty.
+			Assert::AreEqual(std::string("Hand:"), game.GetPlayer(1)->ShowHand());
+			Assert::AreEqual(std::string("Stack: empty"), game.GetPlayer(1)->ShowStack());
 		}
 	};
 }
