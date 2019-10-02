@@ -16,13 +16,6 @@ int Card::GetRank() {
 	return rank;
 }
 
-//Returns the cards rank as a String
-std::string Card::GetRankString() {
-	std::stringstream ss;
-	ss << rank;
-	return ss.str();
-}
-
 //Returns the card at the inputted index 
 Card* Deck::CardAt(int index) {
 	return deck[index];
