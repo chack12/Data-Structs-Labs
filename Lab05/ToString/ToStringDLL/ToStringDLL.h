@@ -10,10 +10,8 @@
 #define TOSTRINGDLL_API __declspec(dllimport)
 #endif
 
-#include <list>
 #include <iostream>
 #include <string>
-#include <queue>
 #include <vector>
 #include <sstream>
 #include <ctime>
@@ -23,7 +21,7 @@ class TOSTRINGDLL_API Card
 public:
 	//Card constructor
 	Card(int myRank) {
-		if (myRank > 0 && myRank < 14) {
+		if (myRank >= 0 && myRank < 14) {
 			rank = myRank;
 		}
 		else {

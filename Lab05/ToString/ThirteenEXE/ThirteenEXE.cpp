@@ -4,7 +4,9 @@
 #include <iostream>
 #include <locale>
 #include <string>
-#include "../ToStringDLL/ToStringDLL.cpp"
+#include <algorithm>
+#include <ctype.h>
+#include "../ToStringDLL/ToStringDLL.h"
 
 using namespace std;
 
@@ -65,14 +67,25 @@ int main()
 			transform(inputS.begin(), inputS.end(), inputS.begin(), ::tolower);
 			if (inputS == "place") {
 				cout << "What card do you want to add on the stack: ";
-				cin >> inputI;
+				cin >> inputS;
 				cout << endl;
 
+				try {
+					inputI = stoi(inputS);
+				}
+				catch (...) {
+					cout << endl;
+					cout << "!!!!!!!!!!!!!!!!!! Invalid input !!!!!!!!!!!!!!!!!!" << endl;
+					cout << endl;
+					
+					continue;
+				}
+
 				if (game->GetPlayer(1)->GetStackSize() == 0 && inputI != 1) {
-					cout << "Invalid input" << endl;
+					cout << "!!!!!!!!!!!!!!!!!! Invalid input !!!!!!!!!!!!!!!!!!" << endl;
 					cout << endl;
 				}
-				else if ((inputI <= 13 && inputI >= 1) && (game->GetPlayer(1)->GetStackSize() == 0 || game->GetPlayer(1)->ShowTopOfStack()->GetRank() == game->GetPlayer(1)->GetCard(inputI)->GetRank() - 1)) {
+				else if ((inputI <= 13 && inputI >= 1) && (game->GetPlayer(1)->GetCard(inputI)->GetRank() == inputI) && ((inputI == 1 && game->GetPlayer(1)->GetStackSize() == 0) || game->GetPlayer(1)->ShowTopOfStack()->GetRank() == game->GetPlayer(1)->GetCard(inputI)->GetRank() - 1)) {
 					game->GetPlayer(1)->AddCardToStack(game->GetPlayer(1)->GetAndRemoveCard(inputI));
 
 					if (game->GetPlayer(1)->CheckForWin()) {
@@ -81,23 +94,34 @@ int main()
 					}
 				}
 				else {
-					cout << "Invalid input" << endl;
+					cout << "!!!!!!!!!!!!!!!!!! Invalid input !!!!!!!!!!!!!!!!!!" << endl;
 					cout << endl;
 				}
+				
 			}
 			else if (inputS == "discard") {
 				cout << game->GetPlayer(1)->ShowHand() << endl;
 
 				cout << "What card do you want to discard: ";
-				cin >> inputI;
+				cin >> inputS;
 				cout << endl;
+
+				try {
+					inputI = stoi(inputS);
+				}
+				catch (...) {
+					cout << "!!!!!!!!!!!!!!!!!! Invalid input !!!!!!!!!!!!!!!!!!" << endl;
+					cout << endl;
+
+					continue;
+				}
 
 				if ((inputI <= 13 && inputI >= 1) && game->GetPlayer(1)->GetCard(inputI)->GetRank() == inputI) {
 					game->PutToBottom(game->GetPlayer(1)->GetAndRemoveCard(inputI));
 					player1Turn = false;
 				}
 				else {
-					cout << "Invalid input" << endl;
+					cout << "!!!!!!!!!!!!!!!!!! Invalid input !!!!!!!!!!!!!!!!!!" << endl;
 					cout << endl;
 				}
 			}
@@ -120,7 +144,7 @@ int main()
 				}
 			}
 			else {
-				cout << "Invalid input" << endl;
+				cout << "!!!!!!!!!!!!!!!!!! Invalid input !!!!!!!!!!!!!!!!!!" << endl;
 				cout << endl;
 			}
 		}
@@ -143,14 +167,24 @@ int main()
 			transform(inputS.begin(), inputS.end(), inputS.begin(), ::tolower);
 			if (inputS == "place") {
 				cout << "What card do you want to add on the stack: ";
-				cin >> inputI;
+				cin >> inputS;
 				cout << endl;
 
+				try {
+					inputI = stoi(inputS);
+				}
+				catch (...) {
+					cout << "!!!!!!!!!!!!!!!!!! Invalid input !!!!!!!!!!!!!!!!!!" << endl;
+					cout << endl;
+
+					continue;
+				}
+
 				if (game->GetPlayer(2)->GetStackSize() == 0 && inputI != 1) {
-					cout << "Invalid input" << endl;
+					cout << "!!!!!!!!!!!!!!!!!! Invalid input !!!!!!!!!!!!!!!!!!" << endl;
 					cout << endl;
 				}
-				if ((inputI <= 13 && inputI >= 1) && (game->GetPlayer(2)->GetStackSize() == 0 || game->GetPlayer(2)->ShowTopOfStack()->GetRank() == game->GetPlayer(2)->GetCard(inputI)->GetRank() - 1)) {
+				if ((inputI <= 13 && inputI >= 1) && (game->GetPlayer(2)->GetCard(inputI)->GetRank() == inputI) && ((inputI == 1 && game->GetPlayer(2)->GetStackSize() == 0) || game->GetPlayer(2)->ShowTopOfStack()->GetRank() == game->GetPlayer(2)->GetCard(inputI)->GetRank() - 1)) {
 					game->GetPlayer(2)->AddCardToStack(game->GetPlayer(2)->GetAndRemoveCard(inputI));
 
 					if (game->GetPlayer(2)->CheckForWin()) {
@@ -159,7 +193,7 @@ int main()
 					}
 				}
 				else {
-					cout << "Invalid input" << endl;
+					cout << "!!!!!!!!!!!!!!!!!! Invalid input !!!!!!!!!!!!!!!!!! " << endl;
 					cout << endl;
 				}
 			}
@@ -167,17 +201,28 @@ int main()
 				cout << game->GetPlayer(2)->ShowHand() << endl;
 
 				cout << "What card do you want to discard: ";
-				cin >> inputI;
+				cin >> inputS;
 				cout << endl;
+
+				try {
+					inputI = stoi(inputS);
+				}
+				catch (...) {
+					cout << "!!!!!!!!!!!!!!!!!! Invalid input !!!!!!!!!!!!!!!!!!" << endl;
+					cout << endl;
+
+					continue;
+				}
 
 				if ((inputI <= 13 && inputI >= 1) && game->GetPlayer(2)->GetCard(inputI)->GetRank() == inputI) {
 					game->PutToBottom(game->GetPlayer(2)->GetAndRemoveCard(inputI));
 					player2Turn = false;
 				}
 				else {
-					cout << "Invalid input" << endl;
+					cout << "!!!!!!!!!!!!!!!!!! Invalid input !!!!!!!!!!!!!!!!!!" << endl;
 					cout << endl;
 				}
+				
 			}
 			else if (inputS == "dump") {
 				std::vector<Card*> listOfCards = game->GetPlayer(2)->DiscardHand();
@@ -198,7 +243,7 @@ int main()
 				}
 			}
 			else {
-				cout << "Invalid input" << endl;
+				cout << "!!!!!!!!!!!!!!!!!! Invalid input !!!!!!!!!!!!!!!!!!" << endl;
 				cout << endl;
 			}
 		}

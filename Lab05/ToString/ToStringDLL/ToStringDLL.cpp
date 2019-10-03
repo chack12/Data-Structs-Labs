@@ -3,13 +3,10 @@
 
 #include "framework.h"
 #include "ToStringDLL.h"
-#include <list>
 #include <iostream>
 #include <string>
-#include <queue>
 #include <vector>
 #include <sstream>
-#include <ctime>
 
 //Returns the cards rank
 int Card::GetRank() {
@@ -60,7 +57,7 @@ Card* Player::GetCard(int input) {
 		}
 	}
 
-	Card* temp = new Card(-1);
+	Card* temp = new Card(0);
 
 	return temp;
 }
