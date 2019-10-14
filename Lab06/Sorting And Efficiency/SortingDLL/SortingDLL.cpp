@@ -12,9 +12,9 @@
 std::vector<int> Sorting::Bubble(std::vector<int> myArray) {
 	std::vector<int> sortedArray = myArray;
 	int max = 50001;
-	
+	int temp = sortedArray.at(sortedArray.size() - 1);
 	// For loop iterating through whole array
-	while (sortedArray.size() - 1 < max)	{
+	while (temp < max)	{
 		for (int i = 0; i < sortedArray.size() - 1; ++i)	{
 			if (sortedArray[i] > sortedArray[i+1])	{
 				if (sortedArray[i] > sortedArray.size() - 1)	{
@@ -31,18 +31,23 @@ std::vector<int> Sorting::Bubble(std::vector<int> myArray) {
 			}
 		}
 	}
+	return sortedArray;
 }
 
 std::vector<int> Sorting::Insertion(std::vector<int> myArray) {
+	return myArray;
 }
 
 std::vector<int> Sorting::Merge(std::vector<int> myArray) {
+	return myArray;
 }
 
 std::vector<int> Sorting::Quick(std::vector<int> myArray) {
+	return myArray;
 }
 
-std::vector<int> Sorting::Radix(std::vector<std::string> myArray) {
+std::vector<std::string> Sorting::Radix(std::vector<std::string> myArray) {
+	return myArray;
 }
 
 // Array getters
