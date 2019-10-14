@@ -153,6 +153,11 @@
   <ItemGroup>
     <ClCompile Include="SortingEXE.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SortingDLL\SortingDLL.vcxproj">
+      <Project>{c1748bae-b2c1-40bc-a1be-06a56f28d1f2}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

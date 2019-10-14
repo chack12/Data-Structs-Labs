@@ -10,48 +10,56 @@
 #define SORTINGDLL_API __declspec(dllimport)
 #endif
 
+#include <iostream>
 #include <ctime>
+#include <vector>
 #include <stdlib.h>
 
-class SORTINGDLL_API ISortingDLL {
+class SORTINGDLL_API Sorting {
 public:
-	ISortingDLL() {
+	bool Bubble(std::vector<int> myArray);
+	bool Insertion(std::vector<int> myArray);
+	bool Merge(std::vector<int> myArray);
+	bool Quick(std::vector<int> myArray);
+	bool Radix(std::vector<std::string> myArray);
+};
+
+class SORTINGDLL_API SortingArrays {
+public:
+	SortingArrays() {
 		srand(time(NULL));
 
 		for (int i = 0; i < 10; ++i) {
-			array10[i] = rand() % 21;
+			array10.push_back(rand() % 21);
 		}
 
 		for (int i = 0; i < 100; ++i) {
-			array100[i] = rand() % 101;
+			array100.push_back(rand() % 101);
 		}
 
 		for (int i = 0; i < 500; ++i) {
-			array500[i] = rand() % 501;
+			array500.push_back(rand() % 501);
 		}
 
 		for (int i = 0; i < 5000; ++i) {
-			array5000[i] = rand() % 5001;
+			array5000.push_back(rand() % 5001);
 		}
 
 		for (int i = 0; i < 25000; ++i) {
-			array25000[i] = rand() % 25001;
+			array25000.push_back(rand() % 25001);
 		}
 	}
 
-private:
-	int array10[10];
-	int array100[100];
-	int array500[500];
-	int array5000[5000];
-	int array25000[25000];
-};
+	std::vector<int> GetArray10();
+	std::vector<int> GetArray100();
+	std::vector<int> GetArray500();
+	std::vector<int> GetArray5000();
+	std::vector<int> GetArray25000();
 
-class SORTINGDLL_API Sorting : public ISortingDLL {
-public:
-	bool Bubble();
-	bool Insertion();
-	bool Merge();
-	bool Quick();
-	bool Radix()
+private:
+	std::vector<int> array10;
+	std::vector<int> array100;
+	std::vector<int> array500;
+	std::vector<int> array5000;
+	std::vector<int> array25000;
 };
