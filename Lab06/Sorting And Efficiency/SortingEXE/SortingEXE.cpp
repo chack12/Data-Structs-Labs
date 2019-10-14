@@ -5,6 +5,7 @@
 #include <chrono>
 #include <string>
 #include <sstream>
+#include <vector>
 #include "../SortingDLL/SortingDLL.h"
 typedef std::chrono::high_resolution_clock Clock;
 

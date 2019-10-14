@@ -21,7 +21,7 @@ public:
 	std::vector<int> Insertion(std::vector<int> myArray);
 	std::vector<int> Merge(std::vector<int> myArray);
 	std::vector<int> Quick(std::vector<int> myArray);
-	std::vector<int> Radix(std::vector<std::string> myArray);
+	std::vector<std::string> Radix(std::vector<std::string> myArray);
 };
 
 class SORTINGDLL_API SortingArrays {
