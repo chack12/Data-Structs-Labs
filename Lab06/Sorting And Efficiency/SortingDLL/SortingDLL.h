@@ -49,12 +49,13 @@ public:
 			array25000.push_back(rand() % 25001);
 		}
 	}
-
+	
 	std::vector<int> GetArray10();
 	std::vector<int> GetArray100();
 	std::vector<int> GetArray500();
 	std::vector<int> GetArray5000();
 	std::vector<int> GetArray25000();
+	bool isSorted(std::vector<int> sortedVector);
 
 private:
 	std::vector<int> array10;
