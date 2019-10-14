@@ -10,29 +10,27 @@
 // of the array.
 
 std::vector<int> Sorting::Bubble(std::vector<int> myArray) {
+	// Create copy of vector to make changes to
 	std::vector<int> sortedArray = myArray;
-	int max = sortedArray.size() * 2 + 1;
+	// Initialize count
 	int count = 0;
+	// Create object of sortingarrays
 	SortingArrays sort;
+	// Variable used to escape while loop
 	bool sorted = false;
 	// For loop iterating through whole array
 	while (!sorted)	{
-		count = 0;
+		// For loop iterating through whole array
 		for (int i = 0; i < sortedArray.size() - 1; ++i)	{
+			// Checks to see if the next value is larger than the previous
 			if (sortedArray[i] > sortedArray[i+1])	{
-				if (sortedArray[i] > sortedArray.size() - 1) {
-					max = sortedArray[i];
-				}
+				// Flips the values
 				int temp = sortedArray[i+1];
 				sortedArray[i+1] = sortedArray[i];
 				sortedArray[i] = temp;
 			}
-			else {
-				if (sortedArray[i] > sortedArray.size() - 1)	{
-					max = sortedArray[i+1];
-				}
-			}
 		}
+		// External function to check if the vector is sorted
 		sorted = sort.isSorted(sortedArray);
 	}
 	return sortedArray;
