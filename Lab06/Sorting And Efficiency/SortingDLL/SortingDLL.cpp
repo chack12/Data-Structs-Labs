@@ -36,7 +36,23 @@ std::vector<int> Sorting::Bubble(std::vector<int> myArray) {
 	return sortedArray;
 }
 
-std::vector<int> Sorting::Insertion(std::vector<int> myArray) {
+std::vector<int> Sorting::Insertion(std::vector<int> myVector) {
+	std::vector<int> sortedVector = myVector;
+	int max = (myVector.size() * 2) + 1;
+	bool flag = true;
+	
+	while (flag) {
+		for (int i = 0; i < sortedVector.size() - 1; ++i) {
+				for (int j = i + 1; j < sortedVector.size() - 1; ++i) {
+					if (sortedVector[i] < sortedVector[j]) {
+						
+				}
+			}
+
+		}
+
+
+	}
 	return myArray;
 }
 
