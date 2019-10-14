@@ -20,102 +20,102 @@ int main()
 	auto t2 = Clock::now();
 	std::cout << "Bubble size 10: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " nanoseconds" << std::endl;
 
-	auto t1 = Clock::now();
+	t1 = Clock::now();
 	sort.Bubble(arrays.GetArray100());
-	auto t2 = Clock::now();
+	t2 = Clock::now();
 	std::cout << "Bubble size 100: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " nanoseconds" << std::endl;
 
-	auto t1 = Clock::now();
+	t1 = Clock::now();
 	sort.Bubble(arrays.GetArray500());
-	auto t2 = Clock::now();
+	t2 = Clock::now();
 	std::cout << "Bubble size 500: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " nanoseconds" << std::endl;
 
-	auto t1 = Clock::now();
+	t1 = Clock::now();
 	sort.Bubble(arrays.GetArray5000());
-	auto t2 = Clock::now();
+	t2 = Clock::now();
 	std::cout << "Bubble size 5000: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " nanoseconds" << std::endl;
 
-	auto t1 = Clock::now();
+	t1 = Clock::now();
 	sort.Bubble(arrays.GetArray25000());
-	auto t2 = Clock::now();
+	t2 = Clock::now();
 	std::cout << "Bubble size 25000: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " nanoseconds" << std::endl;
 
 	//Insertion
-	auto t1 = Clock::now();
+	t1 = Clock::now();
 	sort.Insertion(arrays.GetArray10());
-	auto t2 = Clock::now();
+	t2 = Clock::now();
 	std::cout << "Insertion size 10: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " nanoseconds" << std::endl;
 
-	auto t1 = Clock::now();
+	t1 = Clock::now();
 	sort.Insertion(arrays.GetArray100());
-	auto t2 = Clock::now();
+	t2 = Clock::now();
 	std::cout << "Insertion size 100: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " nanoseconds" << std::endl;
 
-	auto t1 = Clock::now();
+	t1 = Clock::now();
 	sort.Insertion(arrays.GetArray500());
-	auto t2 = Clock::now();
+	t2 = Clock::now();
 	std::cout << "Insertion size 500: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " nanoseconds" << std::endl;
 
-	auto t1 = Clock::now();
+	t1 = Clock::now();
 	sort.Insertion(arrays.GetArray5000());
-	auto t2 = Clock::now();
+	t2 = Clock::now();
 	std::cout << "Insertion size 5000: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " nanoseconds" << std::endl;
 
-	auto t1 = Clock::now();
+	t1 = Clock::now();
 	sort.Insertion(arrays.GetArray25000());
-	auto t2 = Clock::now();
+	t2 = Clock::now();
 	std::cout << "Insertion size 25000: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " nanoseconds" << std::endl;
 
 	//Merge
-	auto t1 = Clock::now();
+	t1 = Clock::now();
 	sort.Merge(arrays.GetArray10());
-	auto t2 = Clock::now();
+	t2 = Clock::now();
 	std::cout << "Merge size 10: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " nanoseconds" << std::endl;
 
-	auto t1 = Clock::now();
+	t1 = Clock::now();
 	sort.Merge(arrays.GetArray100());
-	auto t2 = Clock::now();
+	t2 = Clock::now();
 	std::cout << "Merge size 100: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " nanoseconds" << std::endl;
 
-	auto t1 = Clock::now();
+	t1 = Clock::now();
 	sort.Merge(arrays.GetArray500());
-	auto t2 = Clock::now();
+	t2 = Clock::now();
 	std::cout << "Merge size 500: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " nanoseconds" << std::endl;
 
-	auto t1 = Clock::now();
+	t1 = Clock::now();
 	sort.Merge(arrays.GetArray5000());
-	auto t2 = Clock::now();
+	t2 = Clock::now();
 	std::cout << "Merge size 5000: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " nanoseconds" << std::endl;
 
-	auto t1 = Clock::now();
+	t1 = Clock::now();
 	sort.Merge(arrays.GetArray25000());
-	auto t2 = Clock::now();
+	t2 = Clock::now();
 	std::cout << "Merge size 25000: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " nanoseconds" << std::endl;
 
 	//Quick
-	auto t1 = Clock::now();
+	t1 = Clock::now();
 	sort.Quick(arrays.GetArray10());
-	auto t2 = Clock::now();
+	t2 = Clock::now();
 	std::cout << "Quick size 10: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " nanoseconds" << std::endl;
 
-	auto t1 = Clock::now();
+	t1 = Clock::now();
 	sort.Quick(arrays.GetArray100());
-	auto t2 = Clock::now();
+	t2 = Clock::now();
 	std::cout << "Quick size 100: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " nanoseconds" << std::endl;
 
-	auto t1 = Clock::now();
+	t1 = Clock::now();
 	sort.Quick(arrays.GetArray500());
-	auto t2 = Clock::now();
+	t2 = Clock::now();
 	std::cout << "Quick size 500: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " nanoseconds" << std::endl;
 
-	auto t1 = Clock::now();
+	t1 = Clock::now();
 	sort.Quick(arrays.GetArray5000());
-	auto t2 = Clock::now();
+	t2 = Clock::now();
 	std::cout << "Quick size 5000: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " nanoseconds" << std::endl;
 
-	auto t1 = Clock::now();
+	t1 = Clock::now();
 	sort.Quick(arrays.GetArray25000());
-	auto t2 = Clock::now();
+	t2 = Clock::now();
 	std::cout << "Quick size 25000: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " nanoseconds" << std::endl;
 
 	//Radix
@@ -192,29 +192,29 @@ int main()
 		sArray25000[i] = ss.str();
 	}
 
-	auto t1 = Clock::now();
+	t1 = Clock::now();
 	sort.Radix(sArray10);
-	auto t2 = Clock::now();
+	t2 = Clock::now();
 	std::cout << "Radix size 10: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " nanoseconds" << std::endl;
 
-	auto t1 = Clock::now();
+	t1 = Clock::now();
 	sort.Radix(sArray100);
-	auto t2 = Clock::now();
+	t2 = Clock::now();
 	std::cout << "Radix size 100: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " nanoseconds" << std::endl;
 
-	auto t1 = Clock::now();
+	t1 = Clock::now();
 	sort.Radix(sArray500);
-	auto t2 = Clock::now();
+	t2 = Clock::now();
 	std::cout << "Radix size 500: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " nanoseconds" << std::endl;
 
-	auto t1 = Clock::now();
+	t1 = Clock::now();
 	sort.Radix(sArray5000);
-	auto t2 = Clock::now();
+	t2 = Clock::now();
 	std::cout << "Radix size 5000: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " nanoseconds" << std::endl;
 
-	auto t1 = Clock::now();
+	t1 = Clock::now();
 	sort.Radix(sArray25000);
-	auto t2 = Clock::now();
+	t2 = Clock::now();
 	std::cout << "Radix size 25000: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " nanoseconds" << std::endl;
 
 	return 0;

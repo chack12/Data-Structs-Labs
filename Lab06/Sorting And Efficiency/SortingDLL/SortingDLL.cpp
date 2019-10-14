@@ -9,7 +9,7 @@
 // Make a copy of the private array within the function. Then sort the copy
 // of the array.
 
-bool Sorting::Bubble(std::vector<int> myArray) {
+std::vector<int> Sorting::Bubble(std::vector<int> myArray) {
 	std::vector<int> sortedArray = myArray;
 	int max = 50001;
 	
@@ -31,23 +31,18 @@ bool Sorting::Bubble(std::vector<int> myArray) {
 			}
 		}
 	}
-	return true;
 }
 
-bool Sorting::Insertion(std::vector<int> myArray) {
-	return false;
+std::vector<int> Sorting::Insertion(std::vector<int> myArray) {
 }
 
-bool Sorting::Merge(std::vector<int> myArray) {
-	return false;
+std::vector<int> Sorting::Merge(std::vector<int> myArray) {
 }
 
-bool Sorting::Quick(std::vector<int> myArray) {
-	return false;
+std::vector<int> Sorting::Quick(std::vector<int> myArray) {
 }
 
-bool Sorting::Radix(std::vector<std::string> myArray) {
-	return false;
+std::vector<int> Sorting::Radix(std::vector<std::string> myArray) {
 }
 
 // Array getters

@@ -17,11 +17,11 @@
 
 class SORTINGDLL_API Sorting {
 public:
-	bool Bubble(std::vector<int> myArray);
-	bool Insertion(std::vector<int> myArray);
-	bool Merge(std::vector<int> myArray);
-	bool Quick(std::vector<int> myArray);
-	bool Radix(std::vector<std::string> myArray);
+	std::vector<int> Bubble(std::vector<int> myArray);
+	std::vector<int> Insertion(std::vector<int> myArray);
+	std::vector<int> Merge(std::vector<int> myArray);
+	std::vector<int> Quick(std::vector<int> myArray);
+	std::vector<int> Radix(std::vector<std::string> myArray);
 };
 
 class SORTINGDLL_API SortingArrays {
