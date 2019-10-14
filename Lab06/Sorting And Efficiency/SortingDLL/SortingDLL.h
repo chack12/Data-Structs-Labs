@@ -10,13 +10,48 @@
 #define SORTINGDLL_API __declspec(dllimport)
 #endif
 
-// This class is exported from the dll
-class SORTINGDLL_API CSortingDLL {
+#include <ctime>
+#include <stdlib.h>
+
+class SORTINGDLL_API ISortingDLL {
 public:
-	CSortingDLL(void);
-	// TODO: add your methods here.
+	ISortingDLL() {
+		srand(time(NULL));
+
+		for (int i = 0; i < 10; ++i) {
+			array10[i] = rand() % 21;
+		}
+
+		for (int i = 0; i < 100; ++i) {
+			array100[i] = rand() % 101;
+		}
+
+		for (int i = 0; i < 500; ++i) {
+			array500[i] = rand() % 501;
+		}
+
+		for (int i = 0; i < 5000; ++i) {
+			array5000[i] = rand() % 5001;
+		}
+
+		for (int i = 0; i < 25000; ++i) {
+			array25000[i] = rand() % 25001;
+		}
+	}
+
+private:
+	int array10[10];
+	int array100[100];
+	int array500[500];
+	int array5000[5000];
+	int array25000[25000];
 };
 
-extern SORTINGDLL_API int nSortingDLL;
-
-SORTINGDLL_API int fnSortingDLL(void);
+class SORTINGDLL_API Sorting : public ISortingDLL {
+public:
+	bool Bubble();
+	bool Insertion();
+	bool Merge();
+	bool Quick();
+	bool Radix()
+};

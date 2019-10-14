@@ -4,18 +4,25 @@
 #include "framework.h"
 #include "SortingDLL.h"
 
+// Make a copy of the private array within the function. Then sort the copy
+// of the array.
 
-// This is an example of an exported variable
-SORTINGDLL_API int nSortingDLL=0;
+bool Sorting::Bubble() {
 
-// This is an example of an exported function.
-SORTINGDLL_API int fnSortingDLL(void)
-{
-    return 0;
 }
 
-// This is the constructor of a class that has been exported.
-CSortingDLL::CSortingDLL()
-{
-    return;
+bool Sorting::Insertion() {
+
+}
+
+bool Sorting::Merge() {
+
+}
+
+bool Sorting::Quick() {
+
+}
+
+bool Sorting::Radix() {
+
 }
