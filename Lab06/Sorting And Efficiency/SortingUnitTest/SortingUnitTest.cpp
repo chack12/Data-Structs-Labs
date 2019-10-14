@@ -22,10 +22,12 @@ namespace SortingUnitTest
 			std::vector<int> unsortedVector = {3, 2, 4, 5, 1, 6, 9, 0, 8, 7};
 			std::vector<int> sortedVector = { 0, 1, 2, 3, 4, 5, 6, 7, 8 ,9};
 
+			unsortedVector = sort.Bubble(unsortedVector);
 
 			// Asserting that the Bubble sort will equal the sortedVector initialized.
-			Assert::AreEqual(sort.Bubble(unsortedVector), sortedVector);
-
+			for (int i = 0; i < unsortedVector.size(); ++i) {
+				Assert::IsTrue(unsortedVector[i] == sortedVector[i]);
+			}
 		}
 
 		TEST_METHOD(Insertion)
@@ -36,9 +38,12 @@ namespace SortingUnitTest
 			std::vector<int> unsortedVector = { 3, 2, 4, 5, 1, 6, 9, 0, 8, 7};
 			std::vector<int> sortedVector = { 0, 1, 2, 3, 4, 5, 6, 7, 8 , 9};
 
+			unsortedVector = sort.Insertion(unsortedVector);
+
 			// Asserting that the Insertion sort will equal the sortedVector initialized.
-			Assert::AreEqual(sort.Insertion(unsortedVector), sortedVector);
-			
+			for (int i = 0; i < unsortedVector.size(); ++i) {
+				Assert::IsTrue(unsortedVector[i] == sortedVector[i]);
+			}
 		}
 
 		TEST_METHOD(Merge)
@@ -49,10 +54,12 @@ namespace SortingUnitTest
 			std::vector<int> unsortedVector = { 3, 2, 4, 5, 1, 6, 9, 0, 8, 7 };
 			std::vector<int> sortedVector = { 0, 1, 2, 3, 4, 5, 6, 7, 8 ,9 };
 
+			unsortedVector = sort.Merge(unsortedVector);
 
 			// Asserting that the Merge sort will equal the sortedVector initialized.
-			Assert::AreEqual(sort.Merge(unsortedVector), sortedVector);
-			
+			for (int i = 0; i < unsortedVector.size(); ++i) {
+				Assert::IsTrue(unsortedVector[i] == sortedVector[i]);
+			}
 		}
 
 		TEST_METHOD(Quick)
@@ -63,9 +70,12 @@ namespace SortingUnitTest
 			std::vector<int> unsortedVector = { 3, 2, 4, 5, 1, 6, 9, 0, 8, 7 };
 			std::vector<int> sortedVector = { 0, 1, 2, 3, 4, 5, 6, 7, 8 ,9 };
 
+			unsortedVector = sort.Quick(unsortedVector);
 
 			// Asserting that the Quick sort will equal the sortedVector initialized.
-			Assert::AreEqual(sort.Quick(unsortedVector), sortedVector);
+			for (int i = 0; i < unsortedVector.size(); ++i) {
+				Assert::IsTrue(unsortedVector[i] == sortedVector[i]);
+			}
 
 		}
 
@@ -77,10 +87,12 @@ namespace SortingUnitTest
 			std::vector<std::string> unsortedVector = {"012", "013", "010" "014", "009", "001", "005", "101", "600", "500"};
 			std::vector<std::string> sortedVector = {"001", "005", "009", "010", "012", "013", "014", "101", "500", "600"};
 
+			unsortedVector = sort.Radix(unsortedVector);
 
 			// Asserting that the Merge sort will equal the sortedVector initialized.
-			Assert::AreEqual(sort.Radix(unsortedVector), sortedVector);
-
+			for (int i = 0; i < unsortedVector.size(); ++i) {
+				Assert::IsTrue(unsortedVector[i] == sortedVector[i]);
+			}
 		}
 	};
 }
