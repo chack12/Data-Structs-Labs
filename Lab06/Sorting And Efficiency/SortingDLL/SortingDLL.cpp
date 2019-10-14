@@ -11,13 +11,16 @@
 
 std::vector<int> Sorting::Bubble(std::vector<int> myArray) {
 	std::vector<int> sortedArray = myArray;
-	int max = 50001;
-	int temp = sortedArray.at(sortedArray.size() - 1);
+	int max = sortedArray.size() * 2 + 1;
+	int count = 0;
+	SortingArrays sort;
+	bool sorted = false;
 	// For loop iterating through whole array
-	while (temp < max)	{
+	while (!sorted)	{
+		count = 0;
 		for (int i = 0; i < sortedArray.size() - 1; ++i)	{
 			if (sortedArray[i] > sortedArray[i+1])	{
-				if (sortedArray[i] > sortedArray.size() - 1)	{
+				if (sortedArray[i] > sortedArray.size() - 1) {
 					max = sortedArray[i];
 				}
 				int temp = sortedArray[i+1];
@@ -30,6 +33,7 @@ std::vector<int> Sorting::Bubble(std::vector<int> myArray) {
 				}
 			}
 		}
+		sorted = sort.isSorted(sortedArray);
 	}
 	return sortedArray;
 }
@@ -86,4 +90,18 @@ std::vector<int> SortingArrays::GetArray5000() {
 
 std::vector<int> SortingArrays::GetArray25000() {
 	return array25000;
+}
+
+bool SortingArrays::isSorted(std::vector<int> sortedVector)
+{
+	int count = 0;
+	for (int i = 0; i < sortedVector.size() - 1; ++i) {
+		if (sortedVector.at(i) <= sortedVector.at(i + 1)) {
+			count++;
+		}
+		if (count == sortedVector.size() - 1) {
+			 return true;
+		}
+	}
+	return false;
 }
