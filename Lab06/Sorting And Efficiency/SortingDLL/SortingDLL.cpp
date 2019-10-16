@@ -65,14 +65,16 @@ std::vector<int> Sorting::Merge(std::vector<int> myArray) {
 }
 
 std::vector<int> Sorting::Quick(std::vector<int> myArray) {
+	if (myArray[0] < myArray[myArray.size() - 1]) {
+
+	}
+
 	return myArray;
 }
 
 std::vector<std::string> Sorting::Radix(std::vector<std::string> myArray) {
 	std::vector<std::string> temp;
 	std::stringstream ss;
-
-	int count = 0;
 
 	//Iterate through the number of digits
 	for (int digit = myArray[0].size() - 1; digit >= 0; --digit) {
