@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <vector>
+#include <sstream>
+#include <string>
 #include "framework.h"
 #include "SortingDLL.h"
 
@@ -47,6 +49,30 @@ std::vector<int> Sorting::Quick(std::vector<int> myArray) {
 }
 
 std::vector<std::string> Sorting::Radix(std::vector<std::string> myArray) {
+	std::vector<std::string> temp;
+	std::stringstream ss;
+
+	int count = 0;
+
+	//Iterate through the number of digits
+	for (int digit = myArray[0].size() - 1; digit >= 0; --digit) {
+		//Iterate through the number of elements
+		for (int number = 0; number < 10; ++number) {
+			for (int element = 0; element < myArray.size(); ++element) {
+				//Iterate through the different numbers and group them
+				if (myArray[element][digit] - 48 == number) {
+					temp.push_back(myArray[element]);
+				}
+			}
+		}
+
+		if (temp[0] != "") {
+			myArray = temp;
+		}
+
+		temp.clear();
+	}
+
 	return myArray;
 }
 

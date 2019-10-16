@@ -84,7 +84,7 @@ namespace SortingUnitTest
 			Sorting sort;
 
 			//Initialize a sorted and unsorted vector of same size with same values.
-			std::vector<std::string> unsortedVector = {"012", "013", "010" "014", "009", "001", "005", "101", "600", "500"};
+			std::vector<std::string> unsortedVector = {"012", "013", "010", "014", "009", "001", "005", "101", "600", "500"};
 			std::vector<std::string> sortedVector = {"001", "005", "009", "010", "012", "013", "014", "101", "500", "600"};
 
 			unsortedVector = sort.Radix(unsortedVector);
