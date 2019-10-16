@@ -54,7 +54,7 @@ namespace SortingUnitTest
 			std::vector<int> unsortedVector = { 3, 2, 4, 5, 1, 6, 9, 0, 8, 7 };
 			std::vector<int> sortedVector = { 0, 1, 2, 3, 4, 5, 6, 7, 8 ,9 };
 
-			unsortedVector = sort.Merge(unsortedVector);
+			unsortedVector = sort.Merge(unsortedVector, 0, unsortedVector.size() - 1);
 
 			// Asserting that the Merge sort will equal the sortedVector initialized.
 			for (int i = 0; i < unsortedVector.size(); ++i) {
@@ -70,7 +70,7 @@ namespace SortingUnitTest
 			std::vector<int> unsortedVector = { 3, 2, 4, 5, 1, 6, 9, 0, 8, 7 };
 			std::vector<int> sortedVector = { 0, 1, 2, 3, 4, 5, 6, 7, 8 ,9 };
 
-			unsortedVector = sort.Quick(unsortedVector);
+			unsortedVector = sort.Quick(unsortedVector, 0, unsortedVector.size() - 1);
 
 			// Asserting that the Quick sort will equal the sortedVector initialized.
 			for (int i = 0; i < unsortedVector.size(); ++i) {

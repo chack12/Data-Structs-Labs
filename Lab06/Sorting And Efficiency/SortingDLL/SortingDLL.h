@@ -19,15 +19,20 @@ class SORTINGDLL_API Sorting {
 public:
 	std::vector<int> Bubble(std::vector<int> myArray);
 	std::vector<int> Insertion(std::vector<int> myArray);
-	std::vector<int> Merge(std::vector<int> myArray);
-	std::vector<int> Quick(std::vector<int> myArray);
+	std::vector<int> Merge(std::vector<int> &myArray, int first, int last);
+	std::vector<int> Quick(std::vector<int> &myArray, int first, int last);
 	std::vector<std::string> Radix(std::vector<std::string> myArray);
+	void Merger(std::vector<int>& myArray, int first, int mid, int last);
+	void Swap(std::vector<int> &myArray, int index1, int index2);	
+	int Partition(std::vector<int> &myArray, int first, int last);
+	bool isSorted(std::vector<int> sortedVector);
 };
 
 class SORTINGDLL_API SortingArrays {
 public:
+	//Constructor for the random arrays 
 	SortingArrays() {
-		srand(time(NULL));
+		srand(time(0));
 
 		for (int i = 0; i < 10; ++i) {
 			array10.push_back(rand() % 21);
@@ -55,7 +60,6 @@ public:
 	std::vector<int> GetArray500();
 	std::vector<int> GetArray5000();
 	std::vector<int> GetArray25000();
-	bool isSorted(std::vector<int> sortedVector);
 
 private:
 	std::vector<int> array10;
