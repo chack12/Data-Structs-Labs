@@ -12,31 +12,49 @@
 // of the array.
 
 std::vector<int> Sorting::Bubble(std::vector<int> myArray) {
+	// Create copy of vector to make changes to
 	std::vector<int> sortedArray = myArray;
-	int max = 50001;
-	int temp = sortedArray.at(sortedArray.size() - 1);
+	// Initialize count
+	int count = 0;
+	// Create object of sortingarrays
+	SortingArrays sort;
+	// Variable used to escape while loop
+	bool sorted = false;
 	// For loop iterating through whole array
-	while (temp < max)	{
+	while (!sorted)	{
+		// For loop iterating through whole array
 		for (int i = 0; i < sortedArray.size() - 1; ++i)	{
+			// Checks to see if the next value is larger than the previous
 			if (sortedArray[i] > sortedArray[i+1])	{
-				if (sortedArray[i] > sortedArray.size() - 1)	{
-					max = sortedArray[i];
-				}
+				// Flips the values
 				int temp = sortedArray[i+1];
 				sortedArray[i+1] = sortedArray[i];
 				sortedArray[i] = temp;
 			}
-			else {
-				if (sortedArray[i] > sortedArray.size() - 1)	{
-					max = sortedArray[i+1];
-				}
-			}
 		}
+		// External function to check if the vector is sorted
+		sorted = sort.isSorted(sortedArray);
 	}
 	return sortedArray;
 }
 
-std::vector<int> Sorting::Insertion(std::vector<int> myArray) {
+std::vector<int> Sorting::Insertion(std::vector<int> myVector) {
+	std::vector<int> sortedVector = myVector;
+	int max = (myVector.size() * 2) + 1;
+	bool flag = true;
+	
+	while (flag) {
+		for (int i = 0; i < sortedVector.size() - 1; ++i) {
+				for (int j = i + 1; j < sortedVector.size() - 1; ++i) {
+					if (sortedVector[i] < sortedVector[j]) {
+						
+				}
+			}
+
+		}
+
+
+	}
 	return myArray;
 }
 
@@ -96,4 +114,18 @@ std::vector<int> SortingArrays::GetArray5000() {
 
 std::vector<int> SortingArrays::GetArray25000() {
 	return array25000;
+}
+
+bool SortingArrays::isSorted(std::vector<int> sortedVector)
+{
+	int count = 0;
+	for (int i = 0; i < sortedVector.size() - 1; ++i) {
+		if (sortedVector.at(i) <= sortedVector.at(i + 1)) {
+			count++;
+		}
+		if (count == sortedVector.size() - 1) {
+			 return true;
+		}
+	}
+	return false;
 }
