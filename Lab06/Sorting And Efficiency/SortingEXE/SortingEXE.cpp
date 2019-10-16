@@ -41,6 +41,8 @@ int main()
 	t2 = Clock::now();
 	std::cout << "Bubble size 25000: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " nanoseconds" << std::endl;
 
+	std::cout << std::endl;
+
 	//Insertion
 	t1 = Clock::now();
 	sort.Insertion(arrays.GetArray10());
@@ -66,6 +68,8 @@ int main()
 	sort.Insertion(arrays.GetArray25000());
 	t2 = Clock::now();
 	std::cout << "Insertion size 25000: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " nanoseconds" << std::endl;
+
+	std::cout << std::endl;
 
 	//Merge
 	t1 = Clock::now();
@@ -93,6 +97,8 @@ int main()
 	t2 = Clock::now();
 	std::cout << "Merge size 25000: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " nanoseconds" << std::endl;
 
+	std::cout << std::endl;
+
 	//Quick
 	t1 = Clock::now();
 	sort.Quick(arrays.GetArray10());
@@ -119,6 +125,8 @@ int main()
 	t2 = Clock::now();
 	std::cout << "Quick size 25000: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " nanoseconds" << std::endl;
 	
+	std::cout << std::endl;
+
 	//Radix
 	std::vector<std::string> sArray10;
 	std::vector<std::string> sArray100;
