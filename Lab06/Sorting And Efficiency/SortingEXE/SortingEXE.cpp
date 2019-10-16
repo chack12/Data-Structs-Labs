@@ -20,7 +20,7 @@ int main()
 	sort.Bubble(arrays.GetArray10());
 	auto t2 = Clock::now();
 	std::cout << "Bubble size 10: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " nanoseconds" << std::endl;
-
+	
 	t1 = Clock::now();
 	sort.Bubble(arrays.GetArray100());
 	t2 = Clock::now();
@@ -118,13 +118,19 @@ int main()
 	sort.Quick(arrays.GetArray25000());
 	t2 = Clock::now();
 	std::cout << "Quick size 25000: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " nanoseconds" << std::endl;
-
+	
 	//Radix
 	std::vector<std::string> sArray10;
 	std::vector<std::string> sArray100;
 	std::vector<std::string> sArray500;
 	std::vector<std::string> sArray5000;
 	std::vector<std::string> sArray25000;
+
+	sArray10.resize(arrays.GetArray10().size());
+	sArray100.resize(arrays.GetArray100().size());
+	sArray500.resize(arrays.GetArray500().size());
+	sArray5000.resize(arrays.GetArray5000().size());
+	sArray25000.resize(arrays.GetArray25000().size());
 
 	std::vector<int> array10 = arrays.GetArray10();
 	std::vector<int> array100 = arrays.GetArray100();
@@ -133,64 +139,108 @@ int main()
 	std::vector<int> array25000 = arrays.GetArray25000();
 
 	for (int i = 0; i < 10; ++i) {
-		ss << array10[i];
 		if (array10[i] < 10) {
-			ss << "0" + array10[i];
+			ss << "0";
+			ss<< array10[i];
+			sArray10[i] = ss.str();
 		}
-		sArray10[i] = ss.str();
+		else {
+			ss << array10[i];
+			sArray10[i] = ss.str();
+		}
+		
+		ss.str("");
 	}
 
 	for (int i = 0; i < 100; ++i) {
-		ss << array100[i];
 		if (array100[i] < 10) {
-			ss << "00" + array100[i];
+			ss << "00";
+			ss << array100[i];
+			sArray100[i] = ss.str();
 		}
 		else if (array100[i] < 100) {
-			ss << "0" + array100[i];
+			ss << "0";
+			ss<< array100[i];
+			sArray100[i] = ss.str();
 		}
-		sArray100[i] = ss.str();
+		else {
+			ss << array100[i];
+			sArray100[i] = ss.str();
+		}
+		
+		ss.str("");
 	}
 
 	for (int i = 0; i < 500; ++i) {
-		ss << array500[i];
 		if (array500[i] < 10) {
-			ss << "00" + array500[i];
+			ss << "00";
+			ss << array500[i];
+			sArray500[i] = ss.str();
 		}
 		else if (array500[i] < 100) {
-			ss << "0" + array500[i];
+			ss << "0";
+			ss << array500[i];
+			sArray500[i] = ss.str();
 		}
-		sArray500[i] = ss.str();
+		else {
+			ss << array500[i];
+			sArray500[i] = ss.str();
+		}
+
+		ss.str("");
 	}
 
 	for (int i = 0; i < 5000; ++i) {
-		ss << array5000[i];
 		if (array5000[i] < 10) {
-			ss << "000" + array5000[i];
+			ss << "000";
+			ss << array5000[i];
+			sArray5000[i] = ss.str();
 		}
 		else if (array5000[i] < 100) {
-			ss << "00" + array5000[i];
+			ss << "00";
+			ss << array5000[i];
+			sArray5000[i] = ss.str();
 		}
 		else if (array5000[i] < 1000) {
-			ss << "0" + array5000[i];
+			ss << "0";
+			ss << array5000[i];
+			sArray5000[i] = ss.str();
 		}
-		sArray5000[i] = ss.str();
+		else {
+			ss << array5000[i];
+			sArray5000[i] = ss.str();
+		}
+
+		ss.str("");
 	}
 
 	for (int i = 0; i < 25000; ++i) {
-		ss << array25000[i];
 		if (array25000[i] < 10) {
-			ss << "0000" + array25000[i];
+			ss << "0000";
+			ss << array25000[i];
+			sArray25000[i] = ss.str();
 		}
 		else if (array25000[i] < 100) {
-			ss << "000" + array25000[i];
+			ss << "000";
+			ss << array25000[i];
+			sArray25000[i] = ss.str();
 		}
 		else if (array25000[i] < 1000) {
-			ss << "00" + array25000[i];
+			ss << "00";
+			ss << array25000[i];
+			sArray25000[i] = ss.str();
 		}
 		else if (array25000[i] < 10000) {
-			ss << "0" + array25000[i];
+			ss << "0";
+			ss << array25000[i];
+			sArray25000[i] = ss.str();
 		}
-		sArray25000[i] = ss.str();
+		else {
+			ss << array25000[i];
+			sArray25000[i] = ss.str();
+		}
+
+		ss.str("");
 	}
 
 	t1 = Clock::now();

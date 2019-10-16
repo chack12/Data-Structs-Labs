@@ -43,6 +43,8 @@ std::vector<int> Sorting::Insertion(std::vector<int> myVector) {
 	int max = (myVector.size() * 2) + 1;
 	bool flag = true;
 	
+	return myVector;
+
 	while (flag) {
 		for (int i = 0; i < sortedVector.size() - 1; ++i) {
 				for (int j = i + 1; j < sortedVector.size() - 1; ++i) {
@@ -55,7 +57,7 @@ std::vector<int> Sorting::Insertion(std::vector<int> myVector) {
 
 
 	}
-	return myArray;
+	return myVector;
 }
 
 std::vector<int> Sorting::Merge(std::vector<int> myArray) {
