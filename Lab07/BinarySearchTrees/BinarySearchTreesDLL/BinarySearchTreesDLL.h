@@ -109,7 +109,7 @@ public:
 	* Sets the left pointer to the node
 	*
 	* @param	node	pointer to the left node
-	* @return	value	whether it was successful or not 
+	* @return			whether it was successful or not 
 	*/
 	bool SetLeft(Node* myNode);
 	/**
@@ -139,12 +139,19 @@ public:
 	* @param	value	the value you want set the node to
 	* @return			whether it was successful or not
 	*/
-	bool SetItem(std::string myValue);
+	bool SetValue(std::string myValue);
+	/**
+	* Gets the nodes value
+	*
+	* @param	node	pointer to the left node
+	* @return	
+	*/
+	std::string GetValue();
 	/**
 	* Whether or not the node is a Leaf
 	*
 	* @param	
-	* @return	value	whether it was successful or not
+	* @return		the value of the node
 	*/
 	bool IsLeaf();
 	/**

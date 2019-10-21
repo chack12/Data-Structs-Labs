@@ -12,7 +12,7 @@ bool BinarySearchTrees::Insert(Node myNode)	{
 }
 
 Node* BinarySearchTrees::Find(std::string myValue)	{
-
+	
 }
 
 int BinarySearchTrees::Size()	{
@@ -62,7 +62,11 @@ Node* Node::GetRight() {
 	return right;
 }
 
-bool Node::SetItem(std::string myValue) {
+std::string Node::GetValue() {
+	return value;
+}
+
+bool Node::SetValue(std::string myValue) {
 	if (myValue != "") {
 		value = myValue;
 		return true;
