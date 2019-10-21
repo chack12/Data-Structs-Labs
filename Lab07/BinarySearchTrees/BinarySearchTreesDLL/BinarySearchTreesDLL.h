@@ -29,7 +29,7 @@ public:
 	* @param	node	the node you want to insert
 	* @return			whether it was successful for not
 	*/
-	bool Insert(Node node);
+	bool Insert(Node myNode);
 	/**
 	* Locates the value in the ree and returns a pointer to the node
 	* If not in the tree, returns nullptr
@@ -37,7 +37,7 @@ public:
 	* @param	value	the value you want to find
 	* @return			whether it was successful for not
 	*/
-	Node* Find(std::string value);
+	Node* Find(std::string myValue);
 	/**
 	* Returns the size of the binary tree
 	*
@@ -51,14 +51,14 @@ public:
 	* @param
 	* @return
 	*/
-	std::vector<int> GetAllAscending();
+	std::vector<std::string> GetAllAscending();
 	/**
 	* 
 	*
 	* @param	
 	* @return 
 	*/
-	std::vector<int> GetAllDescending();
+	std::vector<std::string> GetAllDescending();
 	/**
 	* Checks to see if the tree is empty
 	*
@@ -72,7 +72,7 @@ public:
 	* @param	value	the value you want to remove
 	* @return			whether it was successful for not
 	*/
-	bool Remove(std::string value);
+	bool Remove(std::string myValue);
 	/**
 	* The destructor for the binary tree
 	*
@@ -97,19 +97,28 @@ public:
 	*/
 	Node();
 	/**
+	* The constructor for the node
+	*
+	* @param
+	* @return
+	*/
+	Node(std::string myValue) {
+		value = myValue;
+	}
+	/**
 	* Sets the left pointer to the node
 	*
 	* @param	node	pointer to the left node
 	* @return	value	whether it was successful or not 
 	*/
-	bool SetLeft(Node* node);
+	bool SetLeft(Node* myNode);
 	/**
 	* Sets the right pointer of the node
 	*
 	* @param	node	pointer to the right
 	* @return			whether it was successful for not
 	*/
-	bool SetRight(Node* node);
+	bool SetRight(Node* myNode);
 	/**
 	* Returns a pointer to the left node
 	*
@@ -130,7 +139,7 @@ public:
 	* @param	value	the value you want set the node to
 	* @return			whether it was successful or not
 	*/
-	bool SetItem(std::string value);
+	bool SetItem(std::string myValue);
 	/**
 	* Whether or not the node is a Leaf
 	*
@@ -149,6 +158,7 @@ public:
 		delete right;
 	}
 private:
+	std::string value;
 	Node* left;
 	Node* right;
 };

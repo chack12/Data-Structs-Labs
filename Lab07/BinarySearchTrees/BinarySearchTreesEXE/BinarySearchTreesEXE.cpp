@@ -2,19 +2,65 @@
 //
 
 #include <iostream>
+#include <vector>
+#include "../BinarySearchTreesDLL/BinarySearchTreesDLL.h"
+
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	BinarySearchTrees tree1;
+	tree1.Insert(Node("Star Wars"));
+	tree1.Insert(Node("Star Trek"));
+	tree1.Insert(Node("Space Balls"));
+	tree1.Insert(Node("Galaxy Quest"));
+
+	BinarySearchTrees tree2;
+	tree2.Insert(Node("Cars"));
+	tree2.Insert(Node("Monsters, Inc"));
+	tree2.Insert(Node("The Incredibles"));
+	tree2.Insert(Node("Wall - E"));
+
+	BinarySearchTrees tree3;
+	tree3.Insert(Node("Halloween"));
+	tree3.Insert(Node("A Nightmare On Elm Street"));
+	tree3.Insert(Node("Hocus Pocus"));
+	tree3.Insert(Node("Beetlejuice"));
+
+	vector<string> tree1VectorAscending = tree1.GetAllAscending();
+	vector<string> tree1VectorDescending = tree1.GetAllDescending();
+
+	for (int i = 0; i < tree1VectorAscending.size(); ++i) {
+		cout << tree1VectorAscending[i] << endl;
+	}
+
+	for (int i = 0; i < tree1VectorDescending.size(); ++i) {
+		cout << tree1VectorDescending[i] << endl;
+	}
+
+	cout << "***********************" << endl;
+
+	vector<string> tree2VectorAscending = tree2.GetAllAscending();
+	vector<string> tree2VectorDescending = tree2.GetAllDescending();
+
+	for (int i = 0; i < tree2VectorAscending.size(); ++i) {
+		cout << tree2VectorAscending[i] << endl;
+	}
+
+	for (int i = 0; i < tree2VectorDescending.size(); ++i) {
+		cout << tree2VectorDescending[i] << endl;
+	}
+
+	cout << "***********************" << endl;
+
+	vector<string> tree3VectorAscending = tree3.GetAllAscending();
+	vector<string> tree3VectorDescending = tree3.GetAllDescending();
+
+	for (int i = 0; i < tree3VectorAscending.size(); ++i) {
+		cout << tree3VectorAscending[i] << endl;
+	}
+
+	for (int i = 0; i < tree3VectorDescending.size(); ++i) {
+		cout << tree3VectorDescending[i] << endl;
+	}
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
