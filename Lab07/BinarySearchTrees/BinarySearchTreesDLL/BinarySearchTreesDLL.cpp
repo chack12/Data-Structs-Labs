@@ -96,6 +96,32 @@ bool BinarySearchTrees::EmptyTree()	{
 }
 
 bool BinarySearchTrees::Remove(std::string myValue) {
+	Node* temp = new Node();
+	if (root == nullptr) {
+		return false;
+	}
+	// If value is greater than root, start traversing left
+	else if (root->GetValue().compare(myValue) < 0) {
+		temp = root->GetLeft();
+		while (temp->GetValue().compare(myValue) != 0) {
+			// Continue to traverse left
+			if (temp->GetValue().compare(myValue) < 0) {
+				if (temp->GetLeft() != nullptr) {
+					temp = temp->GetLeft();
+				}
+				else  {
+					return false;
+				}
+				
+			}
+			// Go to the right
+			else if (temp->GetValue() < myValue && temp->GetRight() != nullptr)	{
+				temp = temp->GetRight();
+			}
+		}
+	}
+
+
 	return false;
 }
 
