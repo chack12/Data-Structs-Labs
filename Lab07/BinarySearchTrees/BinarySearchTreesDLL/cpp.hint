@@ -1,0 +1,2 @@
+#define BINARYSEARCHTREESDLL_API __declspec(dllexport)
+#define BINARYSEARCHTREESDLL_API __declspec(dllimport)
