@@ -10,22 +10,23 @@ using namespace std;
 int main()
 {
 	BinarySearchTrees tree1;
-	tree1.Insert(Node("Star Wars"));
-	tree1.Insert(Node("Star Trek"));
-	tree1.Insert(Node("Space Balls"));
-	tree1.Insert(Node("Galaxy Quest"));
+
+	tree1.Insert(new Node("Star Wars"));
+	tree1.Insert(new Node("Star Trek"));
+	tree1.Insert(new Node("Space Balls"));
+	tree1.Insert(new Node("Galaxy Quest"));
 
 	BinarySearchTrees tree2;
-	tree2.Insert(Node("Cars"));
-	tree2.Insert(Node("Monsters, Inc"));
-	tree2.Insert(Node("The Incredibles"));
-	tree2.Insert(Node("Wall - E"));
+	tree2.Insert(new Node("Cars"));
+	tree2.Insert(new Node("Monsters, Inc"));
+	tree2.Insert(new Node("The Incredibles"));
+	tree2.Insert(new Node("Wall - E"));
 
 	BinarySearchTrees tree3;
-	tree3.Insert(Node("Halloween"));
-	tree3.Insert(Node("A Nightmare On Elm Street"));
-	tree3.Insert(Node("Hocus Pocus"));
-	tree3.Insert(Node("Beetlejuice"));
+	tree3.Insert(new Node("Halloween"));
+	tree3.Insert(new Node("A Nightmare On Elm Street"));
+	tree3.Insert(new Node("Hocus Pocus"));
+	tree3.Insert(new Node("Beetlejuice"));
 
 	vector<string> tree1VectorAscending = tree1.GetAllAscending();
 	vector<string> tree1VectorDescending = tree1.GetAllDescending();

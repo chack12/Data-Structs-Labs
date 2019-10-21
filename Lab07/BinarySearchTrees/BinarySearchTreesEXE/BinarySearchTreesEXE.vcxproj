@@ -153,6 +153,11 @@
   <ItemGroup>
     <ClCompile Include="BinarySearchTreesEXE.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BinarySearchTreesDLL\BinarySearchTreesDLL.vcxproj">
+      <Project>{226c6af6-7e7a-4dca-a2c8-5cc7b9c765d1}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
