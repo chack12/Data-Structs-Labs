@@ -16,23 +16,27 @@ bool BinarySearchTrees::Insert(Node* myNode)	{
 	Node* cur = root;
 	bool exitFlag = false;
 
+	//If there is no root make the node the root
 	if (root == nullptr) {
 		root = myNode;
 		return true;
 	}
 
 	while (!exitFlag) {
-		int temp = myNode->GetValue().compare(cur->GetValue());
-		if (myNode->GetValue().compare(cur->GetValue()) < 0) {
+		//Traverse down the left side (also accounting for if the values are the same)
+		if (myNode->GetValue().compare(cur->GetValue()) <= 0) {
+			//Check to see if cur is the last node on the left
 			if (cur->GetLeft() != nullptr)	{
 				cur = cur->GetLeft();
 			}
-			else	{
+			else {
 				cur->SetLeft(myNode);
 				exitFlag = true;
 			}
 		}
+		//Traverse down the right side
 		else if (myNode->GetValue().compare(cur->GetValue()) > 0){
+			//Check to see if cur is the last node on the right
 			if (cur->GetRight() != nullptr) {
 				cur = cur->GetRight();
 			}
@@ -41,16 +45,36 @@ bool BinarySearchTrees::Insert(Node* myNode)	{
 				exitFlag = true;
 			}
 		}
-		else {
-			//The values are equal
-		}
 	}
 
 	return false;
 }
 
 Node* BinarySearchTrees::Find(std::string myValue)	{
-	return nullptr;
+	Node* cur = root;
+
+	while (true) {
+		//Check the root
+		if (cur->GetValue() == myValue) {
+			return cur;
+		}
+		//Compare to cur and go down the left side
+		else if (myValue.compare(cur->GetValue()) < 0) {
+			cur = cur->GetLeft();
+		}
+		//Compare to cur and go down the right side
+		else if (myValue.compare(cur->GetValue()) > 0) {
+			cur = cur->GetRight();
+		}
+		else {
+			return nullptr;
+		}
+
+		//If it can't find anything return nullptr
+		if (cur == nullptr) {
+			return nullptr;
+		}
+	}
 }
 
 int BinarySearchTrees::Size()	{
