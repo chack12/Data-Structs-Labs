@@ -37,25 +37,44 @@ bool BinarySearchTrees::Remove(std::string myValue) {
 
 //Node Implementation
 bool Node::SetLeft(Node* myNode) {
+	if (myNode != nullptr) {
+		left = myNode;
+		return true;
+	}
+
 	return false;
 }
 
 bool Node::SetRight(Node* myNode)  {
+	if (myNode != nullptr) {
+		right = myNode;
+		return true;
+	}
+
 	return false;
 }
 
 Node* Node::GetLeft() {
-
+	return left;
 }
 
 Node* Node::GetRight() {
-
+	return right;
 }
 
 bool Node::SetItem(std::string myValue) {
+	if (myValue != "") {
+		value = myValue;
+		return true;
+	}
+
 	return false;
 }
 
 bool Node::IsLeaf() {
+	if (left == nullptr && right == nullptr) {
+		return true;
+	}
 
+	return false;
 }
