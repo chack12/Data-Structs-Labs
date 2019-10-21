@@ -160,7 +160,7 @@ public:
 	* @param	value	the value you want to remove
 	* @return			whether it was successful for not
 	*/
-	bool Remove(std::string myValue);
+	Node* Remove(std::string myValue);
 	/**
 	* Returns the string in all lowercase
 	* Reference - https://stackoverflow.com/questions/313970/how-to-convert-stdstring-to-lower-case
