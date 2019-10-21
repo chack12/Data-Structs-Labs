@@ -135,8 +135,17 @@ Node* BinarySearchTrees::Remove(std::string myValue) {
 				}
 			}
 		}
-		if (prev->GetValue().compare(right->GetValue()) == 0) {
-
+		if (prev->GetValue().compare(right->GetValue()) <= 0) {
+			prev->SetLeft(right);
+		}
+		else  {
+			prev->SetRight(right);
+		}
+		if (right->GetValue().compare(left->GetValue()) >= 0) {
+			right->SetLeft(left);
+		}
+		else  {
+			right->SetRight(left);
 		}
 	}
 
