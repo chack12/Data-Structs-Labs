@@ -128,11 +128,11 @@ public:
 	Node* Find(std::string myValue);
 	/**
 	* Returns the size of the binary tree
-	*
+	* Reference- https://www.geeksforgeeks.org/write-a-c-program-to-calculate-size-of-a-tree/
 	* @param	
 	* @return			the size of the binary tree 
 	*/
-	int Size();
+	int Size(Node* node);
 	/**
 	* 
 	*
@@ -161,13 +161,6 @@ public:
 	* @return			whether it was successful for not
 	*/
 	Node* Remove(std::string myValue);
-	/**
-	* Returns the string in all lowercase
-	* Reference - https://stackoverflow.com/questions/313970/how-to-convert-stdstring-to-lower-case
-	* @param
-	* @return
-	*/
-	//std::string ToLower(std::string myValue);
 	/**
 	* The destructor for the binary tree
 	*

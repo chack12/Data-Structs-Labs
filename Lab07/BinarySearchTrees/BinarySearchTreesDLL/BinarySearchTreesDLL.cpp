@@ -77,8 +77,13 @@ Node* BinarySearchTrees::Find(std::string myValue)	{
 	}
 }
 
-int BinarySearchTrees::Size()	{
-	return 0;
+int BinarySearchTrees::Size(Node* node)	{
+	if (root == nullptr) {
+		return 0;
+	}
+	else {
+		return Size(node->GetLeft()) + 1 + Size(node->GetRight());
+	}
 }
 
 std::vector<std::string> BinarySearchTrees::GetAllAscending()	{
@@ -92,7 +97,8 @@ std::vector<std::string> BinarySearchTrees::GetAllDescending()	{
 }
 
 bool BinarySearchTrees::EmptyTree()	{
-	return false;
+	delete root;
+	return true;
 }
 
 Node* BinarySearchTrees::Remove(std::string myValue) {
@@ -152,12 +158,6 @@ Node* BinarySearchTrees::Remove(std::string myValue) {
 
 	return false;
 }
-
-/*std::string BinarySearchTrees::ToLower(std::string myValue) {
-	std::transform(myValue.begin(), myValue.end(), myValue.begin(), [](unsigned char c) { return std::tolower(c); });
-
-	return myValue;
-}*/
 
 //***********************
 //* Node Implementation *
