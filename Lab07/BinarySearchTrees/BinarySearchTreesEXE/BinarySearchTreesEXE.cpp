@@ -28,6 +28,7 @@ int main()
 	tree3.Insert(new Node("Hocus Pocus"));
 	tree3.Insert(new Node("Beetlejuice"));
 
+	tree1.Remove("Star Trek");
 	vector<string> tree1VectorAscending = tree1.GetAllAscending();
 	vector<string> tree1VectorDescending = tree1.GetAllDescending();
 
