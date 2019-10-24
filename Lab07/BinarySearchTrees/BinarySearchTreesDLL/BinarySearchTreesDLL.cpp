@@ -79,15 +79,17 @@ Node* BinarySearchTrees::Find(std::string myValue)	{
 }
 
 int BinarySearchTrees::Size(Node* node)	{
+	//If the root has noo value then the size is 0
 	if (root == nullptr) {
 		return 0;
 	}
 	else {
+		//Recursively get the size of the left and right
 		return Size(node->GetLeft()) + 1 + Size(node->GetRight());
 	}
 }
 
-std::vector<std::string> BinarySearchTrees::GetAllAscending()	{
+std::vector<std::string> BinarySearchTrees::GetAllAscending() {
 	std::stack<Node*> stack;
 	std::vector<std::string> retVal;
 	Node* cur = root;
@@ -95,18 +97,24 @@ std::vector<std::string> BinarySearchTrees::GetAllAscending()	{
 	bool notEmpty = true;
 
 	while (notEmpty) {
+		//Add all the left sides into the stack
 		if (cur != nullptr) {
 			stack.push(cur);
 			cur = cur->GetLeft();
 		}
 		else {
 			notEmpty = stack.size();
+			//Make sure the stack isn't empty
 			if (notEmpty) {
+				//Get the top of the stack and put it into the array
 				temp = stack.top();
 				retVal.push_back(temp->GetValue());
+				//Reset the value of cur
 				cur = temp;
+				//Get rid of the value that was just added to the vector
 				stack.pop();
 
+				//Get the right side of the tree
 				cur = cur->GetRight();
 			}
 		}
@@ -123,18 +131,24 @@ std::vector<std::string> BinarySearchTrees::GetAllDescending()	{
 	bool notEmpty = true;
 
 	while (notEmpty) {
+		//Add all the right sides into the stack
 		if (cur != nullptr) {
 			stack.push(cur);
 			cur = cur->GetRight();
 		}
 		else {
 			notEmpty = stack.size();
+			//Make sure the stack isn't empty
 			if (notEmpty) {
+				//Get the top of the stack and put it into the array
 				temp = stack.top();
 				retVal.push_back(temp->GetValue());
+				//Reset the value of cur
 				cur = temp;
+				//Get rid of the value that was just added to the vector
 				stack.pop();
 
+				//Get the left side of the tree
 				cur = cur->GetLeft();
 			}
 		}
@@ -144,8 +158,14 @@ std::vector<std::string> BinarySearchTrees::GetAllDescending()	{
 }
 
 bool BinarySearchTrees::EmptyTree()	{
-	delete root;
-	return true;
+	//Deleting the root will delete everything below it
+	try {
+		delete root;
+		return true;
+	}
+	catch (...) {
+		return false;
+	}
 }
 
 Node* BinarySearchTrees::Remove(std::string myValue) {
