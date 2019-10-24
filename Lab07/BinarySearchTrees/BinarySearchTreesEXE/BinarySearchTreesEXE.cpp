@@ -9,72 +9,84 @@ using namespace std;
 
 int main()
 {
-	BinarySearchTrees tree1;
+	BinarySearchTrees tree;
 
-	tree1.Insert(new Node("Star Wars"));
-	tree1.Insert(new Node("Star Trek"));
-	tree1.Insert(new Node("Space Balls"));
-	tree1.Insert(new Node("Galaxy Quest"));
+	tree.Insert(new Node("Star Wars"));
+	tree.Insert(new Node("Star Trek"));
+	tree.Insert(new Node("Space Balls"));
+	tree.Insert(new Node("Galaxy Quest"));
 
-	BinarySearchTrees tree2;
-	tree2.Insert(new Node("Cars"));
-	tree2.Insert(new Node("Monsters, Inc"));
-	tree2.Insert(new Node("The Incredibles"));
-	tree2.Insert(new Node("Wall - E"));
+	vector<string> treeVectorAscending = tree.GetAllAscending();
+	vector<string> treeVectorDescending = tree.GetAllDescending();
 
-	BinarySearchTrees tree3;
-	tree3.Insert(new Node("Halloween"));
-	tree3.Insert(new Node("A Nightmare On Elm Street"));
-	tree3.Insert(new Node("Hocus Pocus"));
-	tree3.Insert(new Node("Beetlejuice"));
+	cout << "-----Space Tree ascending-----" << endl;
 
-	vector<string> tree1VectorAscending = tree1.GetAllAscending();
-	vector<string> tree1VectorDescending = tree1.GetAllDescending();
-
-	cout << "-----Tree 1 ascending-----" << endl;
-
-	for (int i = 0; i < tree1VectorAscending.size(); ++i) {
-		cout << tree1VectorAscending[i] << endl;
+	for (int i = 0; i < treeVectorAscending.size(); ++i) {
+		cout << treeVectorAscending[i] << endl;
 	}
 
 	cout << endl;
-	cout << "-----Tree 1 descending-----" << endl;
+	cout << "-----Space Tree descending-----" << endl;
 
-	for (int i = 0; i < tree1VectorDescending.size(); ++i) {
-		cout << tree1VectorDescending[i] << endl;
+	for (int i = 0; i < treeVectorDescending.size(); ++i) {
+		cout << treeVectorDescending[i] << endl;
 	}
 
-	vector<string> tree2VectorAscending = tree2.GetAllAscending();
-	vector<string> tree2VectorDescending = tree2.GetAllDescending();
+	tree.Remove("Star Wars");
+	tree.Remove("Star Trek");
+	tree.Remove("Space Balls");
+	tree.Remove("Galaxy Quest");
+
+	tree.Insert(new Node("Cars"));
+	tree.Insert(new Node("Monsters, Inc"));
+	tree.Insert(new Node("The Incredibles"));
+	tree.Insert(new Node("Wall - E"));
+
+	treeVectorAscending = tree.GetAllAscending();
+	treeVectorDescending = tree.GetAllDescending();
 
 	cout << endl;
-	cout << "-----Tree 2 ascending-----" << endl;
+	cout << "-----Disney Tree ascending-----" << endl;
 
-	for (int i = 0; i < tree2VectorAscending.size(); ++i) {
-		cout << tree2VectorAscending[i] << endl;
-	}
-
-	cout << endl;
-	cout << "-----Tree 2 descending-----" << endl;
-
-	for (int i = 0; i < tree2VectorDescending.size(); ++i) {
-		cout << tree2VectorDescending[i] << endl;
-	}
-
-	vector<string> tree3VectorAscending = tree3.GetAllAscending();
-	vector<string> tree3VectorDescending = tree3.GetAllDescending();
-
-	cout << endl;
-	cout << "-----Tree 3 ascending-----" << endl;
-
-	for (int i = 0; i < tree3VectorAscending.size(); ++i) {
-		cout << tree3VectorAscending[i] << endl;
+	for (int i = 0; i < treeVectorAscending.size(); ++i) {
+		cout << treeVectorAscending[i] << endl;
 	}
 
 	cout << endl;
-	cout << "-----Tree 3 descending-----" << endl;
+	cout << "-----Disney Tree descending-----" << endl;
 
-	for (int i = 0; i < tree3VectorDescending.size(); ++i) {
-		cout << tree3VectorDescending[i] << endl;
+	for (int i = 0; i < treeVectorDescending.size(); ++i) {
+		cout << treeVectorDescending[i] << endl;
 	}
+
+	tree.Remove("Cars");
+	tree.Remove("Monsters, Inc");
+	tree.Remove("The Incredibles");
+	tree.Remove("Wall - E");
+
+	tree.Insert(new Node("Halloween"));
+	tree.Insert(new Node("A Nightmare On Elm Street"));
+	tree.Insert(new Node("Hocus Pocus"));
+	tree.Insert(new Node("Beetlejuice"));
+
+	treeVectorAscending = tree.GetAllAscending();
+	treeVectorDescending = tree.GetAllDescending();
+
+	cout << endl;
+	cout << "-----Halloween ascending-----" << endl;
+
+	for (int i = 0; i < treeVectorAscending.size(); ++i) {
+		cout << treeVectorAscending[i] << endl;
+	}
+
+	cout << endl;
+	cout << "-----Halloween descending-----" << endl;
+
+	for (int i = 0; i < treeVectorDescending.size(); ++i) {
+		cout << treeVectorDescending[i] << endl;
+	}
+
+	Node* beetlejuiceNode = tree.Find("Beetlejuice");
+
+	tree.EmptyTree();
 }

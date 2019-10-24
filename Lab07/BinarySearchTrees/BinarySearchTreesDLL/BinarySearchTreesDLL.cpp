@@ -161,6 +161,7 @@ bool BinarySearchTrees::EmptyTree()	{
 	//Deleting the root will delete everything below it
 	try {
 		delete root;
+		root = nullptr;
 		return true;
 	}
 	catch (...) {
@@ -199,6 +200,13 @@ Node* BinarySearchTrees::Remove(std::string myValue) {
 				else {
 					parent->SetRight(nullptr);
 				}
+
+				//Checking to see if the node being removed is the last one
+				if (root == node) {
+					root = nullptr;
+				}
+
+				node = nullptr;
 			}
 			//One child left 
 			else if (node->GetRight() == nullptr) {
@@ -270,8 +278,11 @@ Node* BinarySearchTrees::Remove(std::string myValue) {
 				}
 			}
 
-			node->SetLeft(nullptr);
-			node->SetRight(nullptr);
+			if (node != nullptr) {
+				node->SetLeft(nullptr);
+				node->SetRight(nullptr);
+			}
+			
 			return node;
 		}
 	}
