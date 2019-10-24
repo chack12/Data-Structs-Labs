@@ -134,17 +134,17 @@ public:
 	*/
 	int Size(Node* node);
 	/**
-	* 
-	*
+	* Returns a vector with all the node's values in ascending order
+	* Referenced the powerpoints
 	* @param
-	* @return
+	* @return			the node's values in ascending order
 	*/
 	std::vector<std::string> GetAllAscending();
 	/**
-	* 
-	*
+	* Returns a vector with all the node's values in descending order
+	* Referenced the powerpoints
 	* @param	
-	* @return 
+	* @return			the node's values in descending order
 	*/
 	std::vector<std::string> GetAllDescending();
 	/**

@@ -8,6 +8,7 @@
 #include <string>
 #include "framework.h"
 #include "BinarySearchTreesDLL.h"
+#include <stack>
 
 //*********************
 //* BinarySearchTrees *
@@ -87,13 +88,59 @@ int BinarySearchTrees::Size(Node* node)	{
 }
 
 std::vector<std::string> BinarySearchTrees::GetAllAscending()	{
-	std::vector<std::string> temp;
-	return temp;
+	std::stack<Node*> stack;
+	std::vector<std::string> retVal;
+	Node* cur = root;
+	Node* temp;
+	bool notEmpty = true;
+
+	while (notEmpty) {
+		if (cur != nullptr) {
+			stack.push(cur);
+			cur = cur->GetLeft();
+		}
+		else {
+			notEmpty = stack.size();
+			if (notEmpty) {
+				temp = stack.top();
+				retVal.push_back(temp->GetValue());
+				cur = temp;
+				stack.pop();
+
+				cur = cur->GetRight();
+			}
+		}
+	}
+
+	return retVal;
 }
 
 std::vector<std::string> BinarySearchTrees::GetAllDescending()	{
-	std::vector<std::string> temp;
-	return temp;
+	std::stack<Node*> stack;
+	std::vector<std::string> retVal;
+	Node* cur = root;
+	Node* temp;
+	bool notEmpty = true;
+
+	while (notEmpty) {
+		if (cur != nullptr) {
+			stack.push(cur);
+			cur = cur->GetRight();
+		}
+		else {
+			notEmpty = stack.size();
+			if (notEmpty) {
+				temp = stack.top();
+				retVal.push_back(temp->GetValue());
+				cur = temp;
+				stack.pop();
+
+				cur = cur->GetLeft();
+			}
+		}
+	}
+
+	return retVal;
 }
 
 bool BinarySearchTrees::EmptyTree()	{
