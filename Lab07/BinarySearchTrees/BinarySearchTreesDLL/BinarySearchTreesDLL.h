@@ -119,6 +119,13 @@ public:
 	*/
 	bool Insert(Node* myNode);
 	/**
+	* Returns the root of the tree
+	*
+	* @param
+	* @return			returns the root of the tree
+	*/
+	Node* GetRoot();
+	/**
 	* Locates the value in the ree and returns a pointer to the node
 	* If not in the tree, returns nullptr
 	*
@@ -163,7 +170,7 @@ public:
 	Node* Remove(std::string myValue);
 	/**
 	* The destructor for the binary tree
-	*
+	* Reference - https://stackoverflow.com/questions/45122270/deleting-a-node-from-a-binary-search-tree-without-recursion
 	* @param
 	* @return
 	*/

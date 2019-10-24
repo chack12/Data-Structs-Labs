@@ -169,69 +169,125 @@ bool BinarySearchTrees::EmptyTree()	{
 }
 
 Node* BinarySearchTrees::Remove(std::string myValue) {
-	Node* prev = new Node();
-	Node* cur = new Node();
-	Node* left = new Node();
-	Node* right = new Node();
-	if (root == nullptr) {
-		return nullptr;
-	}
-	// If value is less than root, start traversing left
-	else if (root->GetValue().compare(myValue) < 0) {
-		prev = root;
-		cur = root->GetLeft();
-		left = cur->GetLeft();
-		right = cur->GetRight();
-		while (cur->GetValue().compare(myValue) != 0) {
-			// Continue to traverse left
-			if (cur->GetValue().compare(myValue) < 0) {
-				if (cur->GetLeft() != nullptr) {
-					prev = cur;
-					cur = cur->GetLeft();
-					left = cur->GetLeft();
-					right = cur->GetRight();
-				}
-				else  {
-					return nullptr;
-				}	
-			}
-			// Go to the right
-			else if (cur->GetValue().compare(myValue) > 0)	{
-				if (cur->GetLeft() != nullptr) {
-					prev = cur;
-					cur = cur->GetRight();
-					left = cur->GetLeft();
-					right = cur->GetRight();
+	Node* node = root;
+	Node* parent = new Node();
+	Node* temp = new Node();
+	Node* removed = new Node();
+
+	while (node != nullptr) {
+		//If there is an empty tree
+		if (node == nullptr) {
+			return node;
+		}
+		//Go left until you find the node holding the value
+		else if (myValue.compare(node->GetValue()) < 0) {
+			parent = node;
+			node = node->GetLeft();
+		}
+		//Go right until you find the node holding the value
+		else if (myValue.compare(node->GetValue()) > 0) {
+			parent = node;
+			node = node->GetRight();
+		}
+		else
+		{
+			//No child
+			if (node->GetRight() == nullptr && node->GetLeft() == nullptr) {
+				if (parent->GetLeft() == node) {
+					parent->SetLeft(nullptr);
 				}
 				else {
-					return nullptr;
+					parent->SetRight(nullptr);
 				}
 			}
-		}
-		if (prev->GetValue().compare(right->GetValue()) <= 0) {
-			prev->SetLeft(right);
-		}
-		else  {
-			prev->SetRight(right);
-		}
-		if (right->GetValue().compare(left->GetValue()) >= 0) {
-			right->SetLeft(left);
-		}
-		else  {
-			right->SetRight(left);
+			//One child left 
+			else if (node->GetRight() == nullptr) {
+				if (root == node) {
+					root = node->GetLeft();
+				}
+				else {
+					//Checking to see if the node needs to go on the other side
+					if (node->GetRight() == nullptr) {
+						parent->SetRight(node->GetLeft());
+					}
+					else {
+						parent->SetLeft(node->GetLeft());
+					}
+				}
+			}
+			//One child right
+			else if (node->GetLeft() == nullptr) {
+				if (root == node) {
+					root = node->GetRight();
+				}
+				else {
+					//Checking to see if the node needs to go on the other side
+					if (node->GetLeft() == nullptr) {
+						parent->SetLeft(node->GetRight());
+					}
+					else {
+						parent->SetRight(node->GetRight());
+					}
+				}
+			}
+			//Two child
+			else {
+				if (root == node) {
+					//Getting the removed node
+					removed = node;
+					//Grabbing the side that will be deleted
+					temp = root->GetLeft();
+					//Moving the root up from the fight
+					root = node->GetRight();
+					//Making the node back to the root
+					node = root;
+
+					while (true) {
+						//Get to the bottom of the new left side
+						if (node->GetLeft() != nullptr && myValue.compare(node->GetValue()) < 0) {
+							node = node->GetLeft();
+						}
+						//Setting the old left side at the bottom of new left side
+						else {
+							node->SetLeft(temp);
+							
+							removed->SetLeft(nullptr);
+							removed->SetRight(nullptr);
+							return removed;
+						}
+					}
+				}
+				else {
+					//Grabbing the right side
+					temp = node->GetRight();
+
+					//Moving the left side
+					while (temp->GetLeft() != nullptr) {
+						temp = temp->GetLeft();
+					}
+
+					node->SetValue(temp->GetValue());
+				}
+			}
+
+			node->SetLeft(nullptr);
+			node->SetRight(nullptr);
+			return node;
 		}
 	}
+}
 
-
-	return false;
+Node* BinarySearchTrees::GetRoot() {
+	return root;
 }
 
 //***********************
 //* Node Implementation *
 //***********************
 bool Node::SetLeft(Node* myNode) {
+	//Sets the left node
+	left = myNode;
 	if (myNode != nullptr) {
-		left = myNode;
 		return true;
 	}
 
@@ -239,8 +295,9 @@ bool Node::SetLeft(Node* myNode) {
 }
 
 bool Node::SetRight(Node* myNode)  {
+	//Sets the right node
+	right = myNode;
 	if (myNode != nullptr) {
-		right = myNode;
 		return true;
 	}
 
@@ -260,6 +317,7 @@ std::string Node::GetValue() {
 }
 
 bool Node::SetValue(std::string myValue) {
+	//Makes sure it isn't a blank value
 	if (myValue != "") {
 		value = myValue;
 		return true;
@@ -269,6 +327,7 @@ bool Node::SetValue(std::string myValue) {
 }
 
 bool Node::IsLeaf() {
+	//Checks to see if the left and right are both nullptr
 	if (left == nullptr && right == nullptr) {
 		return true;
 	}
