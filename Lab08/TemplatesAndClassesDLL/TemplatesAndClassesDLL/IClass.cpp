@@ -1,2 +1,2 @@
-#include "Fighter.h"
+#include "IClass.h"
 #include "framework.h"

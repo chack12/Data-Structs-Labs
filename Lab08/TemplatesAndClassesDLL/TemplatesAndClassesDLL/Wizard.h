@@ -1,5 +1,12 @@
 #pragma once
-class Wizard
+
+#ifdef TEMPLATESANDCLASSESDLL_EXPORTS
+#define TEMPLATESANDCLASSESDLL_API __declspec(dllexport)
+#else
+#define TEMPLATESANDCLASSESDLL_API __declspec(dllimport)
+#endif
+
+class TEMPLATESANDCLASSESDLL_API Wizard
 {
 public:
 	/**

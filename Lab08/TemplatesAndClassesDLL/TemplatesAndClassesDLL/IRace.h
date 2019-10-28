@@ -2,7 +2,13 @@
 
 #pragma once
 
-class IRace
+#ifdef TEMPLATESANDCLASSESDLL_EXPORTS
+#define TEMPLATESANDCLASSESDLL_API __declspec(dllexport)
+#else
+#define TEMPLATESANDCLASSESDLL_API __declspec(dllimport)
+#endif
+
+class TEMPLATESANDCLASSESDLL_API IRace
 {
 public:
 	/**
@@ -38,6 +44,19 @@ public:
 	void InitiativeBonus();
 
 	/**
+	* The race's enumerator
+	*
+	* @param
+	* @return
+	*/
+	enum raceEnum {
+		Elves,
+		Dwarves,
+		Humans,
+		Halflings
+	};
+
+	/**
 	* The race's constructor
 	*
 	* @param
@@ -53,7 +72,7 @@ public:
 	*/
 	~IRace() {}
 private:
-
+	raceEnum myRace;
 };
 
 

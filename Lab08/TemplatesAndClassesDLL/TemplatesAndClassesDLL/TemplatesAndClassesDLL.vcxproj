@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -166,6 +166,7 @@
     <ClInclude Include="Fighter.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="ICharacter.h" />
+    <ClInclude Include="IClass.h" />
     <ClInclude Include="IRace.h" />
     <ClInclude Include="Rogue.h" />
     <ClInclude Include="TemplatesAndClassesDLL.h" />
@@ -176,6 +177,7 @@
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="Fighter.cpp" />
     <ClCompile Include="ICharacter.cpp" />
+    <ClCompile Include="IClass.cpp" />
     <ClCompile Include="IRace.cpp" />
     <ClCompile Include="Rogue.cpp" />
     <ClCompile Include="TemplatesAndClassesDLL.cpp" />

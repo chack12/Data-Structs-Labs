@@ -2,50 +2,62 @@
 
 #pragma once
 
-#include <iostream>
+#ifdef TEMPLATESANDCLASSESDLL_EXPORTS
+#define TEMPLATESANDCLASSESDLL_API __declspec(dllexport)
+#else
+#define TEMPLATESANDCLASSESDLL_API __declspec(dllimport)
+#endif
 
-class ICharacter
+#include <iostream>
+#include "IRace.h"
+#include "IClass.h"
+
+class TEMPLATESANDCLASSESDLL_API ICharacter : public IRace, public IClass
 {
 public:
-	/**
-	* Returns the number of hit points
-	*
-	* @param
-	* @return                  the number of hit points
-	*/
-	int GetHitPoints();
 
 	/**
-	* Returns the armor class
+	* The function to get the Character's Race.
 	*
 	* @param
-	* @return                  the armor class
+	* @return			the character's race
 	*/
-	std::string GetArmorClass();
+	IRace GetRace();
+	
+	/**
+	* The setter for Character's Race
+'	*
+	* @param	myRace		the race you want to set
+	* @return
+	*/
+	void SetRace(IRace myRace);
 
 	/**
-	* Returns the hit bonus
-	*
-	* @param
-	* @return                  the hit bonus
+	* The getter for Character's Class
+'	*
+	* @param	myClass		the race you want to set
+	* @return
 	*/
-	int GetHitBonus();
+	IClass GetClass();
 
 	/**
-	* Returns initiative bonus
-	*
-	* @param
-	* @return                  the initiative bonus
+	* The setter for Character's class
+'	*
+	* @param	myClass		the class you want to set
+	* @return
 	*/
-	int GetInitiativeBonus();
-
+	void SetClass(IClass myClass);
+	
 	/**
 	* The character's constructor
 	*
 	* @param
 	* @return
 	*/
-	ICharacter() {}
+	ICharacter(IRace newRace, IClass newClass) {
+		myRace = newRace;
+		myClass = newClass;
+	}
 
 	/**
 	* The character's destructor
@@ -54,10 +66,8 @@ public:
 	* @return
 	*/
 	~ICharacter() {}
-private:
-	int hitPoints;
-	std::string armorClass;
-	int hitBonus;
-	int initiativeBonus;
+protected:
+	IRace myRace;
+	IClass myClass;
 };
 
