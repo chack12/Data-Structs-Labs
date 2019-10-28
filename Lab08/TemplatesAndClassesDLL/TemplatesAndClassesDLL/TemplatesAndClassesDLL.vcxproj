@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{035EAFDC-F4A1-461A-BEB2-E3312386AE80}</ProjectGuid>
+    <ProjectGuid>{7AE2D0C5-400B-4B3D-9595-8D6A2A42CA50}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>TemplatesAndClassesDLL</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
