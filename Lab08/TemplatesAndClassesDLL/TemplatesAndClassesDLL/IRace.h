@@ -17,7 +17,7 @@ public:
 	* @param
 	* @return
 	*/
-	void HitPointModification();
+	int GetHitPointMod();
 
 	/**
 	* Changes the armor class
@@ -25,7 +25,7 @@ public:
 	* @param
 	* @return
 	*/
-	void ArmorClassModification();
+	int GetArmorClassMod();
 
 	/**
 	* Changes the hit bonus
@@ -33,7 +33,7 @@ public:
 	* @param
 	* @return
 	*/
-	void HitBonusModification();
+	int GetHitBonusMod();
 
 	/**
 	* Changes the initiative bonus
@@ -41,20 +41,7 @@ public:
 	* @param
 	* @return
 	*/
-	void InitiativeBonus();
-
-	/**
-	* The race's enumerator
-	*
-	* @param
-	* @return
-	*/
-	enum raceEnum {
-		Elves,
-		Dwarves,
-		Humans,
-		Halflings
-	};
+	int GetInitiativeBonus();
 
 	/**
 	* The race's constructor
@@ -71,8 +58,11 @@ public:
 	* @return
 	*/
 	~IRace() {}
-private:
-	raceEnum myRace;
+protected:
+	int hitPointMod;
+	int armorClassMod;
+	int hitBonusMod;
+	int initiativeBonus;
 };
 
 

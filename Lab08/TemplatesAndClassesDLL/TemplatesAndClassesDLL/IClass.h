@@ -7,6 +7,7 @@
 #endif
 
 #include <iostream>
+#include "IRace.h"
 
 class TEMPLATESANDCLASSESDLL_API IClass
 {
@@ -25,7 +26,7 @@ public:
 	* @param
 	* @return                  the armor class
 	*/
-	std::string GetArmorClass();
+	int GetArmorClass();
 
 	/**
 	* Returns the hit bonus
@@ -44,25 +45,12 @@ public:
 	int GetInitiativeBonus();
 
 	/**
-	* Class enumerator
-	*
-	* @param
-	* @return
-	*/
-	enum classEnum {
-		Wizard,
-		Rogue,
-		Fighter,
-		Cleric
-	};
-
-	/**
 	* The constructor for the node
 	*
 	* @param
 	* @return
 	*/
-	IClass();
+	IClass() { }
 
 	/**
 	* The destructor for the node
@@ -70,12 +58,12 @@ public:
 	* @param
 	* @return
 	*/
-	~IClass();
+	~IClass() { }
 protected:
-	classEnum myClass;
 	bool canAttackBackRow;
 	int hitPoints;
-	std::string armorClass;
+	int armorClass;
 	int hitBonus;
 	int initiativeBonus;
+	IRace* race;
 };
