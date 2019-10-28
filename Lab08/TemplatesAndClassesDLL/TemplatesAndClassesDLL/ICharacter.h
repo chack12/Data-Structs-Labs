@@ -1,4 +1,9 @@
+//The character interface
+
+#pragma once
+
 #include <iostream>
+
 class ICharacter
 {
 public:
