@@ -41,20 +41,7 @@ public:
 	* @param
 	* @return
 	*/
-	void InitiativeBonus();
-
-	/**
-	* The race's enumerator
-	*
-	* @param
-	* @return
-	*/
-	enum raceEnum {
-		Elves,
-		Dwarves,
-		Humans,
-		Halflings
-	};
+	void InitiativeBonusModification();
 
 	/**
 	* The race's constructor
@@ -71,8 +58,11 @@ public:
 	* @return
 	*/
 	~IRace() {}
-private:
-	raceEnum myRace;
+protected:
+	int hitPointMod;
+	int armorClassMod;
+	int hitBonusMod;
+	int initiativeBonus;
 };
 
 
