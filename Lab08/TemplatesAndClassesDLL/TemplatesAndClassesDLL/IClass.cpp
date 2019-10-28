@@ -2,17 +2,17 @@
 #include "framework.h"
 
 int IClass::GetHitPoints() {
-	return 
+	return race->GetHitPointMod() + hitPoints;
 }
 
 int IClass::GetArmorClass() {
-
+	return race->GetArmorClassMod() + armorClass;
 }
 
 int IClass::GetHitBonus() {
-
+	return race->GetHitBonusMod() + hitBonus;
 }
 
-in IClass::GetInitiativeBonus() {
-
+int IClass::GetInitiativeBonus() {
+	return race->GetInitiativeBonus() + initiativeBonus;
 }
