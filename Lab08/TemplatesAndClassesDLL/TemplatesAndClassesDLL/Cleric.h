@@ -6,7 +6,9 @@
 #define TEMPLATESANDCLASSESDLL_API __declspec(dllimport)
 #endif
 
-class TEMPLATESANDCLASSESDLL_API Cleric
+#include "IClass.h"
+
+class TEMPLATESANDCLASSESDLL_API Cleric : public IClass
 {
 public:
 	/**
@@ -15,7 +17,10 @@ public:
 	* @param
 	* @return
 	*/
-	Cleric();
+	Cleric(IClass* myClass) : IClass(myClass)
+	{
+		
+	}
 
 	/**
 	* The destructor for the node
@@ -23,7 +28,8 @@ public:
 	* @param
 	* @return
 	*/
-	~Cleric();
+	virtual ~Cleric();
 private:
+	Cleric();
 };
 

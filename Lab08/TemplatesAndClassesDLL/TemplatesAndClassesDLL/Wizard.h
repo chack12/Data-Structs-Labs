@@ -6,7 +6,9 @@
 #define TEMPLATESANDCLASSESDLL_API __declspec(dllimport)
 #endif
 
-class TEMPLATESANDCLASSESDLL_API Wizard
+#include "IClass.h"
+
+class TEMPLATESANDCLASSESDLL_API Wizard : public IClass
 {
 public:
 	/**
@@ -15,7 +17,10 @@ public:
 	* @param
 	* @return
 	*/
-	Wizard();
+	Wizard(IClass* myClass) : IClass(myClass)
+	{
+
+	}
 
 	/**
 	* The destructor for the node
@@ -23,7 +28,8 @@ public:
 	* @param
 	* @return
 	*/
-	~Wizard();
+	virtual ~Wizard();
 private:
+	Wizard();
 };
 

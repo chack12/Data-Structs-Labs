@@ -163,8 +163,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cleric.h" />
+    <ClInclude Include="Dwarves.h" />
+    <ClInclude Include="Elves.h" />
     <ClInclude Include="Fighter.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="Halflings.h" />
+    <ClInclude Include="Humans.h" />
     <ClInclude Include="ICharacter.h" />
     <ClInclude Include="IClass.h" />
     <ClInclude Include="IRace.h" />
