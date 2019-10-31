@@ -13,9 +13,10 @@
 class Dwarves : public IRace
 {
 public:
-	Dwarves(IRace* race) : IRace(race) {
+	Dwarves() : IRace(/*numbers*/) {
 
 	}
+
 	virtual ~Dwarves();
 
 private:

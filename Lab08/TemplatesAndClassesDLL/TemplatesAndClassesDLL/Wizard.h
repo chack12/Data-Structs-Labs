@@ -17,9 +17,14 @@ public:
 	* @param
 	* @return
 	*/
-	Wizard(IClass* myClass) : IClass(myClass)
+	Wizard(IRace* myRace) : IClass(myRace)
 	{
-
+		//Fillin nubers here
+		canAttackBackRow;
+		hitPoints;
+		armorClass;
+		hitBonus;
+		initiativeBonus;
 	}
 
 	/**

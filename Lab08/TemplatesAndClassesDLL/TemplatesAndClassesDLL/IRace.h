@@ -49,7 +49,12 @@ public:
 	* @param
 	* @return
 	*/
-	IRace() {}
+	IRace(int newHitPointMod, int newArmorClassMod, int newHitBonusMod, int newInitiativeBonus) {
+		hitPointMod = newHitPointMod;
+		armorClassMod = newArmorClassMod;
+		hitBonusMod = newHitBonusMod;
+		initiativeBonus = newInitiativeBonus;
+	}
 
 	/**
 	* The race's destructor

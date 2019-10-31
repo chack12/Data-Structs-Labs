@@ -50,7 +50,14 @@ public:
 	* @param
 	* @return
 	*/
-	IClass() { }
+	IClass(IRace* newRace) {
+		race = newRace;
+		canAttackBackRow = 0;
+		hitPoints = 0;
+		armorClass = 0;
+		hitBonus = 0;
+		initiativeBonus = 0;
+	}
 
 	/**
 	* The destructor for the node
