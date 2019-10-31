@@ -12,22 +12,21 @@ class TEMPLATESANDCLASSESDLL_API Cleric : public IClass
 {
 public:
 	/**
-	* The constructor for the node
+	* The constructor for the cleric
 	*
 	* @param
 	* @return
 	*/
 	Cleric(IRace* myRace) : IClass(myRace) {
-		//Fillin nubers here
-		canAttackBackRow;
-		hitPoints;
-		armorClass;
-		hitBonus;
-		initiativeBonus;
+		canAttackBackRow = false;
+		hitPoints = 8;
+		armorClass = 1;
+		hitBonus = 4;
+		initiativeBonus = 2;
 	}
 
 	/**
-	* The destructor for the node
+	* The destructor for the cleric
 	*
 	* @param
 	* @return

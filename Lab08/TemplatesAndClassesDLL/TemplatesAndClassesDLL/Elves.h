@@ -12,11 +12,23 @@
 
 class Elves	: public IRace
 {
-public: 
-	Elves() : IRace(/*numbers*/) {
+public:
+	/**
+	* The constructor for Elves
+	*
+	* @param
+	* @return
+	*/
+	Elves() : IRace(1, 0, 1, -1) {
 
 	}
 
+	/**
+	* The destructor for Elves
+	*
+	* @param
+	* @return
+	*/
 	virtual ~Elves();
 
 protected:

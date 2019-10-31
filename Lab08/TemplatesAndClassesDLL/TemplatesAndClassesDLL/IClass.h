@@ -52,11 +52,11 @@ public:
 	*/
 	IClass(IRace* newRace) {
 		race = newRace;
-		canAttackBackRow = 0;
-		hitPoints = 0;
-		armorClass = 0;
-		hitBonus = 0;
-		initiativeBonus = 0;
+		canAttackBackRow = false;
+		hitPoints = 10;
+		armorClass = 1;
+		hitBonus = 1;
+		initiativeBonus = 1;
 	}
 
 	/**

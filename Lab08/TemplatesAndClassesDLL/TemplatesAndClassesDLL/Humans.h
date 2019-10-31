@@ -13,10 +13,22 @@
 class Humans : public IRace
 {
 public:
-	Humans() : IRace(/*numbers*/) {
+	/**
+	* The constructor for Humans
+	*
+	* @param
+	* @return
+	*/
+	Humans() : IRace(0, -1, 0, 1) {
 
 	}
 
+	/**
+	* The destructor for Humans
+	*
+	* @param
+	* @return
+	*/
 	virtual ~Humans();
 
 protected:

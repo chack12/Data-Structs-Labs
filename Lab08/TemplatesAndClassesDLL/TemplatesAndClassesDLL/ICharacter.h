@@ -30,7 +30,7 @@ public:
 	* @param	myRace		the race you want to set
 	* @return
 	*/
-	void SetRace(IRace myRace);
+	void SetRace(IRace newRace);
 
 	/**
 	* The getter for Character's Class
@@ -46,7 +46,7 @@ public:
 	* @param	myClass		the class you want to set
 	* @return
 	*/
-	void SetClass(IClass myClass);
+	void SetClass(IClass newClass);
 	
 	/**
 	* The character's constructor

@@ -14,10 +14,22 @@
 class Halflings : public IRace
 {
 public:
-	Halflings() : IRace(/*numbers*/) {
+	/**
+	* The constructor for Halflings
+	*
+	* @param
+	* @return
+	*/
+	Halflings() : IRace(1, 1, 0, -1) {
 
 	}
 
+	/**
+	* The destructor for Halflings
+	*
+	* @param
+	* @return
+	*/
 	virtual ~Halflings();
 
 protected:

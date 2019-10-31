@@ -12,22 +12,21 @@ class TEMPLATESANDCLASSESDLL_API Rogue : public IClass
 {
 public:
 	/**
-	* The constructor for the node
+	* The constructor for the rogue
 	*
 	* @param
 	* @return
 	*/
 	Rogue(IRace* myRace) : IClass(myRace) {
-		//Fillin nubers here
-		canAttackBackRow;
-		hitPoints;
-		armorClass;
-		hitBonus;
-		initiativeBonus;
+		canAttackBackRow = true;
+		hitPoints = 8;
+		armorClass = 1;
+		hitBonus = 3;
+		initiativeBonus = 3;
 	}
 
 	/**
-	* The destructor for the node
+	* The destructor for the rogue
 	*
 	* @param
 	* @return

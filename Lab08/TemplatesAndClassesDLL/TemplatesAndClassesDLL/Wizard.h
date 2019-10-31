@@ -12,22 +12,21 @@ class TEMPLATESANDCLASSESDLL_API Wizard : public IClass
 {
 public:
 	/**
-	* The constructor for the node
+	* The constructor for the wizard
 	*
 	* @param
 	* @return
 	*/
 	Wizard(IRace* myRace) : IClass(myRace) {
-		//Fillin nubers here
-		canAttackBackRow;
-		hitPoints;
-		armorClass;
-		hitBonus;
-		initiativeBonus;
+		canAttackBackRow = true;
+		hitPoints = 6;
+		armorClass = 2;
+		hitBonus = 4;
+		initiativeBonus = 2;
 	}
 
 	/**
-	* The destructor for the node
+	* The destructor for the wizard
 	*
 	* @param
 	* @return

@@ -13,10 +13,22 @@
 class Dwarves : public IRace
 {
 public:
-	Dwarves() : IRace(/*numbers*/) {
+	/**
+	* The constructor for Dwarves
+	*
+	* @param
+	* @return
+	*/
+	Dwarves() : IRace(2, -1, -1, 0) {
 
 	}
 
+	/**
+	* The constructor for Dwarves
+	*
+	* @param
+	* @return
+	*/
 	virtual ~Dwarves();
 
 private:

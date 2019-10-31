@@ -12,22 +12,21 @@ class TEMPLATESANDCLASSESDLL_API Fighter : public IClass
 {
 public:
 	/**
-	* The constructor for the node
+	* The constructor for the fighter
 	*
 	* @param
 	* @return
 	*/
 	Fighter(IRace* myRace) : IClass(myRace) {
-		//Fillin nubers here
-		canAttackBackRow;
-		hitPoints;
-		armorClass;
-		hitBonus;
-		initiativeBonus;
+		canAttackBackRow = false;
+		hitPoints = 10;
+		armorClass = 3;
+		hitBonus = 3;
+		initiativeBonus = 1;
 	}
 
 	/**
-	* The destructor for the node
+	* The destructor for the fighter
 	*
 	* @param
 	* @return
