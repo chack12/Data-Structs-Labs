@@ -9,8 +9,7 @@
 #include <iostream>
 #include "IRace.h"
 
-class TEMPLATESANDCLASSESDLL_API IClass
-{
+class TEMPLATESANDCLASSESDLL_API IClass {
 public:
 	/**
 	* Returns the number of hit points
@@ -18,7 +17,7 @@ public:
 	* @param
 	* @return                  the number of hit points
 	*/
-	int GetHitPoints();
+	virtual int GetHitPoints();
 
 	/**
 	* Returns the armor class
@@ -26,7 +25,7 @@ public:
 	* @param
 	* @return                  the armor class
 	*/
-	int GetArmorClass();
+	virtual int GetArmorClass();
 
 	/**
 	* Returns the hit bonus
@@ -34,7 +33,7 @@ public:
 	* @param
 	* @return                  the hit bonus
 	*/
-	int GetHitBonus();
+	virtual int GetHitBonus();
 
 	/**
 	* Returns initiative bonus
@@ -42,30 +41,33 @@ public:
 	* @param
 	* @return                  the initiative bonus
 	*/
-	int GetInitiativeBonus();
+	virtual int GetInitiativeBonus();
 
 	/**
-	* The constructor for the node
+	* The constructor for the IClass
 	*
 	* @param
 	* @return
 	*/
-	IClass(IRace* newRace) {
-		race = newRace;
-		canAttackBackRow = false;
-		hitPoints = 10;
-		armorClass = 1;
-		hitBonus = 1;
-		initiativeBonus = 1;
-	}
+	IClass(IRace* newRace) : race(newRace), canAttackBackRow(false), hitPoints(10), armorClass(1), hitBonus(1), initiativeBonus(1)
+	{ }
 
 	/**
-	* The destructor for the node
+	* The default constructor for the IClass
 	*
 	* @param
 	* @return
 	*/
-	~IClass() { }
+	IClass() : race(nullptr), canAttackBackRow(false), hitPoints(10), armorClass(1), hitBonus(1), initiativeBonus(1)
+	{ }
+
+	/**
+	* The destructor for the IClass
+	*
+	* @param
+	* @return
+	*/
+	virtual ~IClass() {}
 protected:
 	bool canAttackBackRow;
 	int hitPoints;

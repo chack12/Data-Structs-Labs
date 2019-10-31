@@ -10,11 +10,11 @@
 #include "IClass.h"
 #include "ICharacter.h"
 
-class CharacterFactory {
+class TEMPLATESANDCLASSESDLL_API CharacterFactory {
 	public:
 		CharacterFactory() {}
 
-		enum enumOfCharacterType { Wizard, Rogue, Fighter, Cleric};
+		enum enumOfCharacterType { enumWizard, enumRogue, enumFighter, enumCleric};
 		
 		IClass* CreateCharacter(enumOfCharacterType, IRace* race);
 };

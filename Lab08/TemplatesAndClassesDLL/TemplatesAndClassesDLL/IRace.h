@@ -49,13 +49,18 @@ public:
 	* @param
 	* @return
 	*/
-	IRace(int newHitPointMod, int newArmorClassMod, int newHitBonusMod, int newInitiativeBonus) {
-		hitPointMod = newHitPointMod;
-		armorClassMod = newArmorClassMod;
-		hitBonusMod = newHitBonusMod;
-		initiativeBonus = newInitiativeBonus;
-	}
-	I
+	IRace(int newHitPointMod, int newArmorClassMod, int newHitBonusMod, int newInitiativeBonus) : hitPointMod(newHitPointMod), armorClassMod(newArmorClassMod),
+		hitBonusMod(newHitBonusMod), initiativeBonus(newInitiativeBonus)
+	{ }
+	
+	/**
+	* The race's default constructor
+	*
+	* @param
+	* @return
+	*/
+	IRace() : hitPointMod(0), armorClassMod(0), hitBonusMod(0), initiativeBonus(0) {}
+
 	/**
 	* The race's destructor
 	*
