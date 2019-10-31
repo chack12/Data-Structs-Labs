@@ -10,7 +10,7 @@
 #include "IClass.h"
 #include <iostream>
 
-class Humans : public IRace
+class TEMPLATESANDCLASSESDLL_API Humans : public IRace
 {
 public:
 	/**

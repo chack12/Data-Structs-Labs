@@ -10,7 +10,7 @@
 #include "IClass.h"
 #include <iostream>
 
-class Dwarves : public IRace
+class TEMPLATESANDCLASSESDLL_API Dwarves : public IRace
 {
 public:
 	/**

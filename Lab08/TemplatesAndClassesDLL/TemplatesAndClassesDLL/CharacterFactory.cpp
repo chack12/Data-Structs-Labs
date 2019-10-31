@@ -8,17 +8,17 @@
 
 IClass * CharacterFactory::CreateCharacter(enumOfCharacterType CharacterType, IRace * race)
 {
-	IRace* retVal = nullptr;
-	if (CharacterType == Wizard) {
+	IClass* retVal = nullptr;
+	if (CharacterType == enumWizard) {
 		retVal = new Wizard(race);
 	}
-	else if (CharacterType == Rogue) {
+	else if (CharacterType == enumRogue) {
 		retVal = new Rogue(race);
 	}
-	else if (CharacterType == Fighter) {
+	else if (CharacterType == enumFighter) {
 		retVal = new Fighter(race);
 	}
-	else if (CharacterType == Cleric) {
+	else if (CharacterType == enumCleric) {
 		retVal = new Cleric(race);
 	}
 

@@ -11,7 +11,7 @@
 #include "IClass.h"
 #include <iostream>
 
-class Halflings : public IRace
+class TEMPLATESANDCLASSESDLL_API Halflings : public IRace
 {
 public:
 	/**

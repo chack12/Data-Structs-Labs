@@ -9,8 +9,7 @@
 #include <iostream>
 #include "IRace.h"
 
-class TEMPLATESANDCLASSESDLL_API IClass
-{
+class TEMPLATESANDCLASSESDLL_API IClass {
 public:
 	/**
 	* Returns the number of hit points
@@ -45,27 +44,30 @@ public:
 	int GetInitiativeBonus();
 
 	/**
-	* The constructor for the node
+	* The constructor for the IClass
 	*
 	* @param
 	* @return
 	*/
-	IClass(IRace* newRace) {
-		race = newRace;
-		canAttackBackRow = false;
-		hitPoints = 10;
-		armorClass = 1;
-		hitBonus = 1;
-		initiativeBonus = 1;
-	}
+	IClass(IRace* newRace) : race(newRace), canAttackBackRow(false), hitPoints(10), armorClass(1), hitBonus(1), initiativeBonus(1)
+	{ }
 
 	/**
-	* The destructor for the node
+	* The default constructor for the IClass
 	*
 	* @param
 	* @return
 	*/
-	~IClass() { }
+	IClass() : race(nullptr), canAttackBackRow(false), hitPoints(10), armorClass(1), hitBonus(1), initiativeBonus(1)
+	{ }
+
+	/**
+	* The destructor for the IClass
+	*
+	* @param
+	* @return
+	*/
+	virtual ~IClass() {}
 protected:
 	bool canAttackBackRow;
 	int hitPoints;

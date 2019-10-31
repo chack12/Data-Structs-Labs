@@ -31,7 +31,7 @@ public:
 	* @param
 	* @return
 	*/
-	virtual ~Rogue();
+	virtual ~Rogue() {}
 private:
 	Rogue();
 };
