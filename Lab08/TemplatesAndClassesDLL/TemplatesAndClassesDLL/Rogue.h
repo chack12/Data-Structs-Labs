@@ -6,7 +6,9 @@
 #define TEMPLATESANDCLASSESDLL_API __declspec(dllimport)
 #endif
 
-class TEMPLATESANDCLASSESDLL_API Rogue
+#include "IClass.h"
+
+class TEMPLATESANDCLASSESDLL_API Rogue : public IClass
 {
 public:
 	/**
@@ -15,15 +17,18 @@ public:
 	* @param
 	* @return
 	*/
-	Rogue();
+	Rogue(IClass* myClass) : IClass(myClass)
+	{
 
+	}
 	/**
 	* The destructor for the node
 	*
 	* @param
 	* @return
 	*/
-	~Rogue();
+	virtual ~Rogue();
 private:
+	Rogue();
 };
 

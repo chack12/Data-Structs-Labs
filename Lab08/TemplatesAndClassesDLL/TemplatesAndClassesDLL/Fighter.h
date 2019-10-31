@@ -6,7 +6,9 @@
 #define TEMPLATESANDCLASSESDLL_API __declspec(dllimport)
 #endif
 
-class TEMPLATESANDCLASSESDLL_API Fighter
+#include "IClass.h"
+
+class TEMPLATESANDCLASSESDLL_API Fighter : public IClass
 {
 public:
 	/**
@@ -15,7 +17,9 @@ public:
 	* @param
 	* @return
 	*/
-	Fighter();
+	Fighter(IClass* myClass) : IClass(myClass) {
+
+	}
 
 	/**
 	* The destructor for the node
@@ -23,7 +27,8 @@ public:
 	* @param
 	* @return
 	*/
-	~Fighter();
+	virtual ~Fighter();
 private:
+	Fighter();
 };
 

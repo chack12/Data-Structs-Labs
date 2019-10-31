@@ -18,6 +18,6 @@ public:
 	}
 	virtual ~Dwarves();
 
-protected:
+private:
 	Dwarves();
 };
