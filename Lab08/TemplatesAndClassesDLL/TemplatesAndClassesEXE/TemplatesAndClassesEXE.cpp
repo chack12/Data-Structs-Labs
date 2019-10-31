@@ -17,12 +17,12 @@
 #include "../TemplatesAndClassesDLL/Halflings.h"
 #include "../TemplatesAndClassesDLL/Humans.h"
 
-template<class ItemType>
+
 int main()
 {
-	Party<ItemType>* party1;
+	Party<ICharacter>* party1;
 
 	//Character 1
 	ICharacter* char1;
-	char1->SetClass(new Wizard(new Elves()));
+	char1->SetClass(Wizard(new Elves()));
 }

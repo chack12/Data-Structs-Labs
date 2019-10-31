@@ -1,4 +1,4 @@
-#include <vector>
+/*#include <vector>
 #include "../TemplatesAndClassesDLL/Party.h"
 
 template<class ItemType>
@@ -21,3 +21,4 @@ template<class ItemType>
 			std::cout << "Your Party's front row is full." << std::endl;
 		}
 }
+*/
