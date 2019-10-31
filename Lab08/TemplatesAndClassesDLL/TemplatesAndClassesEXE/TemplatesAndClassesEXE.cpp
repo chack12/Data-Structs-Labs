@@ -7,11 +7,12 @@
 #include "../TemplatesAndClassesDLL/IRace.h"
 #include <vector>
 #include "../TemplatesAndClassesDLL/CharacterFactory.h"
-
+#include "../TemplatesAndClassesDLL/Party.h"
+template<class ItemType>
 int main()
 {
-	
-
+	//Party 1, Character 1
+	ICharacter* 
 
 
 }
