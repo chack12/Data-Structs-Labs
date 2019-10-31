@@ -55,7 +55,7 @@ public:
 		hitBonusMod = newHitBonusMod;
 		initiativeBonus = newInitiativeBonus;
 	}
-
+	I
 	/**
 	* The race's destructor
 	*

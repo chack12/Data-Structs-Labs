@@ -182,6 +182,7 @@
     <ClCompile Include="ICharacter.cpp" />
     <ClCompile Include="IClass.cpp" />
     <ClCompile Include="IRace.cpp" />
+    <ClCompile Include="CharacterFactory.cpp" />
     <ClCompile Include="TemplatesAndClassesDLL.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

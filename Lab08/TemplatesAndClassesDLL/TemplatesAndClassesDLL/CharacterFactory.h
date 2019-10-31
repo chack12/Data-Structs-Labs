@@ -12,9 +12,9 @@
 
 class CharacterFactory {
 	public:
-		CharacterFactory() {};
+		CharacterFactory() {}
 
-		enum enumOfCharcterType { ClassType, RaceType};
+		enum enumOfCharacterType { Wizard, Rogue, Fighter, Cleric};
 		
-		ICharacter* CreateCharacter(enumOfCharacterType, IRace* race);
+		IClass* CreateCharacter(enumOfCharacterType, IRace* race);
 };
