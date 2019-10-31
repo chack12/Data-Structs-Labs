@@ -1,9 +1,6 @@
 #include <vector>
-<<<<<<< HEAD
 #include "../TemplatesAndClassesDLL/Party.h"
-=======
 #include "Party.h"
->>>>>>> 0c5c40f8d6ca8138a718cf249a579b71b3fecd0e
 
 template<class ItemType>
 	void Party<ItemType>::addChar(const ItemType& newCharacter) {

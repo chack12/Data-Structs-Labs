@@ -11,10 +11,20 @@
 template<class ItemType>
 int main()
 {
-<<<<<<< HEAD
+	
 	//Party 1, Character 1
-	ICharacter* 
+	Party<ItemType>* party1;
+	ICharacter* char1;
+	char1->SetClass(new Race())
+	char1->SetClass(enumCleric);
+	char1->SetRace(Dwarf);
+	party1->backRow(char1);
 
+	//Party 1, Character 2
+	ICharacter* char2;
+	char2->SetClass(Fighter);
+	char2->SetRace(Human);
+	party1->backRow(char2);
 
 }
 
