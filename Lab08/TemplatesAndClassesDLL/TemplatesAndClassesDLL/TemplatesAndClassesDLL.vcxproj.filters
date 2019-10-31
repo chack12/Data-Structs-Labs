@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Classes">
+      <UniqueIdentifier>{552fc162-9a7f-4132-94c9-d677769f9923}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Races">
+      <UniqueIdentifier>{2a35f3d6-bd2b-4df1-80fb-e7fb43ebe9ed}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
@@ -30,17 +36,35 @@
     <ClInclude Include="ICharacter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Wizard.h">
+    <ClInclude Include="IClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Rogue.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Fighter.h">
+    <ClInclude Include="CharacterFactory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Cleric.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Dwarves.h">
+      <Filter>Header Files\Races</Filter>
+    </ClInclude>
+    <ClInclude Include="Elves.h">
+      <Filter>Header Files\Races</Filter>
+    </ClInclude>
+    <ClInclude Include="Fighter.h">
+      <Filter>Header Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Halflings.h">
+      <Filter>Header Files\Races</Filter>
+    </ClInclude>
+    <ClInclude Include="Humans.h">
+      <Filter>Header Files\Races</Filter>
+    </ClInclude>
+    <ClInclude Include="Rogue.h">
+      <Filter>Header Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Wizard.h">
+      <Filter>Header Files\Classes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -66,6 +90,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Cleric.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IClass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
