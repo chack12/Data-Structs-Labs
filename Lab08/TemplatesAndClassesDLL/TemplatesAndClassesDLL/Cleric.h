@@ -17,9 +17,13 @@ public:
 	* @param
 	* @return
 	*/
-	Cleric(IClass* myClass) : IClass(myClass)
-	{
-		
+	Cleric(IRace* myRace) : IClass(myRace) {
+		//Fillin nubers here
+		canAttackBackRow;
+		hitPoints;
+		armorClass;
+		hitBonus;
+		initiativeBonus;
 	}
 
 	/**

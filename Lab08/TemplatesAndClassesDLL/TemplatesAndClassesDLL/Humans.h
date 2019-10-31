@@ -13,9 +13,10 @@
 class Humans : public IRace
 {
 public:
-	Humans(IRace* race) : IRace(race) {
+	Humans() : IRace(/*numbers*/) {
 
 	}
+
 	virtual ~Humans();
 
 protected:

@@ -13,9 +13,10 @@
 class Elves	: public IRace
 {
 public: 
-	Elves(IRace* race) : IRace(race) {
+	Elves() : IRace(/*numbers*/) {
 
 	}
+
 	virtual ~Elves();
 
 protected:

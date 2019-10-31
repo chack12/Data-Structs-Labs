@@ -17,10 +17,15 @@ public:
 	* @param
 	* @return
 	*/
-	Rogue(IClass* myClass) : IClass(myClass)
-	{
-
+	Rogue(IRace* myRace) : IClass(myRace) {
+		//Fillin nubers here
+		canAttackBackRow;
+		hitPoints;
+		armorClass;
+		hitBonus;
+		initiativeBonus;
 	}
+
 	/**
 	* The destructor for the node
 	*

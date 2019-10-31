@@ -14,9 +14,10 @@
 class Halflings : public IRace
 {
 public:
-	Halflings(IRace* race) : IRace(race) {
+	Halflings() : IRace(/*numbers*/) {
 
 	}
+
 	virtual ~Halflings();
 
 protected:

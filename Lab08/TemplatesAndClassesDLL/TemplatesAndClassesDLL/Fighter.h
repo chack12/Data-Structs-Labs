@@ -17,8 +17,13 @@ public:
 	* @param
 	* @return
 	*/
-	Fighter(IClass* myClass) : IClass(myClass) {
-
+	Fighter(IRace* myRace) : IClass(myRace) {
+		//Fillin nubers here
+		canAttackBackRow;
+		hitPoints;
+		armorClass;
+		hitBonus;
+		initiativeBonus;
 	}
 
 	/**

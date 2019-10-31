@@ -17,8 +17,7 @@ public:
 	* @param
 	* @return
 	*/
-	Wizard(IRace* myRace) : IClass(myRace)
-	{
+	Wizard(IRace* myRace) : IClass(myRace) {
 		//Fillin nubers here
 		canAttackBackRow;
 		hitPoints;
