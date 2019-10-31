@@ -66,21 +66,6 @@
     <ClInclude Include="Wizard.h">
       <Filter>Header Files\Classes</Filter>
     </ClInclude>
-    <ClInclude Include="IClass.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Dwarves.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Elves.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Halflings.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Humans.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TemplatesAndClassesDLL.cpp">
@@ -93,18 +78,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ICharacter.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Wizard.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Rogue.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Fighter.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Cleric.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="IClass.cpp">

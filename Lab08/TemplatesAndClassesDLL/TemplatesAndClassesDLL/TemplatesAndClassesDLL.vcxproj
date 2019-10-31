@@ -178,15 +178,11 @@
     <ClInclude Include="Wizard.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Cleric.cpp" />
     <ClCompile Include="dllmain.cpp" />
-    <ClCompile Include="Fighter.cpp" />
     <ClCompile Include="ICharacter.cpp" />
     <ClCompile Include="IClass.cpp" />
     <ClCompile Include="IRace.cpp" />
-    <ClCompile Include="Rogue.cpp" />
     <ClCompile Include="TemplatesAndClassesDLL.cpp" />
-    <ClCompile Include="Wizard.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
