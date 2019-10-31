@@ -33,6 +33,6 @@ public:
 	*/
 	virtual ~Rogue() {}
 private:
-	Rogue();
+	Rogue() {}
 };
 

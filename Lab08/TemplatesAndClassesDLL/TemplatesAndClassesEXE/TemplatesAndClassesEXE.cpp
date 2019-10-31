@@ -17,12 +17,50 @@
 #include "../TemplatesAndClassesDLL/Halflings.h"
 #include "../TemplatesAndClassesDLL/Humans.h"
 
-
 int main()
 {
-	Party<ICharacter>* party1;
+	Party<ICharacter> party1;
 
 	//Character 1
-	//ICharacter* char1;
-	//char1->SetClass(Wizard(new Elves()));
+	ICharacter char1;
+	char1.SetClass(Wizard(new Elves()));
+	party1.addChar(char1);
+
+	//Character 2
+	ICharacter char2;
+	char2.SetClass(Cleric(new Halflings()));
+	party1.addChar(char2);
+
+	//Character 3
+	ICharacter char3;
+	char3.SetClass(Fighter(new Elves()));
+	party1.addChar(char3);
+
+	//Character 4
+	ICharacter char4;
+	char4.SetClass(Rogue(new Humans()));
+	party1.addChar(char4);
+
+	//Party 2
+	Party<ICharacter> party2;
+
+	//Character 5
+	ICharacter char5;
+	char5.SetClass(Wizard(new Dwarves()));
+	party2.addChar(char5);
+
+	//Character 6
+	ICharacter char6;
+	char6.SetClass(Wizard(new Halflings()));
+	party2.addChar(char6);
+
+	//Character 7
+	ICharacter char7;
+	char7.SetClass(Wizard(new Humans()));
+	party2.addChar(char7);
+
+	//Character 8
+	ICharacter char8;
+	char8.SetClass(Fighter(new Elves()));
+	party2.addChar(char8);
 }

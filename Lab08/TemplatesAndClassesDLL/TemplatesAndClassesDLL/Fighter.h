@@ -33,6 +33,6 @@ public:
 	*/
 	virtual ~Fighter() {}
 private:
-	Fighter();
+	Fighter() {}
 };
 

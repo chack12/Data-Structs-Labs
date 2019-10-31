@@ -29,5 +29,5 @@ public:
 	* @param
 	* @return
 	*/
-	virtual ~Elves();
+	virtual ~Elves() {}
 };

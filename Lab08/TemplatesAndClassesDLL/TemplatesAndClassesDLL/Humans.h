@@ -29,5 +29,5 @@ public:
 	* @param
 	* @return
 	*/
-	virtual ~Humans();
+	virtual ~Humans() {}
 };

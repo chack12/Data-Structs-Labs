@@ -33,6 +33,6 @@ public:
 	*/
 	virtual ~Cleric() {}
 private:
-	Cleric();
+	Cleric() {}
 };
 

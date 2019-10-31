@@ -33,6 +33,6 @@ public:
 	*/
 	virtual ~Wizard() {}
 private:
-	Wizard();
+	Wizard() {}
 };
 

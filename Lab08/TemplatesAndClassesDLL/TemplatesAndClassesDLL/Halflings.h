@@ -30,5 +30,5 @@ public:
 	* @param
 	* @return
 	*/
-	virtual ~Halflings();
+	virtual ~Halflings() {}
 };

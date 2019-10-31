@@ -29,5 +29,5 @@ public:
 	* @param
 	* @return
 	*/
-	virtual ~Dwarves();
+	virtual ~Dwarves() {}
 };

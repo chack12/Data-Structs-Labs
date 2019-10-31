@@ -54,10 +54,7 @@ public:
 	* @param
 	* @return
 	*/
-	ICharacter(IRace newRace, IClass newClass) {
-		myRace = newRace;
-		myClass = newClass;
-	}
+	ICharacter() {}
 
 	/**
 	* The character's destructor
