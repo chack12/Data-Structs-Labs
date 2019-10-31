@@ -23,6 +23,6 @@ int main()
 	Party<ICharacter>* party1;
 
 	//Character 1
-	ICharacter* char1;
-	char1->SetClass(Wizard(new Elves()));
+	//ICharacter* char1;
+	//char1->SetClass(Wizard(new Elves()));
 }
