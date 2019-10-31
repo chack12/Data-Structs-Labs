@@ -9,7 +9,6 @@
 #endif
 
 template<class ItemType>
-
 class TEMPLATESANDCLASSESDLL_API Party
 {
 public:
@@ -24,7 +23,7 @@ public:
 	/**
 	* Adds a character to the party
 	*
-	* @param	character	char
+	* @param	newCharacter	character to add
 	* @return
 	*/
 	void addChar(const ItemType& newCharacter);
@@ -33,3 +32,5 @@ private:
 	std::vector<ItemType> frontRow;
 	std::vector<ItemType> backRow;
 };
+
+#include "Party.cpp"
