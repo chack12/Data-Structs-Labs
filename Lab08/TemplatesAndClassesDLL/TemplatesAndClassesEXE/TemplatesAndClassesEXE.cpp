@@ -24,5 +24,5 @@ int main()
 
 	//Character 1
 	ICharacter* char1;
-	char1->SetClass(new Wizard(new Fighter()));
+	char1->SetClass(new Wizard(new Elves()));
 }
