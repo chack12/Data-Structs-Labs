@@ -25,6 +25,7 @@ int main()
 	//Character 1
 	ICharacter* char1;
 	char1->SetClass(new Wizard(new Elves()));
+<<<<<<< HEAD
 	party1->addChar(char1);
 
 	//Character 2
@@ -66,4 +67,6 @@ int main()
 	//Starting with Party1
 	
 
+=======
+>>>>>>> 45ac3b01a4d2dc9073445b7a7184443c757b4d02
 }
