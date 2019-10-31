@@ -30,7 +30,4 @@ public:
 	* @return
 	*/
 	virtual ~Elves();
-
-protected:
-	Elves();
 };

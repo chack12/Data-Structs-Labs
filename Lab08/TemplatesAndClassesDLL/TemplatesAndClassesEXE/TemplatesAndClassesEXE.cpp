@@ -8,37 +8,21 @@
 #include "../TemplatesAndClassesDLL/IRace.h"
 #include "../TemplatesAndClassesDLL/CharacterFactory.h"
 #include "../TemplatesAndClassesDLL/Party.h"
+#include "../TemplatesAndClassesDLL/Cleric.h"
+#include "../TemplatesAndClassesDLL/Fighter.h"
+#include "../TemplatesAndClassesDLL/Rogue.h"
+#include "../TemplatesAndClassesDLL/Wizard.h"
+#include "../TemplatesAndClassesDLL/Dwarves.h"
+#include "../TemplatesAndClassesDLL/Elves.h"
+#include "../TemplatesAndClassesDLL/Halflings.h"
+#include "../TemplatesAndClassesDLL/Humans.h"
+
 template<class ItemType>
 int main()
 {
-	
-	//Party 1, Character 1
 	Party<ItemType>* party1;
+
+	//Character 1
 	ICharacter* char1;
-	char1->SetClass(new Race())
-	char1->SetClass(enumCleric);
-	char1->SetRace(Dwarf);
-	party1->backRow(char1);
-
-	//Party 1, Character 2
-	ICharacter* char2;
-	char2->SetClass(Fighter);
-	char2->SetRace(Human);
-	party1->backRow(char2);
-
+	char1->SetClass(new Wizard(new Fighter()));
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
-=======
-	
-}
->>>>>>> 0c5c40f8d6ca8138a718cf249a579b71b3fecd0e
