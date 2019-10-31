@@ -24,5 +24,46 @@ int main()
 
 	//Character 1
 	ICharacter* char1;
-	char1->SetClass(new Wizard(new Fighter()));
+	char1->SetClass(new Wizard(new Elves()));
+	party1->addChar(char1);
+
+	//Character 2
+	ICharacter* char2;
+	char2->SetClass(new Cleric(new Halflings()));
+	party1->addChar(char2);
+
+	//Character 3
+	ICharacter* char3;
+	char3->SetClass(new Fighter(new Elves()));
+	party1->addChar(char3);
+
+	//Character 4
+	ICharacter* char4;
+	char4->SetClass(new Rogue(new Humans()));
+
+	Party<ItemType>* party2;
+
+	//Character 5
+	ICharacter* char5;
+	char5->SetClass(new Wizard(new Dwarves()));
+	party2->addChar(char5);
+
+	//Character 6
+	ICharacter* char6;
+	char1->SetClass(new Wizard(new Halflings()));
+	party2->addChar(char6);
+
+	//Character 7
+	ICharacter* char7;
+	char1->SetClass(new Wizard(new Humans()));
+	party2->addChar(char7);
+
+	//Character 8
+	ICharacter* char1;
+	char1->SetClass(new Fighter(new Elves()));
+	party2->addChar(char7);
+
+	//Starting with Party1
+	
+
 }
