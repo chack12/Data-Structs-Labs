@@ -31,7 +31,7 @@ public:
 	* @param
 	* @return
 	*/
-	virtual ~Cleric();
+	virtual ~Cleric() {}
 private:
 	Cleric();
 };

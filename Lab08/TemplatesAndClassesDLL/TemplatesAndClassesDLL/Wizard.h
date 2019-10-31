@@ -31,7 +31,7 @@ public:
 	* @param
 	* @return
 	*/
-	virtual ~Wizard();
+	virtual ~Wizard() {}
 private:
 	Wizard();
 };

@@ -17,7 +17,7 @@ public:
 	* @param
 	* @return                  the number of hit points
 	*/
-	virtual int GetHitPoints();
+	int GetHitPoints();
 
 	/**
 	* Returns the armor class
@@ -25,7 +25,7 @@ public:
 	* @param
 	* @return                  the armor class
 	*/
-	virtual int GetArmorClass();
+	int GetArmorClass();
 
 	/**
 	* Returns the hit bonus
@@ -33,7 +33,7 @@ public:
 	* @param
 	* @return                  the hit bonus
 	*/
-	virtual int GetHitBonus();
+	int GetHitBonus();
 
 	/**
 	* Returns initiative bonus
@@ -41,7 +41,7 @@ public:
 	* @param
 	* @return                  the initiative bonus
 	*/
-	virtual int GetInitiativeBonus();
+	int GetInitiativeBonus();
 
 	/**
 	* The constructor for the IClass

@@ -31,7 +31,7 @@ public:
 	* @param
 	* @return
 	*/
-	virtual ~Fighter();
+	virtual ~Fighter() {}
 private:
 	Fighter();
 };
