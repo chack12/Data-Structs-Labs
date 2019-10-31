@@ -2,15 +2,16 @@
 //
 
 #include <iostream>
+#include <vector>
 #include "../TemplatesAndClassesDLL/ICharacter.h"
 #include "../TemplatesAndClassesDLL/IClass.h"
 #include "../TemplatesAndClassesDLL/IRace.h"
-#include <vector>
 #include "../TemplatesAndClassesDLL/CharacterFactory.h"
 #include "../TemplatesAndClassesDLL/Party.h"
 template<class ItemType>
 int main()
 {
+<<<<<<< HEAD
 	//Party 1, Character 1
 	ICharacter* 
 
@@ -27,3 +28,7 @@ int main()
 //   4. Use the Error List window to view errors
 //   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
 //   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+=======
+	
+}
+>>>>>>> 0c5c40f8d6ca8138a718cf249a579b71b3fecd0e
