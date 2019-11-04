@@ -1,0 +1,2 @@
+#define PRIORITYQUEUESANDHEAPSDLL_API __declspec(dllexport)
+#define PRIORITYQUEUESANDHEAPSDLL_API __declspec(dllimport)
