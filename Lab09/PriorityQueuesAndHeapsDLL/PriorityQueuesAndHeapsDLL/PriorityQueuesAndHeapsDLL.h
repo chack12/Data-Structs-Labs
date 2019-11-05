@@ -11,24 +11,77 @@
 #endif
 
 #include <iostream>
-#include <vector>
 
 class PRIORITYQUEUESANDHEAPSDLL_API PriorityQueuesWithQueue {
 public:
-	PriorityQueuesWithQueue(void) {}
+	/**
+	* The constructor for the priority queue with queue
+	*
+	* @param
+	* @return
+	*/
+	PriorityQueuesWithQueue();
+	
+	/**
+	* Removes a value in the array
+	*
+	* @param	value		value wanting to be removed
+	* @return				conditional
+	*/
 	bool Remove(int value);
+	
+	/**
+	* Inserts a value into the array
+	*
+	* @param	value		value wanting to be inserted
+	* @return				conditional
+	*/
 	bool Insert(int value);
+	
+	/**
+	* Prints out the queue
+	*
+	* @param
+	* @return				output of queue
+	*/
 	std::string PrintQueue();
 private:
-	std::vector<int> queue;
+	int queue[50];
 };
 
 class PRIORITYQUEUESANDHEAPSDLL_API PriorityQueuesWithHeap {
 public:
-	PriorityQueuesWithHeap(void) {}
+	/**
+	* The constructor for the priority queue with queue
+	*
+	* @param
+	* @return
+	*/
+	PriorityQueuesWithHeap();
+
+	/**
+	* Removes a value in the array
+	*
+	* @param	value		value wanting to be removed
+	* @return				conditional
+	*/
 	bool Remove(int value);
+
+	/**
+	* Inserts a value into the array
+	*
+	* @param	value		value wanting to be inserted
+	* @return				conditional
+	*/
 	bool Insert(int value);
+
+	/**
+	* Prints out the queue
+	*
+	* @param
+	* @return				output of queue
+	*/
 	std::string PrintHeap();
 private:
-	std::vector<int> tree;
+	int queue[50];
 };
