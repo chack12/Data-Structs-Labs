@@ -57,7 +57,10 @@ std::string PriorityQueuesWithQueue::PrintQueue() {
 		ss << " ";
 	}
 
-	return ss.str();
+	std::string temp = ss.str();
+	temp.pop_back();
+
+	return temp;
 }
 
 //*****************************
