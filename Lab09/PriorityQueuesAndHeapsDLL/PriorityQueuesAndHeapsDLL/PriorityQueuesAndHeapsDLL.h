@@ -20,7 +20,20 @@ public:
 	* @param
 	* @return
 	*/
-	PriorityQueuesWithQueue();
+	PriorityQueuesWithQueue(int newSize) {
+		queue = new int[newSize];
+		size = newSize;
+	}
+
+	/**
+	* The destructor for the priority queue with queue
+	*
+	* @param
+	* @return
+	*/
+	~PriorityQueuesWithQueue() {
+		delete queue;
+	}
 	
 	/**
 	* Removes a value in the array
@@ -46,7 +59,8 @@ public:
 	*/
 	std::string PrintQueue();
 private:
-	int queue[50];
+	int* queue;
+	int size;
 };
 
 class PRIORITYQUEUESANDHEAPSDLL_API PriorityQueuesWithHeap {
@@ -57,7 +71,20 @@ public:
 	* @param
 	* @return
 	*/
-	PriorityQueuesWithHeap();
+	PriorityQueuesWithHeap(int newSize) {
+		queue = new int[newSize];
+		size = newSize;
+	}
+
+	/**
+	* The destrcutor for the priority queue with queue
+	*
+	* @param
+	* @return
+	*/
+	~PriorityQueuesWithHeap() {
+		delete queue;
+	}
 
 	/**
 	* Removes a value in the array
@@ -83,5 +110,6 @@ public:
 	*/
 	std::string PrintHeap();
 private:
-	int queue[50];
+	int* queue;
+	int size;
 };

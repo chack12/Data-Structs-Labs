@@ -12,7 +12,7 @@ namespace PriorityQueuesAndHeapsUnitTest
 		
 		TEST_METHOD(PriorityQueueWithQueueInsert)
 		{
-			PriorityQueuesWithQueue priorityQueue;
+			PriorityQueuesWithQueue priorityQueue(3);
 
 			priorityQueue.Insert(3);
 			priorityQueue.Insert(1);
@@ -23,7 +23,7 @@ namespace PriorityQueuesAndHeapsUnitTest
 
 		TEST_METHOD(PriorityQueueWithQueueRemove)
 		{
-			PriorityQueuesWithQueue priorityQueue;
+			PriorityQueuesWithQueue priorityQueue(3);
 
 			priorityQueue.Insert(3);
 			priorityQueue.Insert(1);
@@ -36,7 +36,7 @@ namespace PriorityQueuesAndHeapsUnitTest
 
 		TEST_METHOD(PriorityQueueWithHeapInsert)
 		{
-			PriorityQueuesWithHeap priorityQueue;
+			PriorityQueuesWithHeap priorityQueue(3);
 
 			priorityQueue.Insert(3);
 			priorityQueue.Insert(1);
@@ -47,7 +47,7 @@ namespace PriorityQueuesAndHeapsUnitTest
 
 		TEST_METHOD(PriorityQueueWithHeapRemove)
 		{
-			PriorityQueuesWithHeap priorityQueue;
+			PriorityQueuesWithHeap priorityQueue(3);
 
 			priorityQueue.Insert(3);
 			priorityQueue.Insert(1);

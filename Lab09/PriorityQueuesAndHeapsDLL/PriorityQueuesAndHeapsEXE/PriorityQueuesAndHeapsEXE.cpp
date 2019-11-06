@@ -15,25 +15,25 @@ int main()
 {
 	srand(time(0));
 
-	vector<int> fiveVector;
-	vector<int> thousVector;
-	vector<int> twoThousVector;
-	vector<int> fiveThousVector;
+	int fiveVector[500];
+	int thousVector[1000];
+	int twoThousVector[2000];
+	int fiveThousVector[5000];
 
 	for (int i = 0; i < 500; ++i) {
-		fiveVector.push_back(rand() % 501);
+		fiveVector[i] = rand() % 501;
 	}
 
 	for (int i = 0; i < 1000; ++i) {
-		thousVector.push_back(rand() % 1001);
+		thousVector[i] = rand() % 1001;
 	}
 
 	for (int i = 0; i < 2000; ++i) {
-		twoThousVector.push_back(rand() % 2001);
+		twoThousVector[i] = rand() % 2001;
 	}
 
 	for (int i = 0; i < 5000; ++i) {
-		fiveThousVector.push_back(rand() % 5001);
+		fiveThousVector[i] = rand() % 5001;
 	}
 
 	//******************************

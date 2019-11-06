@@ -1,23 +1,28 @@
 // PriorityQueuesAndHeapsDLL.cpp : Defines the exported functions for the DLL.
 //
 
+#include <iostream>
+#include <algorithm>
+#include <sstream>
 #include "framework.h"
 #include "PriorityQueuesAndHeapsDLL.h"
 
-PriorityQueuesWithQueue::PriorityQueuesWithQueue()
-{
-}
-
-bool PriorityQueuesWithQueue::Remove(int value)
-{
+//******************************
+//* Priory Queue using a Queue *
+//******************************
+bool PriorityQueuesWithQueue::Remove(int value) {
 	// Removes the first location that the value is found
-	for (int i = 0; i < 50; i++) {
-		if (queue[i] == value) {
-			for (int j = i + 1; j < 49; j++) {
+	for (int i = 0; i < size; i++) {
+		if (i == size - 1 && queue[i] == value) {
+			queue[i] = NULL;
+		}
+		else if (queue[i] == value) {
+			//Move all the values over
+			for (int j = i + 1; j < size - 1; j++) {
 				queue[i] = queue[j];
 				i++;
 			}
-			queue[50] = -1;
+			queue[size - 1] = NULL;
 			// If done correctly, returns true
 			return true;
 		}
@@ -26,59 +31,46 @@ bool PriorityQueuesWithQueue::Remove(int value)
 	return false;
 }
 
-bool PriorityQueuesWithQueue::Insert(int value)
-{
-	// ******** NOT FINSHED/NOT RIGHT ******** 
-	/*int k = 1;
-	// If value is smaller than first iterator
-	if (value <= queue[0]) {
-		for (int i = 0; i < 49; i++) {
-			int cur = queue[i];
-			int next = queue[i+1];
-			queue[i + 1] = queue[i];
-		}
-		
-		return true;
-	}
-	for (int j = 0; j < 49; j++) {
-		// If value is smaller than second iterator
-		if (value <= queue[k]) {
+bool PriorityQueuesWithQueue::Insert(int value) {
+	if (queue[size - 1] != NULL) {
+		for (int i = 0; i < size; ++i) {
+			//Finding an empty space
+			if (queue[i] == NULL) {
+				//Setting the new value in the queue and then sorting the queue
+				queue[i] = value;
+				std::sort(queue, queue + size);
 
-			k++;
-		}
-		else if (k == 50 && value > queue[k]) {
-			k++;
-		}
-		else {
-			k++;
+				return true;
+			}
 		}
 	}
-	*/
+
+	//Priority queue is full
 	return false;
 }
 
-std::string PriorityQueuesWithQueue::PrintQueue()
-{
-	std::string output;
-	return output;
+std::string PriorityQueuesWithQueue::PrintQueue() {
+	std::stringstream ss;
+
+	for (int i = 0; i < size; ++i) {
+		ss << queue[i];
+		ss << " ";
+	}
+
+	return ss.str();
 }
 
-
-PriorityQueuesWithHeap::PriorityQueuesWithHeap()
-{
-}
-
-bool PriorityQueuesWithHeap::Remove(int value)
-{
+//*****************************
+//* Priory Queue using a Heap *
+//*****************************
+bool PriorityQueuesWithHeap::Remove(int value) {
 	return false;
 }
 
-bool PriorityQueuesWithHeap::Insert(int value)
-{
+bool PriorityQueuesWithHeap::Insert(int value) {
 	return false;
 }
 
-std::string PriorityQueuesWithHeap::PrintHeap()
-{
-	return false;
+std::string PriorityQueuesWithHeap::PrintHeap() {
+
 }
