@@ -18,7 +18,7 @@ namespace PriorityQueuesAndHeapsUnitTest
 			priorityQueue.Insert(1);
 			priorityQueue.Insert(4);
 
-			Assert::AreEqual(priorityQueue.PrintQueue(), "1 3 4");
+			Assert::AreEqual(priorityQueue.PrintQueue(), std::string("1 3 4"));
 		}
 
 		TEST_METHOD(PriorityQueueWithQueueRemove)
@@ -31,7 +31,7 @@ namespace PriorityQueuesAndHeapsUnitTest
 
 			priorityQueue.Remove(3);
 
-			Assert::AreEqual(priorityQueue.PrintQueue(), "1 4");
+			Assert::AreEqual(priorityQueue.PrintQueue(), std::string("1 4"));
 		}
 
 		TEST_METHOD(PriorityQueueWithHeapInsert)
@@ -42,7 +42,7 @@ namespace PriorityQueuesAndHeapsUnitTest
 			priorityQueue.Insert(1);
 			priorityQueue.Insert(4);
 
-			Assert::IsEqual(priorityQueue.PrintHeap(), "1 3 4");
+			Assert::AreEqual(priorityQueue.PrintHeap(), std::string("1 2 3"));
 		}
 
 		TEST_METHOD(PriorityQueueWithHeapRemove)
@@ -55,7 +55,7 @@ namespace PriorityQueuesAndHeapsUnitTest
 
 			priorityQueue.Remove(3);
 
-			Assert::IsEqual(priorityQueue.PrintHeap(), "1 4");
+			Assert::AreEqual(priorityQueue.PrintHeap(), std::string("1 4"));
 		}
 	};
 }
