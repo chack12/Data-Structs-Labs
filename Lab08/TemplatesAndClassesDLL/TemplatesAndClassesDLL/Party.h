@@ -1,6 +1,5 @@
 #pragma once
 #include <vector>
-#include "ICharacter.h"
 
 #ifdef TEMPLATESANDCLASSESDLL_EXPORTS
 #define TEMPLATESANDCLASSESDLL_API __declspec(dllexport)

@@ -19,12 +19,12 @@
 
 int main()
 {
-	Party<ICharacter> party1;
-
+	//Party<ICharacter> party1;
+	
 	//Character 1
 	ICharacter char1;
 	char1.SetClass(Wizard(new Elves()));
-	party1.addChar(char1);
+	/*party1.addChar(char1);
 
 	//Character 2
 	ICharacter char2;
@@ -63,4 +63,5 @@ int main()
 	ICharacter char8;
 	char8.SetClass(Fighter(new Elves()));
 	party2.addChar(char8);
+	*/
 }

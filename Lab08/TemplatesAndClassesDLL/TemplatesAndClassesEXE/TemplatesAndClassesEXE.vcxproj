@@ -153,6 +153,11 @@
   <ItemGroup>
     <ClCompile Include="TemplatesAndClassesEXE.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TemplatesAndClassesDLL\TemplatesAndClassesDLL.vcxproj">
+      <Project>{7ae2d0c5-400b-4b3d-9595-8d6a2a42ca50}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
