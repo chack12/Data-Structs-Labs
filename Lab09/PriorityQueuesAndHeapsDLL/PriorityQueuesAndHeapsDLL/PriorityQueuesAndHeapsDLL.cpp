@@ -75,5 +75,5 @@ bool PriorityQueuesWithHeap::Insert(int value) {
 }
 
 std::string PriorityQueuesWithHeap::PrintHeap() {
-
+	return "";
 }

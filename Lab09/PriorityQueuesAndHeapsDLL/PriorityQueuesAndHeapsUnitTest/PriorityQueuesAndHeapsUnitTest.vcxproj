@@ -175,9 +175,6 @@
     <ProjectReference Include="..\PriorityQueuesAndHeapsDLL\PriorityQueuesAndHeapsDLL.vcxproj">
       <Project>{0684cc85-cdfb-4f51-99b5-08a13e45f37a}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\PriorityQueuesAndHeapsEXE\PriorityQueuesAndHeapsEXE.vcxproj">
-      <Project>{ddfbe858-513f-42b4-abf0-3bcd98ebb0d5}</Project>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

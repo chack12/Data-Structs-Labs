@@ -72,11 +72,11 @@ int main()
 	//* Priory Queue using a Heap *
 	//*****************************
 	cout << "Priory Queue using a Heap" << endl;
-    auto t1 = Clock::now();
+    t1 = Clock::now();
 	for (int i = 0; i < 500; ++i) {
 		//something.Insert(fiveVector[i]);
 	}
-	auto t2 = Clock::now();
+	t2 = Clock::now();
 	cout << "Array size of 500 took: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " nanoseconds" << endl;
 
 	t1 = Clock::now();
