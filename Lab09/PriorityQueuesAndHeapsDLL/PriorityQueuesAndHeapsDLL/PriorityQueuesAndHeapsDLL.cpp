@@ -9,9 +9,9 @@
 #include "PriorityQueuesAndHeapsDLL.h"
 
 
-//******************************
-//* Priory Queue using a Queue *
-//******************************
+//********************************
+//* Priority Queue using a Queue *
+//********************************
 bool PriorityQueuesWithQueue::Remove() {
 	int temp[3];
 
@@ -73,9 +73,9 @@ std::string PriorityQueuesWithQueue::PrintQueue() {
 	return temp;
 }
 
-//*****************************
-//* Priory Queue using a Heap *
-//*****************************
+//*******************************
+//* Priority Queue using a Heap *
+//*******************************
 bool PriorityQueuesWithHeap::Remove() {
 	int count = 0, last = size - 1;
 
