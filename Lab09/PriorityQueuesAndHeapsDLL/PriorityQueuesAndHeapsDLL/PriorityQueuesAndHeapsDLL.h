@@ -23,6 +23,10 @@ public:
 	PriorityQueuesWithQueue(int newSize) {
 		queue = new int[newSize];
 		size = newSize;
+
+		for (int i = 0; i < size; ++i) {
+			queue[i] = -1;
+		}
 	}
 
 	/**
@@ -41,7 +45,7 @@ public:
 	* @param	value		value wanting to be removed
 	* @return				conditional
 	*/
-	bool Remove(int value);
+	bool Remove();
 	
 	/**
 	* Inserts a value into the array
@@ -74,6 +78,10 @@ public:
 	PriorityQueuesWithHeap(int newSize) {
 		queue = new int[newSize];
 		size = newSize;
+
+		for (int i = 0; i < size; ++i) {
+			queue[i] = -1;
+		}
 	}
 
 	/**
@@ -92,7 +100,7 @@ public:
 	* @param	value		value wanting to be removed
 	* @return				conditional
 	*/
-	bool Remove(int value);
+	bool Remove();
 
 	/**
 	* Inserts a value into the array
