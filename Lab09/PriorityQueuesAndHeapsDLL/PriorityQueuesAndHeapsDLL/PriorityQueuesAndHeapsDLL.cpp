@@ -13,27 +13,13 @@
 //* Priority Queue using a Queue *
 //********************************
 bool PriorityQueuesWithQueue::Remove() {
-	int temp[3];
-
-	for (int i = 0; i < 3; ++i) {
-		temp[i] = queue[i];
-	}
-
 	for (int i = 1; i < size; ++i) {
 		//Move all the values over
 		queue[i - 1] = queue[i];
 
 		if (i + 1 == size) {
-			for (int i = 0; i < 3; ++i) {
-				temp[i] = queue[i];
-			}
-			
 			queue[size - 1] = -1;
 			size--;
-
-			for (int i = 0; i < 3; ++i) {
-				temp[i] = queue[i];
-			}
 
 			return true;
 		}
