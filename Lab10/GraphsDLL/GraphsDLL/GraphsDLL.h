@@ -4,19 +4,49 @@
 // that uses this DLL. This way any other project whose source files include this file see
 // GRAPHSDLL_API functions as being imported from a DLL, whereas this DLL sees symbols
 // defined with this macro as being exported.
+
+#include <vector>;
 #ifdef GRAPHSDLL_EXPORTS
 #define GRAPHSDLL_API __declspec(dllexport)
 #else
 #define GRAPHSDLL_API __declspec(dllimport)
 #endif
 
-// This class is exported from the dll
-class GRAPHSDLL_API CGraphsDLL {
+class GRAPHSDLL_API GraphsDLL {
 public:
-	CGraphsDLL(void);
-	// TODO: add your methods here.
+	GraphsDLL() {}
+	GraphsDLL* newNode(int finish);
+	bool AddEdge(int source, int finish);
+	bool removeEdge(int source, int finish);
+	bool hasEdge(int source, int finish);
+	std::vector<int> outEdges();
+	std::vector<int> inEdges();	
+	int getXVertices();
+	int getYVertices();
+	int getXEdges();
+	int getYEdges();
+	~GraphsDLL() {}
+private:
+	int start;
+	int finish;
+	GraphsDLL* node;
+	std::vector<GraphsDLL*> vectorofNodes;
+
 };
 
-extern GRAPHSDLL_API int nGraphsDLL;
+class GRAPHSDLL_API Node {
+private:
+	int m_value;
+	Node * m_next;
 
-GRAPHSDLL_API int fnGraphsDLL(void);
+public:
+	Node();
+	Node(int val);
+	Node(int val, Node * nextNode);
+	void setItem(const int& val);
+	void setNext(Node* nextNodePtr);
+	int getItem() const;
+	Node * getNext() const;
+	virtual ~Node();
+	
+};
