@@ -71,7 +71,7 @@ bool Graphs::removeEdge(int first, int second) {
 
 bool Graphs::hasEdge(int first, int second) {
 	bool foundFirst = false;
-	Node* cur, prev;
+	Node* cur;
 
 	for (int i = 0; i < graph.size(); ++i) {
 		if (graph[i]->getItem() == first) {
@@ -107,15 +107,46 @@ bool Graphs::hasEdge(int first, int second) {
 	return false;
 }
 
-std::vector<int> Graphs::outEdges() {
+std::vector<int> Graphs::outEdges(int val) {
 	std::vector<int> temp;
-	// return vector
+	Node* cur;
+	for (int i = 0; i < graph.size(); i++) {
+		cur = graph[i];
+		while (cur != nullptr) {
+			if (cur->getItem() == val) {
+				if (cur->getNext() != nullptr) {
+					temp.push_back(cur->getNext()->getItem());
+				}
+			}
+		}
+		cur = cur->getNext();
+	}
 	return temp;
 }
 
-std::vector<int> Graphs::inEdges() {
-	std::vector<int> temp;
 	// return vector
+	
+
+// out is the nodes that a certain node points to
+// in is the nodes that point to a certain node
+
+std::vector<int> Graphs::inEdges(int val) {
+	std::vector<int> temp;
+	Node* cur;
+	Node* prev;
+
+	for (int i = 0; i < graph.size(); i++) {
+		prev = graph[i];
+		cur = graph[i]->getNext();
+		while (cur != nullptr) {
+			if (cur->getItem() == val) {
+				temp.push_back(prev->getItem());
+			}
+			cur = cur->getNext();
+		}
+	}
+	
+	
 	return temp;
 }
 
@@ -193,4 +224,23 @@ bool Graphs::addNode(Node* m_head, int val)
 	}
 
 	return false;
+}
+
+bool Graphs::print() {
+	Node* cur;
+
+	for (int i = 0; i < graph.size(); ++i) { 
+        std::cout << "Adjacency list of vertex " << i << std::endl;
+		std::cout << "head " << std::endl;
+
+		cur = graph[i];
+        while(true) {
+			cur = cur->getNext();
+			std::cout << " -> " << cur->getItem();
+		} 
+            
+        std::cout << std::endl;
+	} 
+
+	return true;
 }

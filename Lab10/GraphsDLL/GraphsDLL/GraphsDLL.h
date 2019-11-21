@@ -87,7 +87,7 @@ public:
 	* @param		
 	* @return
 	*/
-	std::vector<int> outEdges();
+	std::vector<int> outEdges(int val);
 
 	/**
 	* Return a list of all integers j such that edge (j,i) 
@@ -95,12 +95,14 @@ public:
 	* @param		
 	* @return
 	*/
-	std::vector<int> inEdges();	
-	/*int getXVertices();
-	int getYVertices();
-	int getXEdges();
-	int getYEdges();
+	std::vector<int> inEdges(int val);
+	/**
+	* Prints the graph
+	*
+	* @param		
+	* @return
 	*/
+	bool print();
 	~Graphs() {}
 private:
 	std::vector<Node*> graph;

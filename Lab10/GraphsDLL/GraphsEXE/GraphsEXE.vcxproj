@@ -153,6 +153,11 @@
   <ItemGroup>
     <ClCompile Include="GraphsEXE.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GraphsDLL\GraphsDLL.vcxproj">
+      <Project>{ba75c6bd-2117-4c84-bdbb-607aa2bacc95}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
