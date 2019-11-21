@@ -47,6 +47,7 @@ bool Graphs::removeEdge(int first, int second) {
 	for (int i = 0; i < graph.size(); ++i) {
 		if (graph[i]->getItem() == first) {
 			removeNode(graph[i], second);
+			foundFirst = true;
 		}
 	}
 
@@ -60,6 +61,33 @@ bool Graphs::removeEdge(int first, int second) {
 }
 
 bool Graphs::hasEdge(int first, int second) {
+	bool foundFirst = false;
+	Node* cur, prev;
+
+	for (int i = 0; i < graph.size(); ++i) {
+		if (graph[i]->getItem() == first) {
+			cur = graph[i];
+			while (true) {
+				cur = cur->getNext();
+				if (cur->getItem() == second) {
+					foundFirst = true;
+					break;
+				}
+			}
+		}
+	}
+
+	for (int i = 0; i < graph.size(); ++i) {
+		if (graph[i]->getItem() == second && foundFirst) {
+			cur = graph[i];
+			while (true) {
+				cur = cur->getNext();
+				if (cur->getItem() == first) {
+					return true;
+				}
+			}
+		}
+	}
 
 	return false;
 }
