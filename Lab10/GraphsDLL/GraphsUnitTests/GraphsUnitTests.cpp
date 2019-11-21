@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "CppUnitTest.h"
-#include <list>
 #include "../GraphsDLL/GraphsDLL.h"
+
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace GraphsUnitTests
@@ -52,7 +52,7 @@ namespace GraphsUnitTests
 			Assert::IsTrue(graph.AddEdge(0, 1));
 			Assert::IsTrue(graph.AddEdge(1, 2));
 			Assert::IsFalse(graph.removeEdge(0, 4));
-			Assert::IsTrue(graph.removeEdge(3, 1));
+			Assert::IsFalse(graph.removeEdge(3, 1));
 		}
 
 		TEST_METHOD(HasEdgeTest1) 

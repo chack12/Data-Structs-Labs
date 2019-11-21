@@ -11,17 +11,16 @@
 
 bool Graphs::AddEdge(int first, int second) {
 	bool foundFirst = false;
-	Node* cur;
 
 	for (int i = 0; i < graph.size(); ++i) {
 		if (graph[i]->getItem() == first) {
 			if (graph[i]->getNext() == nullptr) {
 				graph[i]->setNext(new Node(second));
-				foundFirst = true;
 			}
 			else {
 				addNode(graph[i], second);
 			}
+			foundFirst = true;
 		}
 	}
 
@@ -33,6 +32,7 @@ bool Graphs::AddEdge(int first, int second) {
 			}
 			else {
 				addNode(graph[i], first);
+				return true;
 			}
 		}
 	}
@@ -42,18 +42,27 @@ bool Graphs::AddEdge(int first, int second) {
 
 bool Graphs::removeEdge(int first, int second) {
 	bool foundFirst = false;
-	Node* cur, prev;
 
 	for (int i = 0; i < graph.size(); ++i) {
 		if (graph[i]->getItem() == first) {
-			removeNode(graph[i], second);
-			foundFirst = true;
+			if (removeNode(graph[i], second)) {
+				foundFirst = true;
+			}
+			else {
+				return false;
+			}
+			
 		}
 	}
 
 	for (int i = 0; i < graph.size(); ++i) {
 		if (graph[i]->getItem() == second && foundFirst) {
-			removeNode(graph[i], first);
+			if (removeNode(graph[i], first)) {
+				return true;
+			}
+			else {
+				return false;
+			}
 		}
 	}
 
@@ -69,7 +78,10 @@ bool Graphs::hasEdge(int first, int second) {
 			cur = graph[i];
 			while (true) {
 				cur = cur->getNext();
-				if (cur->getItem() == second) {
+				if (cur == nullptr) {
+					return false;
+				}
+				else if (cur->getItem() == second) {
 					foundFirst = true;
 					break;
 				}
@@ -82,7 +94,10 @@ bool Graphs::hasEdge(int first, int second) {
 			cur = graph[i];
 			while (true) {
 				cur = cur->getNext();
-				if (cur->getItem() == first) {
+				if (cur == nullptr) {
+					return false;
+				}
+				else if (cur->getItem() == first) {
 					return true;
 				}
 			}
