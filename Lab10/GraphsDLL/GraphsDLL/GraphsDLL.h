@@ -22,7 +22,9 @@ public:
 	* @param
 	* @return
 	*/
-	Graphs() : numofVer(0) {}
+	Graphs() {
+		numOfVer = 0;
+	}
 
 	/**
 	* The constructor for the adjacency list node
