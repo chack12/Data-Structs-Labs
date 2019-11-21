@@ -93,13 +93,15 @@ bool Graphs::hasEdge(int first, int second) {
 }
 
 std::vector<int> Graphs::outEdges() {
-
+	std::vector<int> temp;
 	// return vector
+	return temp;
 }
 
 std::vector<int> Graphs::inEdges() {
-
+	std::vector<int> temp;
 	// return vector
+	return temp;
 }
 
 bool Graphs::removeNode(Node* m_head, int val) {
