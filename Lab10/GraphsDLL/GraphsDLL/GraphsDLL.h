@@ -5,7 +5,7 @@
 // GRAPHSDLL_API functions as being imported from a DLL, whereas this DLL sees symbols
 // defined with this macro as being exported.
 
-#include <vector>;
+#include <list>;
 #ifdef GRAPHSDLL_EXPORTS
 #define GRAPHSDLL_API __declspec(dllexport)
 #else
@@ -14,31 +14,96 @@
 
 class GRAPHSDLL_API GraphsDLL {
 public:
+	/**
+	* The default constructor
+	*
+	* @param
+	* @return
+	*/
 	GraphsDLL() {}
-	GraphsDLL* newNode(int finish);
-	bool AddEdge(int source, int finish);
-	bool removeEdge(int source, int finish);
-	bool hasEdge(int source, int finish);
-	std::vector<int> outEdges();
-	std::vector<int> inEdges();	
-	int getXVertices();
+
+	/**
+	* The constructor for the adjacency list node
+	*
+	* @param
+	* @return
+	*/
+	GraphsDLL(int val) : value(val), node(nullptr) {}
+
+	/**
+	* The constructor for the adjacency list node
+	*
+	* @param
+	* @return
+	*/
+	GraphsDLL(int val, GraphsDLL* nextNode) : value(val), node(nextNode) {}
+
+	/**
+	* Sets the next node
+	*
+	* @param		
+	* @return				
+	*/
+	void setNextNode(GraphsDLL* node, GraphsDLL* nextNodePtr);
+
+	/**
+	* Adds an edge to the adjacency list
+	*
+	* @param		listofN[]		the adjacency list
+					source			vertex you're adding edge to
+					finish			vertex you're finishing edge to
+	* @return						conditional
+	*/
+	bool AddEdge(std::list<GraphsDLL*> listofN[], int source, int finish);
+
+	/**
+	* Removes an edge from the adjacency list
+	*
+	* @param		
+	* @return
+	*/
+	bool removeEdge(std::list<GraphsDLL*> listofN[], int source, int finish);
+
+	/**
+	* Checks to see if there is an edge between the two points
+	*
+	* @param		
+	* @return
+	*/
+	bool hasEdge(std::list<GraphsDLL*> listofN[], int source, int finish);
+
+	/**
+	* Return a list of all integers j such that edge (i,j) 
+	*
+	* @param		
+	* @return
+	*/
+	std::list<int> outEdges();
+
+	/**
+	* Return a list of all integers j such that edge (j,i) 
+	*
+	* @param		
+	* @return
+	*/
+	std::list<int> inEdges();	
+	/*int getXVertices();
 	int getYVertices();
 	int getXEdges();
 	int getYEdges();
+	*/
 	~GraphsDLL() {}
 private:
-	int start;
-	int finish;
 	GraphsDLL* node;
-	std::vector<GraphsDLL*> vectorofNodes;
-
+	std::list<GraphsDLL*> listofN;
+	int value;
 };
 
 class GRAPHSDLL_API Node {
 private:
 	int m_value;
 	Node * m_next;
-
+	
 public:
 	Node();
 	Node(int val);

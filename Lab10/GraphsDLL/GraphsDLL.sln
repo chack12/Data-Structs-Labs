@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GraphsDLL", "GraphsDLL\Grap
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GraphsEXE", "GraphsEXE\GraphsEXE.vcxproj", "{3A336657-2F00-49D9-88C3-554F4E69E1F5}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GraphsUnitTests", "GraphsUnitTests\GraphsUnitTests.vcxproj", "{7812FB3E-00B7-4623-86D2-E1376BA4EF21}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{3A336657-2F00-49D9-88C3-554F4E69E1F5}.Release|x64.Build.0 = Release|x64
 		{3A336657-2F00-49D9-88C3-554F4E69E1F5}.Release|x86.ActiveCfg = Release|Win32
 		{3A336657-2F00-49D9-88C3-554F4E69E1F5}.Release|x86.Build.0 = Release|Win32
+		{7812FB3E-00B7-4623-86D2-E1376BA4EF21}.Debug|x64.ActiveCfg = Debug|x64
+		{7812FB3E-00B7-4623-86D2-E1376BA4EF21}.Debug|x64.Build.0 = Debug|x64
+		{7812FB3E-00B7-4623-86D2-E1376BA4EF21}.Debug|x86.ActiveCfg = Debug|Win32
+		{7812FB3E-00B7-4623-86D2-E1376BA4EF21}.Debug|x86.Build.0 = Debug|Win32
+		{7812FB3E-00B7-4623-86D2-E1376BA4EF21}.Release|x64.ActiveCfg = Release|x64
+		{7812FB3E-00B7-4623-86D2-E1376BA4EF21}.Release|x64.Build.0 = Release|x64
+		{7812FB3E-00B7-4623-86D2-E1376BA4EF21}.Release|x86.ActiveCfg = Release|Win32
+		{7812FB3E-00B7-4623-86D2-E1376BA4EF21}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -3,6 +3,8 @@
 
 #include "framework.h"
 #include "GraphsDLL.h"
+#include <iostream>
+#include <vector>
 
 Node::Node() : m_value(-1), m_next(nullptr)
 {
@@ -37,59 +39,43 @@ Node::~Node()
 	std::cout << "Deleting node with value " << m_value << std::endl;
 	delete m_next;
 }
-GraphsDLL::GraphsDLL() {
 
+void GraphsDLL::setNextNode(GraphsDLL* node, GraphsDLL* nextNodePtr)
+{
+	node = nextNodePtr;
 }
 
-GraphsDLL* newNode(int finish) {
-	GraphsDLL* newNode = new GraphsDLL;
-	newNode->finish = finish;
-	return newNode;
+bool GraphsDLL::AddEdge(std::list<GraphsDLL*> listofN[], int source, int finish) {
+	if (listofN[source].size() == 0) {
+		GraphsDLL* node = new GraphsDLL(source);
+		listofN[source].push_back[node];
+	}
+	GraphsDLL* nextNode = new GraphsDLL(finish);
+	listofN[source].push_back[nextNode];
+	node->setNextNode(node, nextNode);
+	listofN[finish].push_back[nextNode];
+	listofN[finish].push_back[node];
+	nextNode->setNextNode(nextNode, node);
+
+	return true;
 }
 
-bool GraphsDLL::AddEdge(int source, int finish) {
-	GraphsDLL 
-
-
-	return false;
-}
-
-bool GraphsDLL::removeEdge(int source, int finish) {
+bool GraphsDLL::removeEdge(std::list<GraphsDLL*> listofN[], int source, int finish) {
 	
 	return false;
 }
 
-bool GraphsDLL::hasEdge(int source, int finish) {
+bool GraphsDLL::hasEdge(std::list<GraphsDLL*> listofN[], int source, int finish) {
 
 	return false;
 }
 
-int GraphsDLL::getXVertices() {
-
-	return 0;
-}
-
-int GraphsDLL::getYVertices() {
-
-	return 0;
-}
-
-int GraphsDLL::getXEdges() {
-
-	return 0;
-}
-
-int GraphsDLL::getYEdges() {
-
-	return 0;
-}
-
-std::vector<int> GraphsDLL::outEdges() {
+std::list<int> GraphsDLL::outEdges() {
 
 	// return vector
 }
 
-std::vector<int> GraphsDLL::inEdges() {
+std::list<int> GraphsDLL::inEdges() {
 
 	// return vector
 }
