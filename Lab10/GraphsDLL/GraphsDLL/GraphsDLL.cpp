@@ -118,8 +118,8 @@ std::vector<int> Graphs::outEdges(int val) {
 					temp.push_back(cur->getNext()->getItem());
 				}
 			}
+			cur = cur->getNext();
 		}
-		cur = cur->getNext();
 	}
 	return temp;
 }
