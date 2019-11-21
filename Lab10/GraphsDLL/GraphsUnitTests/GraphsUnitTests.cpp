@@ -9,12 +9,64 @@ namespace GraphsUnitTests
 	TEST_CLASS(GraphsUnitTests)
 	{
 	public:
-		
-		TEST_METHOD(TestMethod1)
+		TEST_METHOD(ConstructorTest1)
 		{
-			GraphsDLL node;
-			std::list<GraphsDLL*> listofN;
-			Assert::IsTrue(node.addEdge(listofN, 1, 2));
+			Graphs graph();
+		}
+
+		TEST_METHOD(ConstructorTest1)
+		{
+			Graphs graph(1, 3);
+		}
+
+		TEST_METHOD(AddEdgeTest1) 
+		{
+
+		}
+
+		TEST_METHOD(AddEdgeTest2) 
+		{
+
+		}
+
+		TEST_METHOD(RemoveEdgeTest1) 
+		{
+
+		}
+
+		TEST_METHOD(RemoveEdgeTest2) 
+		{
+
+		}
+
+		TEST_METHOD(HasEdgeTest1) 
+		{
+
+		}
+
+		TEST_METHOD(HasEdgeTest2) 
+		{
+
+		}
+
+		TEST_METHOD(OutEdgeTest1) 
+		{
+
+		}
+
+		TEST_METHOD(OutEdgeTest2) 
+		{
+
+		}
+
+		TEST_METHOD(InEdgeTest1) 
+		{
+
+		}
+
+		TEST_METHOD(InEdgeTest2) 
+		{
+
 		}
 	};
 }

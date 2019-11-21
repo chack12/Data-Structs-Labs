@@ -3,83 +3,149 @@
 
 #include "framework.h"
 #include "GraphsDLL.h"
+#include "Node.h"
 #include <iostream>
 #include <vector>
 
-Node::Node() : m_value(-1), m_next(nullptr)
-{
+//Graphs Implementation
 
-}
-Node::Node(int val) : m_value(val), m_next(nullptr)
-{
+bool Graphs::AddEdge(int first, int second) {
+	bool foundFirst = false;
+	Node* cur;
 
-}
-Node::Node(int val, Node * nextNode) : m_value(val), m_next(nextNode)
-{
-
-}
-void Node::setItem(const int& val)
-{
-	m_value = val;
-}
-void Node::setNext(Node* nextNodePtr)
-{
-	m_next = nextNodePtr;
-}
-int Node::getItem() const
-{
-	return m_value;
-}
-Node * Node::getNext() const
-{
-	return m_next;
-}
-Node::~Node()
-{
-	std::cout << "Deleting node with value " << m_value << std::endl;
-	delete m_next;
-}
-
-void GraphsDLL::setNextNode(GraphsDLL* node, GraphsDLL* nextNodePtr)
-{
-	node = nextNodePtr;
-}
-
-bool GraphsDLL::AddEdge(std::list<GraphsDLL*> listofN[], int source, int finish) {
-	if (listofN[source].size() == 0) {
-		GraphsDLL* node = new GraphsDLL(source);
-		listofN[source].push_back[node];
+	for (int i = 0; i < graph.size(); ++i) {
+		if (graph[i]->getItem() == first) {
+			if (graph[i]->getNext() == nullptr) {
+				graph[i]->setNext(new Node(second));
+				foundFirst = true;
+			}
+			else {
+				addNode(graph[i], second);
+			}
+		}
 	}
-	GraphsDLL* nextNode = new GraphsDLL(finish);
-	listofN[source].push_back[nextNode];
-	node->setNextNode(node, nextNode);
-	listofN[finish].push_back[nextNode];
-	listofN[finish].push_back[node];
-	nextNode->setNextNode(nextNode, node);
 
-	return true;
-}
-
-bool GraphsDLL::removeEdge(std::list<GraphsDLL*> listofN[], int source, int finish) {
-	
-	return false;
-}
-
-bool GraphsDLL::hasEdge(std::list<GraphsDLL*> listofN[], int source, int finish) {
+	for (int i = 0; i < graph.size(); ++i) {
+		if (graph[i]->getItem() == second && foundFirst) {
+			if (graph[i]->getNext() == nullptr) {
+				graph[i]->setNext(new Node(first));
+				return true;
+			}
+			else {
+				addNode(graph[i], first);
+			}
+		}
+	}
 
 	return false;
 }
 
-std::list<int> GraphsDLL::outEdges() {
+bool Graphs::removeEdge(int first, int second) {
+	bool foundFirst = false;
+	Node* cur, prev;
+
+	for (int i = 0; i < graph.size(); ++i) {
+		if (graph[i]->getItem() == first) {
+			removeNode(graph[i], second);
+		}
+	}
+
+	for (int i = 0; i < graph.size(); ++i) {
+		if (graph[i]->getItem() == second && foundFirst) {
+			removeNode(graph[i], first);
+		}
+	}
+
+	return false;
+}
+
+bool Graphs::hasEdge(int first, int second) {
+
+	return false;
+}
+
+std::vector<int> Graphs::outEdges() {
 
 	// return vector
 }
 
-std::list<int> GraphsDLL::inEdges() {
+std::vector<int> Graphs::inEdges() {
 
 	// return vector
 }
 
-GraphsDLL::~GraphsDLL() {
+bool Graphs::removeNode(Node* m_head, int val) {
+	Node* cur = new Node();
+	Node* prev = new Node();
+	cur = m_head;
+	prev = m_head;
 
+	//If the head contains the value you want to remove
+	if (m_head->getItem() == val) {
+		//There is nothing after the head so make the head point to nullptr
+		if (m_head->getNext() == nullptr) {
+			m_head = nullptr;
+		}
+		else {
+			//Move the head over 1 node
+			m_head = m_head->getNext();
+		}
+		return true;
+	}
+	else {
+		//Find the node that contains the value
+		while (cur->getItem() != val) {
+			cur = cur->getNext();
+			
+			if (cur == nullptr) {
+				return false;
+			}
+
+			if (cur->getItem() == val) {
+				//If the values node is at the end of the list set the node before the one you want to remove to nullptr making that the new last node
+				if (cur->getNext() == nullptr) {
+					prev->setNext(nullptr);
+				}
+				else {
+					//Set the next node of the node before the one you want to remove to the node after the one you want to remove
+					prev->setNext(cur->getNext());
+				}
+				return true;
+			}
+
+			prev = prev->getNext();
+		}
+	}
+
+	return false;
+}
+
+bool Graphs::addNode(Node* m_head, int val)
+{
+	//Create a new node with the inputted value and point it to nullptr (because it is the end)
+	Node* temp = new Node(val);
+	temp->setNext(nullptr);
+
+	Node* cur = new Node();
+	cur = m_head;
+
+	//If the linked list is empty make the new value the head node
+	if (cur == nullptr) {
+		m_head = temp;
+
+		return true;
+	}
+	else {
+		//Find the last node
+		while (cur->getNext() != nullptr) {
+			cur = cur->getNext();
+		}
+
+		//Point the last node to the new node that was created
+		cur->setNext(temp);
+
+		return true;
+	}
+
+	return false;
 }

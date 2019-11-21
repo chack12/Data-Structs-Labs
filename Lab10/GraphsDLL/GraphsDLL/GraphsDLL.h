@@ -5,14 +5,16 @@
 // GRAPHSDLL_API functions as being imported from a DLL, whereas this DLL sees symbols
 // defined with this macro as being exported.
 
-#include <list>;
 #ifdef GRAPHSDLL_EXPORTS
 #define GRAPHSDLL_API __declspec(dllexport)
 #else
 #define GRAPHSDLL_API __declspec(dllimport)
 #endif
 
-class GRAPHSDLL_API GraphsDLL {
+#include <vector>;
+#include "Node.h"
+
+class GRAPHSDLL_API Graphs {
 public:
 	/**
 	* The default constructor
@@ -20,7 +22,9 @@ public:
 	* @param
 	* @return
 	*/
-	GraphsDLL() {}
+	Graphs() { 
+		numofVer = 0;
+	}
 
 	/**
 	* The constructor for the adjacency list node
@@ -28,41 +32,46 @@ public:
 	* @param
 	* @return
 	*/
-	GraphsDLL(int val) : value(val), node(nullptr) {}
-
-	/**
-	* The constructor for the adjacency list node
-	*
-	* @param
-	* @return
-	*/
-	GraphsDLL(int val, GraphsDLL* nextNode) : value(val), node(nextNode) {}
-
-	/**
-	* Sets the next node
-	*
-	* @param		
-	* @return				
-	*/
-	void setNextNode(GraphsDLL* node, GraphsDLL* nextNodePtr);
+	Graphs(int vNum) : numOfVer(vNum) {
+		for (int i = 0; i< numOfVer; ++i) {
+			graph.push_back(new Node(i));
+		}
+	}
 
 	/**
 	* Adds an edge to the adjacency list
 	*
 	* @param		listofN[]		the adjacency list
-					source			vertex you're adding edge to
-					finish			vertex you're finishing edge to
+					first			vertex you're adding edge to
+					second			vertex you're finishing edge to
 	* @return						conditional
 	*/
-	bool AddEdge(std::list<GraphsDLL*> listofN[], int source, int finish);
+	bool AddEdge(int first, int second);
 
+	/**
+	* Adds an edge to the adjacency list
+	*
+	* @param		listofN[]		the adjacency list
+					first			vertex you're adding edge to
+					second			vertex you're finishing edge to
+	* @return						conditional
+	*/
+	bool addNode(Node* node, int val);
 	/**
 	* Removes an edge from the adjacency list
 	*
 	* @param		
 	* @return
 	*/
-	bool removeEdge(std::list<GraphsDLL*> listofN[], int source, int finish);
+	bool removeEdge(int first, int second);
+
+	/**		
+	* Removes an edge from the adjacency list
+	*
+	* @param
+	* @return
+	*/
+	bool removeNode(Node* m_head, int val);
 
 	/**
 	* Checks to see if there is an edge between the two points
@@ -70,7 +79,7 @@ public:
 	* @param		
 	* @return
 	*/
-	bool hasEdge(std::list<GraphsDLL*> listofN[], int source, int finish);
+	bool hasEdge(int first, int second);
 
 	/**
 	* Return a list of all integers j such that edge (i,j) 
@@ -78,7 +87,7 @@ public:
 	* @param		
 	* @return
 	*/
-	std::list<int> outEdges();
+	std::vector<int> outEdges();
 
 	/**
 	* Return a list of all integers j such that edge (j,i) 
@@ -86,32 +95,14 @@ public:
 	* @param		
 	* @return
 	*/
-	std::list<int> inEdges();	
+	std::vector<int> inEdges();	
 	/*int getXVertices();
 	int getYVertices();
 	int getXEdges();
 	int getYEdges();
 	*/
-	~GraphsDLL() {}
+	~Graphs() {}
 private:
-	GraphsDLL* node;
-	std::list<GraphsDLL*> listofN;
-	int value;
-};
-
-class GRAPHSDLL_API Node {
-private:
-	int m_value;
-	Node * m_next;
-	
-public:
-	Node();
-	Node(int val);
-	Node(int val, Node * nextNode);
-	void setItem(const int& val);
-	void setNext(Node* nextNodePtr);
-	int getItem() const;
-	Node * getNext() const;
-	virtual ~Node();
-	
+	std::vector<Node*> graph;
+	int numOfVer;
 };
