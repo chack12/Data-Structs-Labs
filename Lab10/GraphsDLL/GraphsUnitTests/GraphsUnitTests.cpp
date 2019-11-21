@@ -121,7 +121,6 @@ namespace GraphsUnitTests
 			Assert::IsTrue(graph.AddEdge(0, 1));
 			Assert::IsTrue(graph.AddEdge(1, 2));
 			Assert::IsTrue(graph.AddEdge(0, 2));
-			Assert::IsTrue(graph.AddEdge(2, 0));
 
 			std::vector<int> out = graph.inEdges(1);
 
@@ -139,7 +138,6 @@ namespace GraphsUnitTests
 			Assert::IsTrue(graph.AddEdge(0, 1));
 			Assert::IsTrue(graph.AddEdge(1, 2));
 			Assert::IsTrue(graph.AddEdge(0, 2));
-			Assert::IsTrue(graph.AddEdge(2, 0));
 
 			std::vector<int> out = graph.inEdges(2);
 

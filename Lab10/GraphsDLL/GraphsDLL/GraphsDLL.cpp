@@ -138,11 +138,15 @@ std::vector<int> Graphs::inEdges(int val) {
 	for (int i = 0; i < graph.size(); i++) {
 		prev = graph[i];
 		cur = graph[i]->getNext();
-		while (cur != nullptr) {
+		while (true) {
 			if (cur->getItem() == val) {
 				temp.push_back(prev->getItem());
 			}
+			prev = cur;
 			cur = cur->getNext();
+			if (cur == nullptr) {
+				break;
+			}
 		}
 	}
 	
