@@ -235,10 +235,10 @@ bool Graphs::print() {
 
 	for (int i = 0; i < graph.size(); ++i) { 
         std::cout << "Adjacency list of vertex " << i << std::endl;
-		std::cout << "head " << std::endl;
+		std::cout << "head";
 
 		cur = graph[i];
-        while(true) {
+        while(cur->getNext() != nullptr) {
 			cur = cur->getNext();
 			std::cout << " -> " << cur->getItem();
 		} 

@@ -8,10 +8,14 @@ using namespace std;
 
 int main()
 {
-	int commandInput, input1, input2;
+	int commandInput, input1, input2, input3;
 	vector<int> temp;
-	Graphs graph;
 	bool runFlag = true;
+
+	cout << "Enter how many nodes you want: ";
+	cin >> input3;
+
+	Graphs graph(input3);
 
 	while (runFlag) {
 		cout << "Press 1 to add an edge to graph" << endl;
