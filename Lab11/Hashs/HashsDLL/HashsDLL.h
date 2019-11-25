@@ -10,13 +10,104 @@
 #define HASHSDLL_API __declspec(dllimport)
 #endif
 
+#include <vector>
+
 // This class is exported from the dll
-class HASHSDLL_API CHashsDLL {
+class HASHSDLL_API HashTable {
 public:
-	CHashsDLL(void);
-	// TODO: add your methods here.
+	/**
+	* The default constructor
+	*
+	* @param
+	* @return
+	*/
+	HashTable() {
+		hashList.resize(100);
+
+		for (int i = 0; i < 100; ++i) {
+			hashList.at(i) = -1;
+		}
+	}
+
+	/**
+	* The default constructor
+	*
+	* @param
+	* @return
+	*/
+	HashTable(int size) {
+		hashList.resize(size);
+
+		for (int i = 0; i < size; ++i) {
+			hashList.at(i) = -1;
+		}
+	}
+
+	/**
+	* Add item
+	*
+	* @param
+	* @return
+	*/
+	void addItem(int val);
+
+	/**
+	* Removes item based on value sent
+	*
+	* @param
+	* @return
+	*/
+	Hash* removeItem(int val);
+
+	/**
+	* Get item based on value sent
+	*
+	* @param
+	* @return
+	*/
+	Hash* getItem(int val);
+
+	/**
+	* Get length of list/vector
+	*
+	* @param
+	* @return			
+	*/
+	int getLength();
+
+	/**
+	* The default constructor
+	*
+	* @param
+	* @return
+	*/
+	~HashTable();
+
+
+private:
+	std::vector<Hash*> hashList;
+	/**
+	* accepts an int and returns an int
+	*
+	* @param		hashVal
+	* @return		val
+	*/
+	int hash(int hashVal);
 };
 
-extern HASHSDLL_API int nHashsDLL;
-
-HASHSDLL_API int fnHashsDLL(void);
+class HASHSDLL_API Hash {
+public:
+	/**
+	* Checks to see if the datas are the same
+	* == overloader
+	* @param		hashVal
+	* @return		val
+	*/
+	Hash operator == (Hash h) 
+	{ 
+		return (h.data == data && h.key == key);
+	} 
+private:
+	int key;
+	int data;
+}

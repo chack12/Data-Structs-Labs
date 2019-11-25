@@ -4,18 +4,18 @@
 #include "framework.h"
 #include "HashsDLL.h"
 
+	void HashTable::addItem(int val) {
 
-// This is an example of an exported variable
-HASHSDLL_API int nHashsDLL=0;
+	}
+	Hash* HashTable::removeItem(int val) {
 
-// This is an example of an exported function.
-HASHSDLL_API int fnHashsDLL(void)
-{
-    return 0;
-}
+	}
+	Hash* HashTable::getItem(int val) {
 
-// This is the constructor of a class that has been exported.
-CHashsDLL::CHashsDLL()
-{
-    return;
-}
+	}
+	int HashTable::getLength() {
+
+	}
+	~HashTable() {
+
+	}
