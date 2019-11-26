@@ -57,7 +57,7 @@ public:
 	* @param
 	* @return
 	*/
-	Hash* removeItem(int val);
+	Node* removeItem(int val);
 
 	/**
 	* Get item based on value sent
@@ -65,7 +65,7 @@ public:
 	* @param
 	* @return
 	*/
-	Hash* getItem(int val);
+	Node* getItem(int val);
 
 	/**
 	* Get length of list/vector
@@ -85,7 +85,7 @@ public:
 
 
 private:
-	std::vector<Hash*> hashList;
+	std::vector<Node*> hashList;
 	/**
 	* accepts an int and returns an int
 	*
@@ -95,19 +95,18 @@ private:
 	int hash(int hashVal);
 };
 
-class HASHSDLL_API Hash {
+class HASHSDLL_API Node {
 public:
 	/**
-	* Checks to see if the datas are the same
+	* Checks to see if the datas and keys are the same
 	* == overloader
 	* @param		hashVal
 	* @return		val
 	*/
-	Hash operator == (Hash h) 
-	{ 
-		return (h.data == data && h.key == key);
-	} 
+	bool operator == (Node n) {
+		return (n.data == data && n.key == key);
+	}
 private:
 	int key;
 	int data;
-}
+};
