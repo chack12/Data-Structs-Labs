@@ -76,18 +76,17 @@ namespace HashsUnitTest
 		TEST_METHOD(GetLength1)
 		{
 			HashTable test;
-			Assert::AreEqual(test.getLength(), 100);
+			Assert::AreEqual(test.getLength(), 0);
 		}
 		TEST_METHOD(GetLength2)
 		{
 			HashTable test(5);
+			Assert::IsTrue(test.addItem(5, 1));
+			Assert::IsTrue(test.addItem(4, 2));
+			Assert::IsTrue(test.addItem(3, 2));
+			Assert::IsTrue(test.addItem(2, 4));
+			Assert::IsTrue(test.addItem(1, 3));
 			Assert::AreEqual(test.getLength(), 5);
-		}
-		TEST_METHOD(Hash1)
-		{
-		}
-		TEST_METHOD(Hash2)
-		{
 		}
 	};
 }
