@@ -54,16 +54,34 @@ namespace HashsUnitTest
 		}
 		TEST_METHOD(GetNode1)
 		{
-			
+			HashTable test(5);
+			Assert::IsTrue(test.addItem(5, 1));
+			Assert::IsTrue(test.addItem(4, 2));
+			Assert::AreEqual(test.getNode(1)->getData(),5);
+			Assert::AreEqual(test.getNode(2)->getData(),4);
 		}
 		TEST_METHOD(GetNode2)
 		{
+			HashTable test(5);
+			Assert::IsTrue(test.addItem(5, 1));
+			Assert::IsTrue(test.addItem(4, 2));
+			if (test.getNode(3) == nullptr) {
+				Assert::IsTrue(true);
+			}
+			else {
+				Assert::IsTrue(false);
+			}
+			Assert::AreEqual(test.getNode(2)->getData(), 4);
 		}
 		TEST_METHOD(GetLength1)
 		{
+			HashTable test;
+			Assert::AreEqual(test.getLength(), 100);
 		}
 		TEST_METHOD(GetLength2)
 		{
+			HashTable test(5);
+			Assert::AreEqual(test.getLength(), 5);
 		}
 		TEST_METHOD(Hash1)
 		{
