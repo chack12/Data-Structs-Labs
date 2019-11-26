@@ -7,15 +7,20 @@
 	void HashTable::addItem(int val) {
 
 	}
-	Hash* HashTable::removeItem(int val) {
+	Node* HashTable::removeItem(int val) {
 
 	}
-	Hash* HashTable::getItem(int val) {
+	Node* HashTable::getItem(int val) {
 
 	}
 	int HashTable::getLength() {
 
 	}
-	~HashTable() {
+	HashTable::~HashTable() {
 
+	}
+
+	void Node::setItem(const int& val)
+	{
+		data = val;
 	}

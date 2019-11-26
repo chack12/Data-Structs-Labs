@@ -25,7 +25,7 @@ public:
 		hashList.resize(100);
 
 		for (int i = 0; i < 100; ++i) {
-			hashList.at(i) = -1;
+			hashList.at(i)->setItem(-1);
 		}
 	}
 
@@ -39,7 +39,7 @@ public:
 		hashList.resize(size);
 
 		for (int i = 0; i < size; ++i) {
-			hashList.at(i) = -1;
+			hashList.at(i)->setItem(-1);
 		}
 	}
 
@@ -97,6 +97,9 @@ private:
 
 class HASHSDLL_API Node {
 public:
+
+	void setItem(const int& val);
+
 	/**
 	* Checks to see if the datas and keys are the same
 	* == overloader
