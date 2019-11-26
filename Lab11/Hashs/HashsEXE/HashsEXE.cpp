@@ -119,28 +119,28 @@ int main()
 		cout << "100% The size" << endl;
 		auto t1 = Clock::now();
 		for (int i = 0; i < 500; ++i) {
-			fiveTable100.addItem(fiveVector[i], i);
+			fiveTable100.addItem(fiveVector[i], i + 1);
 		}
 		auto t2 = Clock::now();
 		cout << "500 Nodes: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " nanoseconds" << endl;
 
 		t1 = Clock::now();
 		for (int i = 0; i < 1000; ++i) {
-			thousTable100.addItem(thousVector[i], i);
+			thousTable100.addItem(thousVector[i], i + 1);
 		}
 		t2 = Clock::now();
 		cout << "1000 Nodes: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " nanoseconds" << endl;
 
 		t1 = Clock::now();
 		for (int i = 0; i < 2000; ++i) {
-			twoThousTable100.addItem(twoThousVector[i], i);
+			twoThousTable100.addItem(twoThousVector[i], i + 1);
 		}
 		t2 = Clock::now();
 		cout << "2000 Nodes: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " nanoseconds" << endl;
 
 		t1 = Clock::now();
 		for (int i = 0; i < 5000; ++i) {
-			fiveThousTable100.addItem(fiveThousVector[i], i);
+			fiveThousTable100.addItem(fiveThousVector[i], i + 1);
 		}
 		t2 = Clock::now();
 		cout << "5000 Nodes: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " nanoseconds" << endl;
@@ -148,28 +148,28 @@ int main()
 		cout << "150% The size" << endl;
 		t1 = Clock::now();
 		for (int i = 0; i < 500; ++i) {
-			fiveTable150.addItem(fiveVector[i], i);
+			fiveTable150.addItem(fiveVector[i], i + 1);
 		}
 		t2 = Clock::now();
 		cout << "500 Nodes: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " nanoseconds" << endl;
 
 		t1 = Clock::now();
 		for (int i = 0; i < 1000; ++i) {
-			thousTable150.addItem(thousVector[i], i);
+			thousTable150.addItem(thousVector[i], i + 1);
 		}
 		t2 = Clock::now();
 		cout << "1000 Nodes: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " nanoseconds" << endl;
 
 		t1 = Clock::now();
 		for (int i = 0; i < 2000; ++i) {
-			twoThousTable150.addItem(twoThousVector[i], i);
+			twoThousTable150.addItem(twoThousVector[i], i + 1);
 		}
 		t2 = Clock::now();
 		cout << "2000 Nodes: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " nanoseconds" << endl;
 
 		t1 = Clock::now();
 		for (int i = 0; i < 5000; ++i) {
-			fiveThousTable150.addItem(fiveThousVector[i], i);
+			fiveThousTable150.addItem(fiveThousVector[i], i + 1);
 		}
 		t2 = Clock::now();
 		cout << "5000 Nodes: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " nanoseconds" << endl;
@@ -177,28 +177,28 @@ int main()
 		cout << "200% The size" << endl;
 		t1 = Clock::now();
 		for (int i = 0; i < 500; ++i) {
-			fiveTable200.addItem(fiveVector[i], i);
+			fiveTable200.addItem(fiveVector[i], i + 1);
 		}
 		t2 = Clock::now();
 		cout << "500 Nodes: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " nanoseconds" << endl;
 
 		t1 = Clock::now();
 		for (int i = 0; i < 1000; ++i) {
-			thousTable200.addItem(thousVector[i], i);
+			thousTable200.addItem(thousVector[i], i + 1);
 		}
 		t2 = Clock::now();
 		cout << "1000 Nodes: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " nanoseconds" << endl;
 
 		t1 = Clock::now();
 		for (int i = 0; i < 2000; ++i) {
-			twoThousTable200.addItem(twoThousVector[i], i);
+			twoThousTable200.addItem(twoThousVector[i], i + 1);
 		}
 		t2 = Clock::now();
 		cout << "2000 Nodes: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " nanoseconds" << endl;
 
 		t1 = Clock::now();
 		for (int i = 0; i < 5000; ++i) {
-			fiveThousTable200.addItem(fiveThousVector[i], i);
+			fiveThousTable200.addItem(fiveThousVector[i], i + 1);
 		}
 		t2 = Clock::now();
 		cout << "5000 Nodes: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " nanoseconds" << endl;
@@ -206,28 +206,28 @@ int main()
 		cout << "500% The size" << endl;
 		t1 = Clock::now();
 		for (int i = 0; i < 500; ++i) {
-			fiveTable500.addItem(fiveVector[i], i);
+			fiveTable500.addItem(fiveVector[i], i + 1);
 		}
 		t2 = Clock::now();
 		cout << "500 Nodes: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " nanoseconds" << endl;
 
 		t1 = Clock::now();
 		for (int i = 0; i < 1000; ++i) {
-			thousTable500.addItem(thousVector[i], i);
+			thousTable500.addItem(thousVector[i], i + 1);
 		}
 		t2 = Clock::now();
 		cout << "1000 Nodes: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " nanoseconds" << endl;
 
 		t1 = Clock::now();
 		for (int i = 0; i < 2000; ++i) {
-			twoThousTable500.addItem(twoThousVector[i], i);
+			twoThousTable500.addItem(twoThousVector[i], i + 1);
 		}
 		t2 = Clock::now();
 		cout << "2000 Nodes: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " nanoseconds" << endl;
 
 		t1 = Clock::now();
 		for (int i = 0; i < 5000; ++i) {
-			fiveThousTable500.addItem(fiveThousVector[i], i);
+			fiveThousTable500.addItem(fiveThousVector[i], i + 1);
 		}
 		t2 = Clock::now();
 		cout << "5000 Nodes: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " nanoseconds" << endl;
