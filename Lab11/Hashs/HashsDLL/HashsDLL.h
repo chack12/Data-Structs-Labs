@@ -11,92 +11,40 @@
 #endif
 
 #include <vector>
-
-// This class is exported from the dll
-class HASHSDLL_API HashTable {
-public:
-	/**
-	* The default constructor
-	*
-	* @param
-	* @return
-	*/
-	HashTable() {
-		hashList.resize(100);
-
-		for (int i = 0; i < 100; ++i) {
-			hashList.at(i) = -1;
-		}
-	}
-
-	/**
-	* The default constructor
-	*
-	* @param
-	* @return
-	*/
-	HashTable(int size) {
-		hashList.resize(size);
-
-		for (int i = 0; i < size; ++i) {
-			hashList.at(i) = -1;
-		}
-	}
-
-	/**
-	* Add item
-	*
-	* @param
-	* @return
-	*/
-	void addItem(int val);
-
-	/**
-	* Removes item based on value sent
-	*
-	* @param
-	* @return
-	*/
-	Node* removeItem(int val);
-
-	/**
-	* Get item based on value sent
-	*
-	* @param
-	* @return
-	*/
-	Node* getItem(int val);
-
-	/**
-	* Get length of list/vector
-	*
-	* @param
-	* @return			
-	*/
-	int getLength();
-
-	/**
-	* The default constructor
-	*
-	* @param
-	* @return
-	*/
-	~HashTable();
-
-
-private:
-	std::vector<Node*> hashList;
-	/**
-	* accepts an int and returns an int
-	*
-	* @param		hashVal
-	* @return		val
-	*/
-	int hash(int hashVal);
-};
-
 class HASHSDLL_API Node {
 public:
+	/**
+	* Returns the data for the node
+	* 
+	* @param		
+	* @return			data for the node
+	*/
+	int getData();
+
+	/**
+	* Sets the data for the node
+	*
+	* @param	val		the new data
+	* @return
+	*/
+	void setData(int val);
+
+	/**
+	* Returns the key of the node
+	*
+	* @param
+	* @return			the key of the node
+	*/
+	int getKey();
+
+	/**
+	* Sets the key of the node
+	*
+	* @param	val		the new key
+	* @return
+	*/
+	void setKey(int val);
+	
 	/**
 	* Checks to see if the datas and keys are the same
 	* == overloader
@@ -106,7 +54,112 @@ public:
 	bool operator == (Node n) {
 		return (n.data == data && n.key == key);
 	}
+
+	/**
+	* Blank constructor
+	*
+	* @param
+	* @return
+	*/
+	Node();
+
+	/**
+	* Constructor
+	*
+	* @param
+	* @return
+	*/
+	Node(int myKey, int myData) {
+		key = myKey;
+		data = myData;
+	}
 private:
 	int key;
 	int data;
+};
+// This class is exported from the dll
+class HASHSDLL_API HashTable {
+public:
+	/**
+	* Add a node
+	*
+	* @param	node	the node you want to add
+	* @return
+	*/
+	bool addItem(int val, int key);
+
+	/**
+	* Removes node based on value sent
+	*
+	* @param	key		the key for the node
+	* @return			the node
+	*/
+	Node* removeItem(int key);
+
+	/**
+	* Get node based on the key
+	*
+	* @param	key		the key for the node
+	* @return			the node
+	*/
+	Node* getNode(int key);
+
+	/**
+	* Get length of list/vector
+	*
+	* @param
+	* @return			the length
+	*/
+	int getLength();
+
+	/**
+	* The default constructor
+	*
+	* @param
+	* @return
+	*/
+	HashTable() {
+		hashTable.resize(100);
+
+		for (int i = 0; i < 100; ++i) {
+			hashTable[i] = nullptr;
+		}
+	}
+
+	/**
+	* Constructor
+	*
+	* @param
+	* @return
+	*/
+	HashTable(int size) {
+		hashTable.resize(size);
+
+		for (int i = 0; i < size; ++i) {
+			hashTable[i] = nullptr;
+		}
+	}
+
+	/**
+	* Destructor
+	*
+	* @param
+	* @return
+	*/
+	~HashTable() {
+		for (int i = 0; i < hashTable.size(); ++i) {
+			delete hashTable[i];
+		}
+	}
+
+
+private:
+	std::vector<Node*> hashTable;
+	/**
+	* Takes the modulus of the maximum size of the table
+	*
+	* @param	val		the inputted value
+	* @return			an int
+	*/
+	int hash(int val);
 };
